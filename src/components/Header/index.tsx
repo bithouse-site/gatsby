@@ -3,37 +3,37 @@ import { Link } from 'gatsby';
 import { Logo } from '../Logo';
 import { Helmet } from 'react-helmet';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
-import { useSiteConfiguration } from '../../hooks/useSiteConfiguration';
 import { Animation } from '../Animation';
 import * as classes from './style.module.css';
+import useHeader from '../../hooks/useHeader';
 
 export function Header(): React.ReactElement {
     const [open, setOpen] = React.useState<boolean>(false);
-    const siteConfiguration = useSiteConfiguration();
     const isDesktopBreakpoint = useMediaQuery('(min-width: 992px)');
+    const header = useHeader().allSanityHeader?.nodes[0]
 
     const navigationItems = (
         <>
-            {siteConfiguration.navigation.header.map((linkObject, key) => {
+            {header?.menu?.map((linkObject: any, key: any) => {
                 return (
                     <Link
                         key={key}
-                        to={linkObject.url}
+                        to={linkObject.link}
                         className={classes.NavLink}
                         onClick={!isDesktopBreakpoint ? () => setOpen(!open) : undefined}
                     >
-                        {linkObject.label}
+                        {linkObject.nameMenu}
                     </Link>
                 );
             })}
             <a
-                href={siteConfiguration.navigation.ctaButton.url}
-                target={siteConfiguration.navigation.ctaButton.openNewTab ? '_blank' : undefined}
+                href={header.ctaButton.link}
+                target='_blank'
                 rel="noopener noreferrer"
                 className={classes.CtaButton}
                 onClick={!isDesktopBreakpoint ? () => setOpen(!open) : undefined}
             >
-                {siteConfiguration.navigation.ctaButton.label}
+                {header.ctaButton.nameButton}
             </a>
         </>
     );
@@ -65,10 +65,12 @@ export function Header(): React.ReactElement {
             <Helmet bodyAttributes={{ class: open ? classes.Blurred : undefined }} />
             <Animation className={classes.ContentWrapper} type="fadeDown">
                 <Link to="/" aria-label="home">
-                    <Logo fontSize="2rem" color="var(--primary-color" />
+                    <Logo />
                 </Link>
                 {isDesktopBreakpoint ? topNavigationBar : sideNavigationBar}
             </Animation>
         </header>
     );
 }
+
+

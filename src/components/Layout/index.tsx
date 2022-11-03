@@ -1,12 +1,11 @@
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/700.css';
+import '@fontsource/gothic-a1/400.css';
+import "@fontsource/gothic-a1/700.css";
 import '../../globalStyles/global.css';
 import '../../globalStyles/theme.css';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Theme, useGlobalState } from '../../context';
 import { SplashScreen } from '../SplashScreen';
-import { Footer } from '../Footer';
 import { Header } from '../Header/index';
 import { CookieBar } from '../CookieBar';
 import * as classes from './style.module.css';
@@ -39,7 +38,6 @@ export function Layout(props: LayoutProps): React.ReactElement {
             <div className={classes.Layout}>
                 <Header />
                 <main>{props.children}</main>
-                <Footer />
                 {props.useCookieBar && <CookieBar />}
             </div>
         </>

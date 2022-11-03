@@ -8,7 +8,7 @@ import {
   Page,
   ProjectsSection,
   Seo,
-} from "gatsby-theme-portfolio-minimal";
+} from "gatsby-theme-portfolio-minimal"; 
 
 import { PageBit } from "../components/PageBit/index";
 

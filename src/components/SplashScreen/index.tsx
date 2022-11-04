@@ -1,7 +1,7 @@
+import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useGlobalState, ActionType } from '../../context';
-import { Logo } from '../Logo';
 import { Animation } from '../Animation';
 import * as classes from './style.module.css';
 
@@ -33,7 +33,12 @@ export function SplashScreen(): React.ReactElement {
                         }, 500);
                     }}
                 />
-                <Logo fontSize="3rem" color="var(--background-color)" />
+                {/* <Logo fontSize="3rem" color="var(--background-color)" /> */}
+                <StaticImage
+      src="../../images/logoWhite.svg"
+      alt="Logo Bitlogic"
+      transformOptions={{ fit: "cover", cropFocus: "attention" }}
+    />
             </div>
         </Animation>
     );

@@ -1,20 +1,14 @@
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
-import { useSiteConfiguration } from '../../hooks/useSiteConfiguration';
+import useHeader from '../../hooks/useHeader';
 import "./style.css";
 
-interface LogoProps {
-    fontSize?: string;
-    color?: string;
-}
-
-export function Logo(props: LogoProps): React.ReactElement {
-    const siteConfiguration = useSiteConfiguration();
-    const fontSize = props.fontSize || '2rem';
-    const color = props.color || 'var(--primary-color)';
+export function Logo(): React.ReactElement {
+    const headerImage = useHeader().allSanityHeader?.nodes[0].logo.asset
 
     return (
-        <div className={"Logo"} aria-roledescription="logo" style={{ fontSize, color }}>
-            {siteConfiguration.logo.text}
+        <div className={"Logo"} aria-roledescription="logo">
+            <GatsbyImage image={headerImage.gatsbyImageData} alt="Logo bitlogic"/>
         </div>
     );
 }

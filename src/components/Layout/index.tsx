@@ -1,5 +1,5 @@
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/700.css';
+import '@fontsource/gothic-a1/400.css';
+import "@fontsource/gothic-a1/700.css";
 import '../../globalStyles/global.scss';
 import '../../globalStyles/theme.scss';
 import React from 'react';
@@ -39,8 +39,8 @@ export function Layout(props: LayoutProps): React.ReactElement {
             <div className={classes.Layout}>
                 <Header />
                 <main>{props.children}</main>
-                <Footer />
                 {props.useCookieBar && <CookieBar />}
+                <Footer />
             </div>
         </>
     );

@@ -19,7 +19,7 @@ export function Footer(): React.ReactElement {
         <div className="Redes">
           <StaticImage
             className="Title"
-            src="../../../public/icons/Logo-White.png"
+            src="../../images/Logo-White.png"
             alt="Logo Bitlogic"
             width={250}
           />
@@ -30,7 +30,7 @@ export function Footer(): React.ReactElement {
               rel="noopener noreferrer"
             >
               <StaticImage
-                src="../../../public/icons/Social-IG.png"
+                src="../../images/Social-IG.png"
                 alt="Logo Bitlogic"
                 width={40}
               />
@@ -41,14 +41,14 @@ export function Footer(): React.ReactElement {
               rel="noopener noreferrer"
             >
               <StaticImage
-                src="../../../public/icons/Social-FB.png"
+                src="../../images/Social-FB.png"
                 alt="Logo Bitlogic"
                 width={40}
               />
             </Link>
             <Link to="/">
               <StaticImage
-                src="../../../public/icons/Social-YT.png"
+                src="../../images/Social-YT.png"
                 alt="Logo Bitlogic"
                 width={40}
               />

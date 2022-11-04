@@ -87,7 +87,7 @@
     height: 0.1563rem;
     width: 0%;
     bottom: -0.125rem;
-    background-color: var(--primary-color);
+    background-color: var(--primary-color-green);
     transition: 200ms ease-out;
 }
 

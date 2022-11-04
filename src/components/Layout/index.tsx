@@ -1,12 +1,12 @@
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/700.css';
-import '../../globalStyles/global.css';
-import '../../globalStyles/theme.css';
+import '../../globalStyles/global.scss';
+import '../../globalStyles/theme.scss';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Theme, useGlobalState } from '../../context';
 import { SplashScreen } from '../SplashScreen';
-import { Footer } from '../Footer';
+import { Footer } from '../Footer/index';
 import { Header } from '../Header/index';
 import { CookieBar } from '../CookieBar';
 import * as classes from './style.module.css';

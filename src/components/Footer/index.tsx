@@ -1,45 +1,61 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import { Logo } from '../Logo';
-import { Theme, useGlobalState } from '../../context';
-import { useSiteConfiguration } from '../../hooks/useSiteConfiguration';
-import * as classes from './style.module.css';
+import React from "react"
+import { Link } from "gatsby"
+import { Logo } from "../Logo"
+import "./style.scss"
+import { StaticImage } from "gatsby-plugin-image"
 
 export function Footer(): React.ReactElement {
-    const { globalState } = useGlobalState();
-    const siteConfiguration = useSiteConfiguration();
-    const darkModeEnabled = globalState.theme === Theme.Dark;
-
-    return (
-        <footer
-            className={classes.Footer}
-            style={{
-                background: darkModeEnabled ? 'var(--background-color)' : 'var(--primary-color)',
-                borderTop: darkModeEnabled ? '3px solid var(--box-shadow-hover-color)' : undefined,
-            }}
-        >
-            <div className={classes.ContentWrapper}>
-                <Link to="/" aria-label="home">
-                    <Logo
-                        fontSize="1.5rem"
-                        color={darkModeEnabled ? 'var(--primary-color)' : 'var(--background-color)'}
-                    />
-                </Link>
-                <div className={classes.Links}>
-                    {siteConfiguration.navigation.footer.map((linkObject, key) => {
-                        return (
-                            <Link
-                                key={key}
-                                to={linkObject.url}
-                                aria-label={linkObject.label}
-                                style={{ color: darkModeEnabled ? 'var(--primary-color)' : 'var(--background-color)' }}
-                            >
-                                {linkObject.label}
-                            </Link>
-                        );
-                    })}
-                </div>
-            </div>
-        </footer>
-    );
+  return (
+    <div className="Footer">
+      <div className="ContentWrapper">
+        <div className="Contacto">
+          <h2 className="Title">Contactanos</h2>
+          <div className="Links">
+            <p>Mail</p>
+            <p>Address</p>
+            <p>Phone</p>
+          </div>
+        </div>
+        <div className="Redes">
+          <StaticImage
+            className="Title"
+            src="../../../public/icons/Logo-White.png"
+            alt="Logo Bitlogic"
+            width={250}
+          />
+          <div className="Links">
+            <Link
+              to="https://www.instagram.com/bithouse.com.ar/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <StaticImage
+                src="../../../public/icons/Social-IG.png"
+                alt="Logo Bitlogic"
+                width={40}
+              />
+            </Link>
+            <Link
+              to="https://www.facebook.com/Bithouse-Cordoba-113742567060909/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <StaticImage
+                src="../../../public/icons/Social-FB.png"
+                alt="Logo Bitlogic"
+                width={40}
+              />
+            </Link>
+            <Link to="/">
+              <StaticImage
+                src="../../../public/icons/Social-YT.png"
+                alt="Logo Bitlogic"
+                width={40}
+              />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }

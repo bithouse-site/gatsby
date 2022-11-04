@@ -1,8 +1,4 @@
 .Logo {
-    position: relative;
-    z-index: 13;
-    font-size: 1.75rem;
-    font-weight: 900;
     /* Disable effects when sidebar is open */
     filter: none !important;
     pointer-events: auto !important;

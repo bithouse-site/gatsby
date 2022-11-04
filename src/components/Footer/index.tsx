@@ -21,7 +21,7 @@ export function Footer(): React.ReactElement {
             className="Title"
             src="../../images/Logo-White.png"
             alt="Logo Bitlogic"
-            width={250}
+            width={240}
           />
           <div className="Links">
             <Link

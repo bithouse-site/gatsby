@@ -1,4 +1,5 @@
 import React from "react"
+import { Seo } from "gatsby-theme-portfolio-minimal";
 import { PageBit } from "../components/PageBit/index"
 
 export default function IndexPage() {

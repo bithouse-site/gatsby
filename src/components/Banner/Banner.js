@@ -8,13 +8,17 @@ const Banner = () => {
   const textColor = banner?.color === "#FCFCFC" ? "black" : "#FCFCFC"
   return (
     <div className="Banner" style={{ backgroundColor: banner?.color.value }}>
-      <GatsbyImage
-        image={banner?.image.asset.gatsbyImageData}
-        alt={banner?.description}
-      />
-      <p className="Title" style={{color: textColor}}>
-        {banner?.title}
-      </p>
+      {banner?.image && (
+          <GatsbyImage
+            image={banner?.image.asset.gatsbyImageData}
+            alt={banner?.description}
+          />
+      )}
+      {banner?.title && (
+        <p className="Title" style={{color: textColor}}>
+          {banner?.title}
+        </p>
+      )}
     </div>
   )
 }

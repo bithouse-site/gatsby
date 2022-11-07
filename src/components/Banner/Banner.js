@@ -5,7 +5,7 @@ import "./Banner.scss"
 
 const Banner = () => {
   const banner = useBanner().allSanityBanner?.nodes[0]
-  const textColor = banner?.color === "#FCFCFC" ? "black" : "#FCFCFC"
+  const textColor = banner?.color.value === "#FCFCFC" ? "#1B1C1E" : "#FCFCFC"
   return (
     <div className="Banner" style={{ backgroundColor: banner?.color.value }}>
       {banner?.image && (

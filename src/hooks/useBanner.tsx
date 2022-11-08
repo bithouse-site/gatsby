@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby"
 
-const useFooter = () => {
+const useBanner = () => {
   return useStaticQuery(graphql`
     {
       allSanityBanner {
@@ -22,4 +22,4 @@ const useFooter = () => {
   `)
 }
 
-export default useFooter
+export default useBanner

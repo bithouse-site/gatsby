@@ -1,13 +1,10 @@
 import React from "react"
-import { Seo } from "gatsby-theme-portfolio-minimal";
-import { PageBit } from "../components/PageBit/index"
+import { Seo } from "gatsby-theme-portfolio-minimal"
 
 export default function IndexPage() {
   return (
     <>
-      <Seo title='Gatsby Starter for Portfolio Minimal' />
-
-      <PageBit useSplashScreenAnimation />
+      <Seo title="Gatsby Starter for Portfolio Minimal" />
     </>
   )
 }

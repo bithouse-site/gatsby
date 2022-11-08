@@ -8,8 +8,9 @@ interface PageProps {
     useSplashScreenAnimation?: boolean;
 }
 
-export function PageBit(props: PageProps): React.ReactElement {
+export function Page(props: PageProps): React.ReactElement {
     const siteConfiguration = useSiteConfiguration();
+    console.log(props.children);
     return (
         <GlobalStateProvider
             defaultTheme={siteConfiguration.featureToggles.useDarkModeAsDefault ? Theme.Dark : Theme.Light}

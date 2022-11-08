@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@fontsource/gothic-a1": "^4.5.9",
+    "@portabletext/react": "^2.0.0",
     "bootstrap": "^5.2.2",
     "gatsby": "^4.18.2",
     "gatsby-plugin-image": "^2.24.0",
@@ -22,7 +23,8 @@
     "react": "^17.0.2",
     "react-bootstrap": "^2.5.0",
     "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "sass": "^1.56.0"
   },
   "author": "Konstantin Münster <mail@konstantin.digital>",
   "license": "0BSD",

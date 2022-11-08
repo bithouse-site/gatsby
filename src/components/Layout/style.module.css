@@ -8,5 +8,11 @@
 }
 
 .Layout main {
-    margin-top: 2rem;
+    margin-top: 5rem;
+}
+
+@media (min-width: 768px) {
+    .Layout main {
+        margin-top: 2rem;
+    }
 }

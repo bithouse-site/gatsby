@@ -24,7 +24,6 @@
 
 .Title {
   font-weight: 500;
-  text-transform: uppercase;
   color: var(--background-color);
   letter-spacing: 1px;
   margin-right: 1.5rem;
@@ -35,31 +34,24 @@
 .Redes {
   align-self: center;
   margin-left: auto;
-  .Links {
-    width: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-left: 20px;
-    a {
-      margin-right: 2rem;
-      color: $bg-color;
-    }
-  }
 }
 
 .Contacto {
   align-self: center;
-  .Links {
+  .Contactos {
     width: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex-wrap: nowrap;
+    img{
+      width: 40px;
+      height: 40px;
+    }
     p {
       font-family: $primary-font;
       font-size: 0.875rem;
       font-weight: 700;
-      text-transform: uppercase;
       color: var(--background-color);
       letter-spacing: 1px;
       margin-bottom: 1rem;
@@ -73,5 +65,11 @@
 @media (min-width: 768px) {
   .Links a {
     margin-right: 4rem;
+  }
+}
+
+@media (max-width: 567px) {
+  .Redes{
+    margin-left: 0%;
   }
 }

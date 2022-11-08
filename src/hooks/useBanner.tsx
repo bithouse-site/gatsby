@@ -3,23 +3,17 @@ import { useStaticQuery, graphql } from "gatsby"
 const useFooter = () => {
   return useStaticQuery(graphql`
     {
-      allSanityFooter {
+      allSanityBanner {
         nodes {
-          address
-          phone
-          email
-          logo {
+          title
+          description
+          color {
+            title
+            value
+          }
+          image {
             asset {
               gatsbyImageData
-            }
-          }
-          media {
-            _key
-            link
-            icon {
-              asset {
-                gatsbyImageData
-              }
             }
           }
         }

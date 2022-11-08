@@ -27,11 +27,9 @@ const SocialMedia = ({ logo }) => {
   return (
     <>
       {logo && (
-        <GatsbyImage
-          className="Logo"
-          image={logoData.asset.gatsbyImageData}
-          alt="logo"
-        />
+        <div className="Logo">
+          <GatsbyImage image={logoData.asset.gatsbyImageData} alt="logo" />
+        </div>
       )}
       <div className="Medias">{socialMedia}</div>
     </>

@@ -1,3 +1,6 @@
+@import "../../globalStyles/global.scss";
+@import "../../globalStyles/theme.scss";
+
 .Banner {
   display: flex;
   justify-content: space-around;
@@ -12,6 +15,18 @@
   margin-bottom: 0.5rem;
   letter-spacing: 1px;
   line-height: normal;
+}
+
+.Text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Button {
+  a{
+    text-decoration: underline;
+  }
 }
 
 @media (max-width: 768px) {

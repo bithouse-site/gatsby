@@ -14,11 +14,25 @@ const BannerDoble = () => {
           alt={banner?.description}
         />
       )}
-      {banner?.title && (
-        <p className="Title" style={{ color: textColor }}>
-          {banner?.title}
-        </p>
-      )}
+      <div className="Text">
+        {banner?.title && (
+          <p className="Title" style={{ color: textColor }}>
+            {banner?.title}
+          </p>
+        )}
+        {banner?.button && (
+          <div className="Button">
+            <a
+              href={banner?.button.link}
+              rel="noreferrer"
+              style={{ color: textColor }}
+            >
+              {banner?.button.nameButton}
+            </a>
+
+          </div>
+        )}
+      </div>
     </div>
   )
 }

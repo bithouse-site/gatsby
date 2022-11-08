@@ -1,9 +1,9 @@
 import { useStaticQuery, graphql } from "gatsby"
 
-const useBanner = () => {
+const useBannerDoble = () => {
   return useStaticQuery(graphql`
     {
-      allSanityBanner {
+      allSanityBannerDoble {
         nodes {
           title
           description
@@ -16,10 +16,14 @@ const useBanner = () => {
               gatsbyImageData
             }
           }
+          button {
+            nameButton
+            link
+          }
         }
       }
     }
   `)
 }
 
-export default useBanner
+export default useBannerDoble

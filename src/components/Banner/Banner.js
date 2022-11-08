@@ -6,16 +6,18 @@ import "./Banner.scss"
 const Banner = () => {
   const banner = useBanner().allSanityBanner?.nodes[0]
   const textColor = banner?.color.value === "#FCFCFC" ? "#1B1C1E" : "#FCFCFC"
+  const showText = banner?.image === null ? true : undefined
+
   return (
     <div className="Banner" style={{ backgroundColor: banner?.color.value }}>
       {banner?.image && (
-          <GatsbyImage
-            image={banner?.image.asset.gatsbyImageData}
-            alt={banner?.description}
-          />
+        <GatsbyImage
+          image={banner?.image.asset.gatsbyImageData}
+          alt={banner?.description}
+        />
       )}
-      {banner?.title && (
-        <p className="Title" style={{color: textColor}}>
+      {showText && (
+        <p className="Title" style={{ color: textColor }}>
           {banner?.title}
         </p>
       )}

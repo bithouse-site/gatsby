@@ -1,13 +1,13 @@
 import React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
-import useFooter from "../../../hooks/useFooter"
+import useFooter from "../../hooks/useFooter"
 import "./SocialMedia.scss"
 import { Link } from "gatsby"
 
-const SocialMedia = () => {
+const SocialMedia = ({ logo }) => {
   const footer = useFooter().allSanityFooter?.nodes[0]
   const mediaData = footer?.media
-  const logo = footer?.logo
+  const logoData = footer?.logo
 
   const socialMedia = mediaData.map(media => {
     return (
@@ -26,11 +26,13 @@ const SocialMedia = () => {
   })
   return (
     <>
-      <GatsbyImage
-        className="Logo"
-        image={logo.asset.gatsbyImageData}
-        alt="logo"
-      />
+      {logo && (
+        <GatsbyImage
+          className="Logo"
+          image={logoData.asset.gatsbyImageData}
+          alt="logo"
+        />
+      )}
       <div className="Medias">{socialMedia}</div>
     </>
   )

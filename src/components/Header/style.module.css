@@ -5,7 +5,6 @@
     width: 100%;
     height: auto;
     min-height: var(--header-height);
-    background: var(--background-color);
 }
 
 .ContentWrapper  {
@@ -64,7 +63,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--background-color);
+    background: var(--primary-color-white);
 }
 
 .TopNavigationBar a {
@@ -152,8 +151,9 @@
     width: auto;
     height: auto;
     border-radius: var(--border-radius);
-    border: 0.125rem solid var(--primary-color);
-    background: var(--background-color);
+    border: 0.125rem solid var(--primary-color-green);
+    background: var(--primary-color-green);
+    color: white !important;
     padding: 1rem 1.5rem;
     margin: 1.5rem auto;
 }

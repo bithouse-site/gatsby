@@ -8,7 +8,7 @@ interface PageProps {
     useSplashScreenAnimation?: boolean;
 }
 
-export function PageBit(props: PageProps): React.ReactElement {
+export function Page(props: PageProps): React.ReactElement {
     const siteConfiguration = useSiteConfiguration();
     return (
         <GlobalStateProvider

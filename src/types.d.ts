@@ -21,6 +21,16 @@ interface PageSection {
     heading?: string;
 }
 
+interface HeroContent {
+    sectionId: string;
+    heading?: string;
+    data?: any;
+    titleHero?: string;
+    _rawRichTextHero?: array;
+    socialNetworks?: boolean;
+    imageHero?: any;
+}
+
 interface GatsbyNodeHelpers {
     actions: Actions;
     createContentDigest: (input: unknown) => string;

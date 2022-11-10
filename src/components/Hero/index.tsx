@@ -2,15 +2,13 @@ import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { Animation } from '../../components/Animation';
 import { Section } from '../../components/Section';
-import { PageSection } from '../../types';
+import { HeroContent } from '../../types';
 import {PortableText} from '@portabletext/react';
-import useHero from '../../hooks/useHero';
 import * as classes from './style.module.css';
 import SocialMedia from '../SocialMedia/SocialMedia';
 
-export function Hero(props: PageSection): React.ReactElement {
-    const dataHero = useHero().allSanityHero?.nodes[0];
-    const heroImage = dataHero?.imageHero?.asset?.gatsbyImageData;
+export function Hero(props: HeroContent): React.ReactElement {
+    const heroImage = props?.data?.imageHero?.asset?.gatsbyImageData;
 
     return (
         <Animation type="fadeUp" delay={400}>
@@ -27,11 +25,11 @@ export function Hero(props: PageSection): React.ReactElement {
                             </Animation>
                         )}
                     </div>
-                    <h1 className={classes.Title}>{dataHero.titleHero}</h1>
+                    <h1 className={classes.Title}>{props?.data?.titleHero}</h1>
                     {/* <p>{dataHero?.description}</p> */}
-                    <PortableText value={dataHero._rawRichTextHero} />
+                    <PortableText value={props?.data?._rawRichTextHero} />
                     <Animation type="fadeLeft" delay={800}>
-                        {dataHero.socialNetworks === true ? (
+                        {props?.data?.socialNetworks === true ? (
                             <SocialMedia logo={undefined} />
                         ) : null}
                     </Animation>

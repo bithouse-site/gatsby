@@ -1,35 +1,34 @@
 import React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
-import useBannerDoble from "../../hooks/useBannerDoble"
 import "./BannerDoble.scss"
 
-const BannerDoble = () => {
-  const banner = useBannerDoble().allSanityBannerDoble?.nodes[0]
-  const textColor = banner?.color.value === "#FCFCFC" ? "#1B1C1E" : "#FCFCFC"
+const BannerDoble = ({
+  data: { title, description, color, image, button },
+}) => {
+  const textColor = color?.value === "#FCFCFC" ? "#1B1C1E" : "#FCFCFC"
+  const bgColor = color === null ? "#0A694D" : color?.value
+  const altText = description === null ? "Banner Doble" : description
+
   return (
-    <div className="Banner" style={{ backgroundColor: banner?.color.value }}>
-      {banner?.image && (
-        <GatsbyImage
-          image={banner?.image.asset.gatsbyImageData}
-          alt={banner?.description}
-        />
+    <div className="Banner" style={{ backgroundColor: bgColor }}>
+      {image?.asset && (
+        <GatsbyImage image={image.asset.gatsbyImageData} alt={altText} />
       )}
       <div className="Text">
-        {banner?.title && (
+        {title && (
           <p className="Title" style={{ color: textColor }}>
-            {banner?.title}
+            {title}
           </p>
         )}
-        {banner?.button && (
+        {button?.link && (
           <div className="Button">
             <a
-              href={banner?.button.link}
+              href={button?.link}
               rel="noreferrer"
               style={{ color: textColor }}
             >
-              {banner?.button.nameButton}
+              {button?.nameButton}
             </a>
-
           </div>
         )}
       </div>

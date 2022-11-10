@@ -1,24 +1,24 @@
 import React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
-import useBanner from "../../hooks/useBanner"
 import "./Banner.scss"
 
-const Banner = () => {
-  const banner = useBanner().allSanityBanner?.nodes[0]
-  const textColor = banner?.color.value === "#FCFCFC" ? "#1B1C1E" : "#FCFCFC"
-  const showText = banner?.image === null ? true : undefined
+const Banner = ({data : {title, description, color, image}}) => {
+  const textColor = color?.value === "#FCFCFC" ? "#1B1C1E" : "#FCFCFC"
+  const showText = image === null ? true : undefined
+  const bgColor = color === null ? "#0A694D" : color?.value
+  const altText = description === null ? "Banner" : description
 
   return (
-    <div className="Banner" style={{ backgroundColor: banner?.color.value }}>
-      {banner?.image && (
+    <div className="Banner" style={{ backgroundColor: bgColor }}>
+      {image?.asset && (
         <GatsbyImage
-          image={banner?.image.asset.gatsbyImageData}
-          alt={banner?.description}
+          image={image.asset.gatsbyImageData}
+          alt={altText}
         />
       )}
       {showText && (
         <p className="Title" style={{ color: textColor }}>
-          {banner?.title}
+          {title}
         </p>
       )}
     </div>

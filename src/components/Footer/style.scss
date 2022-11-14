@@ -7,7 +7,6 @@
   min-height: var(--footer-height);
   background: $dark-green;
   border-top: none;
-  margin-top: 2rem;
 }
 
 .ContentWrapper {
@@ -22,7 +21,7 @@
   flex-wrap: wrap;
 }
 
-.Title {
+.Footer .Title {
   font-weight: 500;
   color: var(--background-color);
   letter-spacing: 1px;

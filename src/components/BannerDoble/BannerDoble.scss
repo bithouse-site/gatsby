@@ -1,7 +1,7 @@
 @import "../../globalStyles/global.scss";
 @import "../../globalStyles/theme.scss";
 
-.Banner {
+.BannerDoble {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -9,7 +9,7 @@
   text-align: center;
 }
 
-.Title {
+.BannerDoble .Title {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
@@ -17,26 +17,26 @@
   line-height: normal;
 }
 
-.Text {
+.BannerDoble .Text {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.Button {
+.BannerDoble .Button {
   a{
     text-decoration: underline;
   }
 }
 
 @media (max-width: 768px) {
-  .Banner {
+  .BannerDoble {
     flex-direction: column;
   }
 }
 
 @media (min-width: 768px) {
-  .Banner {
+  .BannerDoble {
     flex-direction: row;
   }
 }

@@ -1,11 +1,12 @@
 import { GatsbyImage } from "gatsby-plugin-image"
 import React from "react"
+import { PortableText } from "@portabletext/react"
 import "./DualAsymmetric.scss"
 
 const DualAsymmetric = ({
   data: {
     title,
-    content,
+    _rawRichTextDualA,
     description,
     colorLeft,
     colorRight,
@@ -33,14 +34,12 @@ const DualAsymmetric = ({
         </div>
       )}
       <div className="TextContainer" style={{ backgroundColor: bgColorText }}>
-        {(title || content) && (
+        {(title || _rawRichTextDualA) && (
           <>
             <p className="Title" style={{ color: textColor }}>
               {title}
             </p>
-            <p className="Content" style={{ color: textColor }}>
-              {content}
-            </p>
+            <PortableText value={_rawRichTextDualA} className="Content" />
           </>
         )}
         {button?.link && (

@@ -56,7 +56,7 @@ const useHome = () => {
               id
               _type
               title
-              content
+              _rawRichTextDualA
               description
               imageSide
               image {

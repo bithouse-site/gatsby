@@ -6,11 +6,13 @@ import useHome from "../hooks/useHome"
 import Banner from "../components/Banner/Banner"
 import BannerDoble from "../components/BannerDoble/BannerDoble"
 import { Hero } from "../components/Hero/index"
+import DualAsimetric from "../components/DualAsimetric/DualAsimetric"
 
 const bodyComponents = {
   banner: data => <Banner data={data} />,
   bannerDoble: data => <BannerDoble data={data} />,
   hero: data => <Hero data={data} />,
+  dualAsimetric: data => <DualAsimetric data={data} />,
 }
 
 export default function Home() {

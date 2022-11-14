@@ -52,6 +52,31 @@ const useHome = () => {
                 }
               }
             }
+            ... on SanityDualAsimetric {
+              id
+              _type
+              title
+              content
+              description
+              imageSide
+              image {
+                asset {
+                  gatsbyImageData
+                }
+              }
+              button {
+                nameButton
+                link
+              }
+              colorLeft {
+                title
+                value
+              }
+              colorRight {
+                title
+                value
+              }
+            }
           }
         }
       }

@@ -16,12 +16,12 @@ const bodyComponents = {
 }
 
 export default function Home() {
-  const dynamicZone = useHome().allSanityHome.nodes[0].HomeBuilder
+  const dynamicZone = useHome().allSanityHome.nodes[0]?.HomeBuilder
   
   return (
     <>
       <Page useSplashScreenAnimation>
-        {dynamicZone.map(component => {
+        {dynamicZone?.map(component => {
           return bodyComponents[component?._type]
             ? bodyComponents[component._type](component)
             : null

@@ -52,7 +52,7 @@ const useHome = () => {
                 }
               }
             }
-            ... on SanityDualAsimetric {
+            ... on SanityDualAsymmetric {
               id
               _type
               title

@@ -1,8 +1,8 @@
 import { GatsbyImage } from "gatsby-plugin-image"
 import React from "react"
-import "./DualAsimetric.scss"
+import "./DualAsymmetric.scss"
 
-const DualAsimetric = ({
+const DualAsymmetric = ({
   data: {
     title,
     content,
@@ -23,7 +23,7 @@ const DualAsimetric = ({
   const buttonColor = bgColorText === "#0A694D" ? "alternative" : "default"
 
   return (
-    <div className={`DualAsimetric ${imageSide}`}>
+    <div className={`DualAsymmetric ${imageSide}`}>
       {image?.asset && (
         <div
           className="ImageContainer"
@@ -57,4 +57,4 @@ const DualAsimetric = ({
   )
 }
 
-export default DualAsimetric
+export default DualAsymmetric

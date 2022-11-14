@@ -1,0 +1,42 @@
+@import "../../globalStyles/global.scss";
+@import "../../globalStyles/theme.scss";
+
+.BannerDoble {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.BannerDoble .Title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  line-height: normal;
+}
+
+.BannerDoble .Text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.BannerDoble .Button {
+  a{
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 768px) {
+  .BannerDoble {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 768px) {
+  .BannerDoble {
+    flex-direction: row;
+  }
+}

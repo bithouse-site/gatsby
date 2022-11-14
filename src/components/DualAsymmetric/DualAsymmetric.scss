@@ -1,0 +1,101 @@
+@import "../../globalStyles/global.scss";
+@import "../../globalStyles/theme.scss";
+
+.DualAsymmetric {
+  display: flex;
+  justify-content: center;
+  min-height: 60vh;
+  &.left {
+    flex-direction: row;
+  }
+  &.right {
+    flex-direction: row-reverse;
+  }
+}
+
+.DualAsymmetric .ImageContainer {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.DualAsymmetric .TextContainer {
+  flex-grow: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p {
+    width: 50%;
+  }
+}
+
+.DualAsymmetric .Title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  line-height: normal;
+}
+
+.DualAsymmetric .Button {
+  margin: 1rem 0;
+  &.default {
+    @include primaryBtn;
+  }
+  &.alternative {
+    @include secondaryBtn;
+  }
+}
+
+.DualAsymmetric .Button:hover {
+  &.default {
+    background: $bg-white;
+    color: $dark-green !important;
+  }
+  &.alternative {
+    background: $dark-green;
+    color: $bg-white !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .DualAsymmetric {
+    &.left {
+      flex-direction: column;
+    }
+    &.right {
+      flex-direction: column;
+    }
+  }
+  .DualAsymmetric .ImageContainer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .DualAsymmetric .TextContainer {
+    p {
+      width: 90%;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .DualAsymmetric {
+    &.left {
+      flex-direction: row;
+    }
+    &.right {
+      flex-direction: row-reverse;
+    }
+  }
+  .DualAsymmetric .TextContainer {
+    p {
+      width: 70%;
+    }
+  }
+  .DualAsymmetric .ImageContainer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

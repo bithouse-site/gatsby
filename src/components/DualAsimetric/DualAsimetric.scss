@@ -1,0 +1,101 @@
+@import "../../globalStyles/global.scss";
+@import "../../globalStyles/theme.scss";
+
+.DualAsimetric {
+  display: flex;
+  justify-content: center;
+  min-height: 60vh;
+  &.left {
+    flex-direction: row;
+  }
+  &.right {
+    flex-direction: row-reverse;
+  }
+}
+
+.DualAsimetric .ImageContainer {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.DualAsimetric .TextContainer {
+  flex-grow: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p {
+    width: 50%;
+  }
+}
+
+.DualAsimetric .Title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  line-height: normal;
+}
+
+.DualAsimetric .Button {
+  margin: 1rem 0;
+  &.default {
+    @include primaryBtn;
+  }
+  &.alternative {
+    @include secondaryBtn;
+  }
+}
+
+.DualAsimetric .Button:hover {
+  &.default {
+    background: $bg-white;
+    color: $dark-green !important;
+  }
+  &.alternative {
+    background: $dark-green;
+    color: $bg-white !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .DualAsimetric {
+    &.left {
+      flex-direction: column;
+    }
+    &.right {
+      flex-direction: column;
+    }
+  }
+  .DualAsimetric .ImageContainer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .DualAsimetric .TextContainer {
+    p {
+      width: 90%;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .DualAsimetric {
+    &.left {
+      flex-direction: row;
+    }
+    &.right {
+      flex-direction: row-reverse;
+    }
+  }
+  .DualAsimetric .TextContainer {
+    p {
+      width: 70%;
+    }
+  }
+  .DualAsimetric .ImageContainer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

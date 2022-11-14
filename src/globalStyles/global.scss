@@ -15,12 +15,52 @@
 
 $primary-font: "Gothic A1", sans-serif;
 
+/* COLORS */
 $bg-color: var(--background-color);
 $bg-black: #1b1c1e;
 $bg-white: #fcfcfc;
 $dark-green: #0a694d;
 $light-green-1: #a3e8c4;
 $light-green-2: #87c0a2;
+
+/* BUTTONS */
+@mixin primaryBtn {
+  font-size: 1rem;
+  font-weight: 700;
+  width: auto;
+  height: auto;
+  border-radius: var(--border-radius);
+  border: 0.125rem solid $dark-green;
+  transition: 20ms ease-out;
+  background-color: $dark-green;
+  color: $bg-white;
+
+  @media screen and (min-width: 992px) {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@mixin secondaryBtn {
+  font-size: 1rem;
+  font-weight: 700;
+  width: auto;
+  height: auto;
+  border-radius: var(--border-radius);
+  border: 0.125rem solid $bg-white;
+  transition: 20ms ease-out;
+  background-color: $bg-white;
+  color: $dark-green;
+
+  @media screen and (min-width: 992px) {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+  }
+  @media screen and (max-width: 992px) {
+    padding: 0.3rem 5rem;
+    font-size: 1rem;
+  }
+}
 
 /* GLOBAL STYLES */
 * {

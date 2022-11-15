@@ -7,8 +7,8 @@ const useDualSymmetric = () => {
             nodes {
               titleDualS
               _rawRichTextDualS
-              firstText
               shortText
+              imageSide
               youtubeVideo {
                 url
               }
@@ -25,14 +25,46 @@ const useDualSymmetric = () => {
                 link
                 description
                 imageIcon {
+                  crop {
+                    _key
+                    _type
+                    top
+                    bottom
+                    left
+                    right
+                  }
+                  hotspot {
+                    _key
+                    _type
+                    x
+                    y
+                    height
+                    width
+                  }
                   asset {
-                    gatsbyImageData
+                    _id
                   }
                 }
               }
               imageDualS {
+                crop {
+                  _key
+                  _type
+                  top
+                  bottom
+                  left
+                  right
+                }
+                hotspot {
+                  _key
+                  _type
+                  x
+                  y
+                  height
+                  width
+                }
                 asset {
-                  gatsbyImageData
+                  _id
                 }
               }
             }

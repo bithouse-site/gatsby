@@ -1,21 +1,27 @@
-.bodyDual {
+.DualSymmetric {
+    max-height: 1200px;
+    .imageDual{
+        width: 100%;
+    }
     .imageWrapper {
         box-shadow: 0 0 2.5rem var(--box-shadow-color);
         transition: all 0.3s ease-out;
-    
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
         &:hover {
             transform: translate3d(0px, -0.125rem, 0px);
             box-shadow: 0 0 2.5rem var(--box-shadow-hover-color);
         }
     }
     
-    .details {
+    .TextDetails {
         width: 100%;
         max-width: 35rem;
         margin-top: 3rem; 
         padding: 0 20px; 
         
-        .profile {
+        .Profile {
             h6 {
                 color: var(--primary-color-green);
                 font-weight: 700;
@@ -47,29 +53,34 @@
 }
 
 @media (min-width: 992px) {
-    .bodyDual{
-        .text {
-            display: flex;
+    .DualSymmetric {
+        display: flex;
+        column-gap: 2rem;            
+
+        &.left {
+            flex-direction: row;
+          }
+        &.right {
             flex-direction: row-reverse;
-            column-gap: 8rem;
-            align-items: center;
-    
-            .details{
-                margin-top: 0px;
-            }
         }
-    
-        .bodyImage {
-            display: flex;
-            column-gap: 5rem;
-            align-items: center;
+        .imageDual{
+            flex-basis: 50%;
         }
-    }
+        .TextDetails {
+            flex-basis: 50%;
+            margin-top: 0px;
+            align-self: center;
+        }
+
+    } 
    
 } 
 
-
-
+@media (min-width: 1400px) {
+    .DualSymmetric {
+        column-gap: 9rem;   
+    }
+}
 /* .Project {
     display: flex;
     flex-direction: column-reverse;

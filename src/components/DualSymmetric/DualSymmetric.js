@@ -1,18 +1,33 @@
 import React from "react"
-import { GatsbyImage } from "gatsby-plugin-image"
+import SanityImage from "gatsby-plugin-sanity-image"
 import { Animation } from "../Animation"
 import { PortableText } from "@portabletext/react"
-import useDualSymetric from "../../hooks/useDualSymmetric"
 import "./style.scss"
 
-const DualSymmetric = () => {
-  const data = useDualSymetric().allSanityDualSymmetric?.nodes[0]
-  const dataImage = data?.imageDualS?.asset?.gatsbyImageData
-  const videoUrl = data?.youtubeVideo?.url
-  const dataIcon = data?.iconObject
-  const firstText = data?.firstText
-  const textColor =
-    data?.backgroundColor?.value === "#FCFCFC" ? "#1B1C1E" : "#FCFCFC"
+const DualSymmetric = ({
+  data: {
+    titleDualS,
+    imageDualS,
+    video,
+    iconObject,
+    imageSide,
+    backgroundColor,
+    _rawRichTextDualS,
+    shortText,
+    button,
+  },
+}) => {
+  const imageIcon = iconObject?.imageIcon
+  const dataImage = imageDualS?.asset
+  const videoUrl = video?.url
+
+  console.log(imageIcon)
+
+  const darkColors = ["#0A694D", "#868585", "#1B1C1E"]
+
+  const textColor = darkColors.includes(backgroundColor?.value)
+    ? "#FFFFFF"
+    : "#1B1C1E"
 
   const url = videoUrl?.replace("watch?v=", "embed/")
   let code = url?.substring(url.lastIndexOf("/") + 1, url.length)
@@ -22,27 +37,26 @@ const DualSymmetric = () => {
     code = code.substring(0, code.indexOf("?"))
   }
 
-  console.log(firstText)
-  const sectionStyle = firstText === true ? "text" : "bodyImage"
-
   return (
     <Animation
       type="fadeLeft"
       className="bodyDual"
-      style={{ backgroundColor: data?.backgroundColor.value, color: textColor }}
+      style={{ backgroundColor: backgroundColor?.value }}
     >
-      <section className={`${sectionStyle}`}>
+      <section className={`DualSymmetric ${imageSide}`}>
         {dataImage && !videoUrl && (
-          <GatsbyImage
-            className="imageWrapper"
-            imgClassName="dualImage"
-            image={dataImage}
-            alt="Image Art"
-          />
+          <div className="imageDual">
+            <SanityImage
+              {...imageDualS}
+              imgClassName="dualImage"
+              alt="Image Art"
+              className="imageWrapper"
+            />
+          </div>
         )}
 
         {videoUrl !== null && videoUrl !== undefined && (
-          <div className="quote-body">
+          <div>
             {url !== undefined && code !== undefined && (
               <iframe
                 loading="lazy"
@@ -64,33 +78,42 @@ const DualSymmetric = () => {
           </div>
         )}
 
-        <div className="details">
-          <h1 style={{ color: textColor }}>{data?.titleDualS}</h1>
-          <PortableText value={data?._rawRichTextDualS} />
-          <div className="profile d-flex align-items-center mt-4">
-            <div className="me-3">
-              <GatsbyImage
-                image={dataIcon?.imageIcon?.asset?.gatsbyImageData}
-                alt="Icon Image"
-                loading="eager"
-              />
-              <h6 style={{ color: textColor }}>{dataIcon?.label}</h6>
+        <div className="TextDetails" style={{ color: textColor }}>
+          {(titleDualS || _rawRichTextDualS) && (
+            <>
+              <h1>{titleDualS}</h1>
+              <PortableText value={_rawRichTextDualS} />
+            </>
+          )}
+
+          {iconObject && (
+            <div className="Profile d-flex align-items-center mt-4">
+              <div className="me-3">
+                <SanityImage {...imageIcon} alt="Icon Image" loading="eager" />
+                <h6>{iconObject?.label}</h6>
+              </div>
+              <div>
+                <p>{iconObject?.description}</p>
+              </div>
             </div>
-            <div>
-              <p>{dataIcon?.description}</p>
+          )}
+
+          {shortText && (
+            <div className="mt-2">
+              <p>{shortText}</p>
             </div>
-          </div>
-          <div className="mt-2">
-            <p>{data?.shortText}</p>
-          </div>
-          <a
-            href={data?.button?.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="CtaButton"
-          >
-            {data?.button?.nameButton}
-          </a>
+          )}
+
+          {button && (
+            <a
+              href={button?.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="CtaButton"
+            >
+              {button?.nameButton}
+            </a>
+          )}
         </div>
       </section>
     </Animation>

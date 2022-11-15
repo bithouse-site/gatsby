@@ -17,6 +17,7 @@
     "bootstrap": "^5.2.2",
     "gatsby": "^4.18.2",
     "gatsby-plugin-image": "^2.24.0",
+    "gatsby-plugin-sanity-image": "^0.13.2",
     "gatsby-plugin-sass": "^5.24.0",
     "gatsby-source-sanity": "^7.5.1",
     "gatsby-theme-portfolio-minimal": "latest",

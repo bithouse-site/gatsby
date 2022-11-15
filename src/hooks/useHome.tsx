@@ -52,6 +52,72 @@ const useHome = () => {
                 }
               }
             }
+            ... on SanityDualSymmetric {
+              id
+              _type
+              imageSide
+              shortText
+              titleDualS
+              _rawRichTextDualS
+              backgroundColor {
+                title
+                value
+              }
+              button {
+                link
+                nameButton
+              }
+              iconObject {
+                description
+                label
+                link
+                imageIcon {
+                  crop {
+                    _key
+                    _type
+                    top
+                    bottom
+                    left
+                    right
+                  }
+                  hotspot {
+                    _key
+                    _type
+                    x
+                    y
+                    height
+                    width
+                  }
+                  asset {
+                    _id
+                  }
+                }
+              }
+              youtubeVideo {
+                url
+              }
+              imageDualS {
+                crop {
+                  _key
+                  _type
+                  top
+                  bottom
+                  left
+                  right
+                }
+                hotspot {
+                  _key
+                  _type
+                  x
+                  y
+                  height
+                  width
+                }
+                asset {
+                  _id
+                }
+              }
+            }
           }
         }
       }

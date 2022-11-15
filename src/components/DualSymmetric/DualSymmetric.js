@@ -21,8 +21,6 @@ const DualSymmetric = ({
   const dataImage = imageDualS?.asset
   const videoUrl = youtubeVideo?.url
 
-  console.log(videoUrl)
-
   const darkColors = ["#0A694D", "#868585", "#1B1C1E"]
 
   const textColor = darkColors.includes(backgroundColor?.value)

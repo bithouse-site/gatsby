@@ -116,6 +116,8 @@ const useHome = () => {
                 asset {
                   _id
                 }
+              }
+            }
             ... on SanityDualAsymmetric {
               id
               _type

@@ -1,7 +1,17 @@
+@import "../../globalStyles/global.scss";
+@import "../../globalStyles/theme.scss";
+
 .DualSymmetric {
-    max-height: 1200px;
-    .imageDual{
+    .imageContainer{
         width: 100%;
+    }
+    .videoContainer{
+        height: 180px;
+        iframe{
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+        }
     }
     .imageWrapper {
         box-shadow: 0 0 2.5rem var(--box-shadow-color);
@@ -36,26 +46,44 @@
     }
 
     a.CtaButton {
-        color: white !important;
-        width: auto;
-        height: auto;
-        border-radius: var(--border-radius);
-        border: 0.125rem solid var(--primary-color-green);
-        background: var(--primary-color-green);
-        padding: 0.5rem 1.5rem;
-        transition: 20ms ease-out;
+        &.alternative{
+            @include secondaryBtn;
+        }
+        &.default{
+            @include primaryBtn;
+        }        
+    }
+}
 
-        &:hover {
-            background: var(--background-color);
-            color: var(--primary-color-green) !important;
+@media (min-width: 425px) {
+    .DualSymmetric {
+        .videoContainer{
+            height: 230px;
+            
+        }
+    }
+}
+@media (min-width: 768px) {
+    .DualSymmetric {
+        .videoContainer{
+            height: 400px;
+            
         }
     }
 }
 
 @media (min-width: 992px) {
     .DualSymmetric {
+        height: 500px;
         display: flex;
         column-gap: 2rem;            
+
+        .videoContainer{
+            height: 280px;
+            width: 600px;
+            align-self: center;
+            flex-basis: 50%;
+        }
 
         &.left {
             flex-direction: row;
@@ -63,7 +91,7 @@
         &.right {
             flex-direction: row-reverse;
         }
-        .imageDual{
+        .imageContainer {
             flex-basis: 50%;
         }
         .TextDetails {
@@ -71,14 +99,16 @@
             margin-top: 0px;
             align-self: center;
         }
-
     } 
-   
 } 
 
 @media (min-width: 1400px) {
     .DualSymmetric {
-        column-gap: 9rem;   
+        column-gap: 8rem;
+        
+        .videoContainer{
+            height: 405px;
+        }
     }
 }
 /* .Project {

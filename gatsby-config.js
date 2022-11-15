@@ -43,6 +43,14 @@ module.exports = {
         graphqlTag: "default",
       },
     },
+    {
+      resolve: "gatsby-plugin-sanity-image",
+      options: {
+        // Sanity project info (required)
+        projectId: `g3ub24w8`,
+        dataset: process.env.SANITY_DATASET,
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-plugin-sass`,
   ],

@@ -18,7 +18,7 @@ export function Header(): React.ReactElement {
                 return (
                     <Link
                         key={key}
-                        to={linkObject.link}
+                        to={linkObject?.link}
                         className={classes.NavLink}
                         onClick={!isDesktopBreakpoint ? () => setOpen(!open) : undefined}
                     >
@@ -27,13 +27,13 @@ export function Header(): React.ReactElement {
                 );
             })}
             <a
-                href={header.ctaButton.link}
+                href={header.ctaButton?.link}
                 target='_blank'
                 rel="noopener noreferrer"
                 className={classes.CtaButton}
                 onClick={!isDesktopBreakpoint ? () => setOpen(!open) : undefined}
             >
-                {header.ctaButton.nameButton}
+                {header.ctaButton?.nameButton}
             </a>
         </>
     );

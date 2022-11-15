@@ -116,6 +116,29 @@ const useHome = () => {
                 asset {
                   _id
                 }
+            ... on SanityDualAsymmetric {
+              id
+              _type
+              title
+              _rawRichTextDualA
+              description
+              imageSide
+              image {
+                asset {
+                  gatsbyImageData
+                }
+              }
+              button {
+                nameButton
+                link
+              }
+              colorLeft {
+                title
+                value
+              }
+              colorRight {
+                title
+                value
               }
             }
           }

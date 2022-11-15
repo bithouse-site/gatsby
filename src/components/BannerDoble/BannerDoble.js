@@ -10,7 +10,7 @@ const BannerDoble = ({
   const altText = description === null ? "Banner Doble" : description
 
   return (
-    <div className="Banner" style={{ backgroundColor: bgColor }}>
+    <div className="BannerDoble" style={{ backgroundColor: bgColor }}>
       {image?.asset && (
         <GatsbyImage image={image.asset.gatsbyImageData} alt={altText} />
       )}

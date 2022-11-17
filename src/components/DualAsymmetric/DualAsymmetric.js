@@ -19,9 +19,19 @@ const DualAsymmetric = ({
     imageSide === "left" ? colorLeft?.value : colorRight?.value
   const bgColorText =
     imageSide === "left" ? colorRight?.value : colorLeft?.value
-  const textColor = bgColorText === "#FCFCFC" ? "#1B1C1E" : "#FCFCFC"
+  const textColor =
+    bgColorText === "#0A694D" ||
+    bgColorText === "#1B1C1E" ||
+    bgColorText === "#868585"
+      ? "#FCFCFC"
+      : "#1B1C1E"
   const altText = description === null ? "Banner Dual Asimetric" : description
-  const buttonColor = bgColorText === "#0A694D" ? "alternative" : "default"
+  const buttonColor =
+    bgColorText === "#0A694D" ||
+    bgColorText === "#1B1C1E" ||
+    bgColorText === "#868585"
+      ? "default"
+      : "alternative"
 
   return (
     <div className={`DualAsymmetric ${imageSide}`}>

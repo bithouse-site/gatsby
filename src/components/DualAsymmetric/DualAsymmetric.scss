@@ -49,16 +49,6 @@
   }
 }
 
-.DualAsymmetric .Button:hover {
-  &.default {
-    background: $bg-white;
-    color: $dark-green !important;
-  }
-  &.alternative {
-    background: $dark-green;
-    color: $bg-white !important;
-  }
-}
 
 @media (max-width: 768px) {
   .DualAsymmetric {

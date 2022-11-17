@@ -22,6 +22,9 @@ $bg-white: #fcfcfc;
 $dark-green: #0a694d;
 $light-green-1: #a3e8c4;
 $light-green-2: #87c0a2;
+$gray: #868585;
+$light-gray-1: #B4B2B0;
+$light-gray-2: #DFDFDF;
 
 /* BUTTONS */
 @mixin primaryBtn {
@@ -60,10 +63,16 @@ $light-green-2: #87c0a2;
   width: auto;
   height: auto;
   border-radius: var(--border-radius);
-  border: 0.125rem solid $bg-white;
+  border: 0.125rem solid $light-green-1;
   transition: 20ms ease-out;
-  background-color: $bg-white;
-  color: $dark-green;
+  background-color: $light-green-1;
+  color: $bg-black;
+
+  &:hover {
+    color: $bg-white !important;
+    background-color: $light-green-2;
+    border: 0.125rem solid $bg-white;
+  }
 
   @media screen and (min-width: 992px) {
     padding: 0.5rem 1.5rem;

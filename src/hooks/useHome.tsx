@@ -26,7 +26,12 @@ const useHome = () => {
               _type
               title
               description
-              color {
+              _rawContent
+              colorLeft {
+                title
+                value
+              }
+              colorRight {
                 title
                 value
               }

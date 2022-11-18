@@ -5,26 +5,54 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 2rem;
+  height: 18rem;
   text-align: center;
-}
-
-.BannerDoble .Title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  letter-spacing: 1px;
-  line-height: normal;
 }
 
 .BannerDoble .Text {
   display: flex;
+  flex-grow: 2;
+  height: 100%;
   flex-direction: column;
   justify-content: center;
+  &.light {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p, 
+    a,
+    blockquote {
+      color: $bg-white;
+    }
+  }
+  &.dark {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p, 
+    a,
+    blockquote {
+      color: $bg-black;
+    }
+  }
+}
+
+.BannerDoble .ImageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  height: 100%;
 }
 
 .BannerDoble .Button {
-  a{
+  a {
     text-decoration: underline;
   }
 }
@@ -32,6 +60,9 @@
 @media (max-width: 768px) {
   .BannerDoble {
     flex-direction: column;
+  }
+  .BannerDoble .ImageContainer{
+    width: 100%;
   }
 }
 

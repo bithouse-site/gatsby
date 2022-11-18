@@ -7,7 +7,12 @@ const useBannerDoble = () => {
         nodes {
           title
           description
-          color {
+          _rawContent
+          colorLeft {
+            title
+            value
+          }
+          colorRight {
             title
             value
           }

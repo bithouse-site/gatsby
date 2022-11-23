@@ -23,8 +23,15 @@ $dark-green: #0a694d;
 $light-green-1: #a3e8c4;
 $light-green-2: #87c0a2;
 $gray: #868585;
-$light-gray-1: #B4B2B0;
-$light-gray-2: #DFDFDF;
+$light-gray-1: #b4b2b0;
+$light-gray-2: #dfdfdf;
+
+/* BREAKPOINTS */
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
 
 /* BUTTONS */
 @mixin primaryBtn {
@@ -43,7 +50,7 @@ $light-gray-2: #DFDFDF;
     color: var(--primary-color-green) !important;
   }
 
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: $breakpoint-lg) {
     padding: 0.5rem 1.5rem;
     font-size: 1rem;
   }
@@ -51,7 +58,7 @@ $light-gray-2: #DFDFDF;
     padding: 0.3rem 3rem;
     font-size: 1rem;
   }
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: $breakpoint-lg) {
     padding: 0.3rem 5rem;
     font-size: 1rem;
   }
@@ -74,7 +81,7 @@ $light-gray-2: #DFDFDF;
     border: 0.125rem solid $bg-white;
   }
 
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: $breakpoint-lg) {
     padding: 0.5rem 1.5rem;
     font-size: 1rem;
   }
@@ -82,7 +89,7 @@ $light-gray-2: #DFDFDF;
     padding: 0.3rem 3rem;
     font-size: 1rem;
   }
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: $breakpoint-lg) {
     padding: 0.3rem 5rem;
     font-size: 1rem;
   }

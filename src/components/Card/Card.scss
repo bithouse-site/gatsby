@@ -1,0 +1,75 @@
+@import "../../globalStyles/global.scss";
+@import "../../globalStyles/theme.scss";
+
+.Card{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 30%;
+  padding: 16px;
+}
+
+.ArtistsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  font-weight: 200;
+  font-size: 12px;
+  line-height: normal;
+}
+
+.ArtistsContainer .Profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 8px;
+  color: $dark-green;
+  h6 {
+    font-weight: 700;
+    font-size: 12px;
+    padding-top: 8px;
+  }
+  a {
+    color: $dark-green;
+  }
+}
+
+.Profile .Icon {
+  max-width: 40px;
+}
+
+.Artists {
+  max-width: 60%;
+  padding-left: 16px;
+  font-weight: 200;
+  font-size: 12px;
+}
+
+.Link {
+  color: $dark-green;
+  font-weight: 700;
+}
+
+
+
+@media screen and (max-width: $breakpoint-sm) {
+  .Card {
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: $breakpoint-md) {
+  .Card {
+    max-width: 60%;
+  }
+}
+
+@media screen and (max-width: $breakpoint-lg) {
+  .Card {
+    max-width: 40%;
+  }
+}
+

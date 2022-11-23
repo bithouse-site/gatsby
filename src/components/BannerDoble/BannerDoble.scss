@@ -22,7 +22,7 @@
     h4,
     h5,
     h6,
-    p, 
+    p,
     a,
     blockquote {
       color: $bg-white;
@@ -35,7 +35,7 @@
     h4,
     h5,
     h6,
-    p, 
+    p,
     a,
     blockquote {
       color: $bg-black;
@@ -61,7 +61,10 @@
   .BannerDoble {
     flex-direction: column;
   }
-  .BannerDoble .ImageContainer{
+  .BannerDoble .ImageContainer {
+    width: 100%;
+  }
+  .BannerDoble .Text {
     width: 100%;
   }
 }

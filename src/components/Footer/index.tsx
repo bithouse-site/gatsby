@@ -10,7 +10,7 @@ export function Footer(): React.ReactElement {
     <div className="Footer">
       <div className="ContentWrapper">
         <div className="Contacto">
-          <h2 className="Title">Contactanos</h2>
+          <h5 className="Title">Contactanos</h5>
           <div className="Contactos">
             <Email />
             <Phone />

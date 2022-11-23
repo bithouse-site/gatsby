@@ -141,36 +141,146 @@ a:focus {
   outline-width: 2px;
 }
 
+// Font weights
+$lighter: 200;
+$regular: 400;
+$medium: 500;
+$bold: 600;
+$max-bold: 700;
+
+/* Sizes */
+$xxxxxs: 0.75rem; //12px
+$xxxxs: 0.875rem; //14px
+$xxxs: 1rem; //16px
+$xxs: 1.125rem;
+$xs: 1.25rem; //20px
+$s: 1.5rem; //24px
+$m: 1.75rem; //28px
+$l: 2rem; //32px
+$xl: 2.25rem; //36px
+$xxl: 2.5rem; //40px
+$xxxl: 3rem; //48px
+$xxxxl: 3.5rem; //56px
+$xxxxxl: 4rem; //64px
+
+// display-large
 h1 {
-  font-weight: 700;
-  font-size: 1.75rem;
-  line-height: 2rem;
-  color: var(--primary-color);
-  margin: 1rem 0;
+  font-size: $xxl;
+  font-weight: $max-bold;
 }
 
+// display-medium
 h2 {
-  font-weight: 700;
-  font-size: 1.625rem;
-  line-height: 2rem;
-  color: var(--primary-color);
-  margin: 2rem 0 1rem 0;
+  font-size: $xl;
+  font-weight: $max-bold;
 }
 
+// display-small
 h3 {
-  font-weight: 700;
-  font-size: 1.375rem;
-  line-height: 2rem;
-  color: var(--primary-color);
-  margin: 2rem 0 1rem 0;
+  font-size: $l;
+  font-weight: $max-bold;
 }
 
+
+// headline-large
 h4 {
-  font-weight: 700;
-  font-size: 1.125rem;
-  line-height: 2rem;
-  color: var(--primary-color);
-  margin: 2rem 0 1rem 0;
+  font-size: $m;
+  font-weight: $max-bold;
+}
+
+// headline-medium
+h5 {
+  font-size: $s;
+  font-weight: $max-bold;
+}
+
+// headline-small
+h5.headline-small {
+  font-size: $xs;
+  font-weight: $max-bold;
+}
+
+h6.title-large {
+  font-size: $m;
+  font-weight: $medium;
+}
+
+h6.title-medium {
+  font-size: $s;
+  font-weight: $medium;
+}
+
+h6.title-small {
+  font-size: $xs;
+  font-weight: $medium;
+}
+
+//body large
+p {
+  font-size: $xxxs;
+  font-weight: $regular;
+  line-height: 24px;
+}
+
+p.body-medium {
+  font-size: $xxxxs;
+  font-weight: $regular;
+}
+
+p.body-small {
+  font-size: $xxxxxs;
+  font-weight: $regular;
+}
+
+small.label-large {
+  font-size: $xxs;
+  font-weight: $max-bold;
+}
+
+// label-medium
+small {
+  font-size: $xxxs;
+  font-weight: $max-bold;
+}
+
+small.label-small {
+  font-size: $xxxxs;
+  font-weight: $max-bold;
+}
+
+
+
+@media screen and (min-width: 1024px) {
+
+  h1 {
+    font-size: $xxxxxl;
+  }
+  
+  h2 {
+    font-size: $xxxxl;
+  }
+
+  h3 {
+    font-size: $xxxl;
+  }
+
+ h4 {
+    font-size: $xxl;
+  }
+
+  h5 {
+    font-size: $xl;
+  }
+
+  h5.headline-small {
+    font-size: $l;
+  }
+
+  p {
+    font-size: $xs;
+    line-height: 28px;
+  }
+
 }
 
 hr {

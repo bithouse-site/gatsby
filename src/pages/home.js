@@ -11,11 +11,11 @@ import DualSymmetric from "../components/DualSymmetric/DualSymmetric"
 import DualAsymmetric from "../components/DualAsymmetric/DualAsymmetric"
 
 const bodyComponents = {
-  banner: data => <Banner data={data} />,
-  bannerDoble: data => <BannerDoble data={data} />,
-  hero: data => <Hero data={data} />,
-  dualSymmetric: data => <DualSymmetric data={data} />,
-  dualAsymmetric: data => <DualAsymmetric data={data} />,
+  banner: data => <Banner data={data} key={data?.id} />,
+  bannerDoble: data => <BannerDoble data={data} key={data?.id} />,
+  hero: data => <Hero data={data} key={data?.id} />,
+  dualSymmetric: data => <DualSymmetric data={data} key={data?.id} />,
+  dualAsymmetric: data => <DualAsymmetric data={data} key={data?.id} />,
 }
 
 export default function Home() {

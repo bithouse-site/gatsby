@@ -82,19 +82,19 @@ const DualSymmetric = ({
         <div className="TextDetails" style={{ color: textColor }}>
           {(titleDualS || _rawRichTextDualS) && (
             <>
-              <h1 style={{ color: textColor, marginTop: 0 }}>{titleDualS}</h1>
+              <h4 style={{ color: textColor, marginTop: 0 }}>{titleDualS}</h4>
               <PortableText value={_rawRichTextDualS} />
             </>
           )}
 
           {iconObject && (
             <div className="Profile d-flex align-items-center mt-4">
-              <div className="me-3">
+              <div className="me-3 d-flex flex-column">
                 <SanityImage {...imageIcon} alt="Icon Image" loading="eager" />
-                <h6 style={{ color: textColor }}>{iconObject?.label}</h6>
+                <small className="label-small" style={{ color: textColor }}>{iconObject?.label}</small>
               </div>
               <div>
-                <p>{iconObject?.description}</p>
+                <p className="body-medium">{iconObject?.description}</p>
               </div>
             </div>
           )}
@@ -112,7 +112,7 @@ const DualSymmetric = ({
               rel="noopener noreferrer"
               className={`CtaButton ${buttonColor}`}
             >
-              {button?.nameButton}
+              <small>{button?.nameButton}</small>
             </a>
           )}
         </div>

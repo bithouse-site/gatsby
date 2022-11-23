@@ -22,7 +22,6 @@
 }
 
 .Footer .Title {
-  font-weight: 500;
   color: var(--background-color);
   letter-spacing: 1px;
   margin-right: 1.5rem;
@@ -52,8 +51,6 @@
     }
     p {
       font-family: $primary-font;
-      font-size: 0.875rem;
-      font-weight: 700;
       color: var(--background-color);
       letter-spacing: 1px;
       margin-bottom: 1rem;

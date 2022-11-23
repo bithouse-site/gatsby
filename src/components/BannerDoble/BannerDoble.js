@@ -39,8 +39,8 @@ const BannerDoble = ({
             <a
               href={button?.link}
               rel="noreferrer"
-            >
-              {button?.nameButton}
+            ><small className="label-large">{button?.nameButton}</small>
+              
             </a>
           </div>
         )}

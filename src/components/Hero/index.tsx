@@ -7,6 +7,7 @@ import {PortableText} from '@portabletext/react';
 import * as classes from './style.module.css';
 import SocialMedia from '../SocialMedia/SocialMedia';
 
+
 export function Hero(props: HeroContent): React.ReactElement {
     const heroImage = props?.data?.imageHero?.asset?.gatsbyImageData;
 
@@ -25,7 +26,7 @@ export function Hero(props: HeroContent): React.ReactElement {
                             </Animation>
                         )}
                     </div>
-                    <h1 className={classes.Title}>{props?.data?.titleHero}</h1>
+                    <h4 className={classes.Title}>{props?.data?.titleHero}</h4>
                     {/* <p>{dataHero?.description}</p> */}
                     <PortableText value={props?.data?._rawRichTextHero} />
                     <Animation type="fadeLeft" delay={800}>

@@ -26,14 +26,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  p {
+  p, h4 {
     width: 50%;
   }
 }
 
 .DualAsymmetric .Title {
-  font-size: 2rem;
-  font-weight: 700;
   margin-bottom: 0.5rem;
   letter-spacing: 1px;
   line-height: normal;
@@ -64,7 +62,7 @@
     padding-bottom: 1rem;
   }
   .DualAsymmetric .TextContainer {
-    p {
+    p, h4 {
       width: 90%;
     }
   }
@@ -80,7 +78,7 @@
     }
   }
   .DualAsymmetric .TextContainer {
-    p {
+    p, h4 {
       width: 70%;
     }
   }

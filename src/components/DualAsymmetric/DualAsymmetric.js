@@ -41,9 +41,9 @@ const DualAsymmetric = ({
       <div className="TextContainer" style={{ backgroundColor: bgColorText }}>
         {(title || _rawRichTextDualA) && (
           <>
-            <p className="Title" style={{ color: textColor }}>
+            <h4 className="Title" style={{ color: textColor }}>
               {title}
-            </p>
+            </h4>
             <PortableText value={_rawRichTextDualA} className="Content" />
           </>
         )}
@@ -53,7 +53,7 @@ const DualAsymmetric = ({
             rel="noreferrer"
             className={`Button ${buttonColor} ${bgColorText}`}
           >
-            {button?.nameButton}
+            <small>{button?.nameButton}</small>
           </a>
         )}
       </div>

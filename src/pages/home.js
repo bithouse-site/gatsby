@@ -9,7 +9,6 @@ import BannerDoble from "../components/BannerDoble/BannerDoble"
 import { Hero } from "../components/Hero/index"
 import DualSymmetric from "../components/DualSymmetric/DualSymmetric"
 import DualAsymmetric from "../components/DualAsymmetric/DualAsymmetric"
-import Carousel from "../components/Carousel/Carousel"
 
 const bodyComponents = {
   banner: data => <Banner data={data} />,
@@ -30,7 +29,6 @@ export default function Home() {
             ? bodyComponents[component._type](component)
             : null
         })}
-        <Carousel />
       </Page>
     </>
   )

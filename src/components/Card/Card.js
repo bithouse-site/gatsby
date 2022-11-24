@@ -4,14 +4,16 @@ import { PortableText } from "@portabletext/react"
 
 import "./Card.scss"
 
-const Card = ({ data: { title, type, _rawContent, link, image, artists } }) => {
+const Card = ({ data: { title, _rawContent, link, image, artists } }) => {
   const icon = artists?.imageIcon
 
   return (
-    <div className={`Card ${type}`}>
+    <div className="Card">
       {image && <SanityImage {...image} alt={`${title}`} />}
-      {title && <h3>{title}</h3>}
-      {_rawContent && <PortableText value={_rawContent} className="Content" />}
+      {title && <h6 className="title-small Title">{title}</h6>}
+      {_rawContent && (
+          <PortableText className="Content" value={_rawContent} />
+      )}
       {artists && (
         <div className="ArtistsContainer">
           <div className="Profile">
@@ -22,7 +24,7 @@ const Card = ({ data: { title, type, _rawContent, link, image, artists } }) => {
                 loading="eager"
                 className="Icon"
               />
-              <h6>{artists?.label}</h6>
+              <small className="label-small">{artists?.label}</small>
             </a>
           </div>
           <div className="Artists">{artists?.description}</div>
@@ -30,7 +32,7 @@ const Card = ({ data: { title, type, _rawContent, link, image, artists } }) => {
       )}
       {link && (
         <a href={link} rel="noopener noreferrer" className="Link">
-          Ver más
+          <small>Ver más</small>
         </a>
       )}
     </div>

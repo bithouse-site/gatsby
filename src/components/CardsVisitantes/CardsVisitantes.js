@@ -17,7 +17,7 @@ const CardsVisitantes = () => {
     return <Card data={articleData} key={article?.id} />
   })
 
-  return <Pagination posts={cardsComponent} postPerPage={2} />
+  return <Pagination posts={cardsComponent} postPerPage={3} />
 }
 
 export default CardsVisitantes

@@ -38,10 +38,14 @@ const Pagination = ({ posts, postPerPage, inicialState }) => {
                 to="#Articles"
                 style={{ paddingTop: "0.2rem" }}
               >
-                <img src={LArrowDark} />
+                <img src={LArrowDark} alt="flecha izquierda" />
               </Link>
             ) : (
-              <img src={LArrowLight} style={{ paddingTop: "0.2rem" }} />
+              <img
+                src={LArrowLight}
+                alt="flecha izquierda"
+                style={{ paddingTop: "0.2rem" }}
+              />
             )}
           </li>
           {pageNumbers.map(number => (
@@ -76,10 +80,14 @@ const Pagination = ({ posts, postPerPage, inicialState }) => {
                 to="#Articles"
                 style={{ paddingTop: "0.2rem" }}
               >
-                <img src={RArrowDark} />
+                <img src={RArrowDark} alt="flecha derecha" />
               </Link>
             ) : (
-              <img src={RArrowLight} style={{ paddingTop: "0.2rem" }}/>
+              <img
+                src={RArrowLight}
+                alt="flecha derecha"
+                style={{ paddingTop: "0.2rem" }}
+              />
             )}
           </li>
         </ul>

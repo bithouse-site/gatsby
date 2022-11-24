@@ -1,11 +1,11 @@
 import React from "react"
-import { Seo } from "gatsby-theme-portfolio-minimal"
+import { Seo } from "../components/seo"
 import Home from './home'
 
 export default function IndexPage() {
   return (
     <>
-      <Seo title="Gatsby Starter for Portfolio Minimal" />
+      <Seo title="Home" description="" keywords=""/>
       <Home />
     </>
   )

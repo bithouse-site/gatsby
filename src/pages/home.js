@@ -2,6 +2,7 @@ import React from "react"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Page } from "../components/Page/index"
 import useHome from "../hooks/useHome"
+import { Seo } from "../components/seo"
 
 // dynamic zone components
 import Banner from "../components/Banner/Banner"
@@ -23,6 +24,7 @@ export default function Home() {
 
   return (
     <>
+      <Seo title="Home" description="" keywords="" />
       <Page useSplashScreenAnimation>
         {dynamicZone?.map(component => {
           return bodyComponents[component?._type]

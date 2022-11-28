@@ -5,6 +5,7 @@ const useArticleCard = () => {
     {
       allSanityCardsVigentes {
         nodes {
+          id
           title
           _rawContent
           link

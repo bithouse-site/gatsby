@@ -1,12 +1,21 @@
 @import "../../globalStyles/global.scss";
 @import "../../globalStyles/theme.scss";
 
-.Card{
+.Card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  max-width: 30%;
+  justify-content: flex-start;
+  max-width: 25%;
   padding: 16px;
+}
+
+.Card .Title {
+  padding-top: 1rem;
+}
+
+.Card .Content {
+  font-size: $xxxxs !important;
+  font-weight: $lighter !important;
 }
 
 .ArtistsContainer {
@@ -15,23 +24,18 @@
   justify-content: flex-start;
   align-items: center;
   flex-wrap: nowrap;
-  font-weight: 200;
-  font-size: 12px;
   line-height: normal;
 }
 
 .ArtistsContainer .Profile {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  height: auto;
   align-items: center;
-  padding-top: 8px;
+  max-width: 30%;
   color: $dark-green;
-  h6 {
-    font-weight: 700;
-    font-size: 12px;
-    padding-top: 8px;
-  }
   a {
     color: $dark-green;
   }
@@ -41,35 +45,36 @@
   max-width: 40px;
 }
 
-.Artists {
-  max-width: 60%;
+.Card .Artists {
   padding-left: 16px;
   font-weight: 200;
   font-size: 12px;
 }
 
-.Link {
+.Card .Link {
   color: $dark-green;
-  font-weight: 700;
+  a,
+  small {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
-
-
 
 @media screen and (max-width: $breakpoint-sm) {
   .Card {
-    max-width: 80%;
+    max-width: 70%;
   }
 }
 
-@media screen and (max-width: $breakpoint-md) {
+@media screen and (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
   .Card {
-    max-width: 60%;
+    max-width: 30%;
   }
 }
 
-@media screen and (max-width: $breakpoint-lg) {
+@media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
   .Card {
-    max-width: 40%;
+    max-width: 30%;
   }
 }
-

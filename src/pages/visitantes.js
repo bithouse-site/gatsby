@@ -1,11 +1,12 @@
 import React from "react"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Page } from "../components/Page/index"
-import useArticle from "../hooks/useArticle"
+/* import useArticle from "../hooks/useArticle" */
 import ArticlePage from "../templates/ArticlePage"
 
 export default function Visitantes() {
-  const dataArticles = useArticle().allSanityArticle?.nodes
+  /* 
+  const dataArticles = useArticle().allSanityArticle?.nodes */
   return (
     <>
       <Page useSplashScreenAnimation>

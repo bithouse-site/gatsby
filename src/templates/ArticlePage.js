@@ -2,35 +2,33 @@ import React from "react"
 import { Page } from "../components/Page/index"
 import { graphql } from "gatsby"
 import SanityImage from "gatsby-plugin-sanity-image"
-import { PortableText } from "@portabletext/react"
-import "./Article.scss"
-import { Link } from "gatsby"
-
-import CarouselImages from "../components/Carousel/CarouselImages"
+import { SimpleCard, CustomSection } from "../components/index"
+import "./ArticlePage.scss"
 
 const ArticlePage = ({ data }) => {
   const {
     title,
-    _rawContentAfterCarousel,
-    _rawContentBeforeCarousel,
     imageHeader,
-    dualSection,
-    carousel,
+    otherTitle,
+    articleReferences,
   } = data?.allSanityArticle?.nodes[0]
-  console.log(dualSection)
+
+  const pageInfo = data?.allSanityArticle?.nodes[0]
+
   return (
     <>
       <Page>
         <section className="article">
           <div>
-            <SanityImage {...imageHeader} alt="Image Art" />
-            <h3 className="title">{title}</h3>
+            <SanityImage
+              {...imageHeader}
+              alt="Image Art"
+              className="imageHeader"
+            />
+            <h5 className="title">{title}</h5>
           </div>
-          <div className="container">
-            <PortableText value={_rawContentBeforeCarousel} />
-            <CarouselImages />
-            <PortableText value={_rawContentAfterCarousel} />
-          </div>
+          <CustomSection sections={pageInfo?.ArticleBuilder} />
+          <SimpleCard data={articleReferences} title={otherTitle} />
         </section>
       </Page>
     </>
@@ -43,12 +41,108 @@ export const query = graphql`
   query($slug: String!) {
     allSanityArticle(filter: { slug: { current: { eq: $slug } } }) {
       nodes {
+        ArticleBuilder {
+          ... on SanityDualSectionArray {
+            _key
+            _type
+            dualSymmetric {
+              _rawRichTextDualS
+              titleDualS
+              shortText
+              imageSide
+              backgroundColor {
+                title
+                value
+              }
+              button {
+                link
+                nameButton
+              }
+              iconObject {
+                label
+                link
+                description
+                imageIcon {
+                  asset {
+                    _id
+                  }
+                  crop {
+                    _key
+                    _type
+                    bottom
+                    left
+                    right
+                  }
+                  hotspot {
+                    _key
+                    _type
+                    height
+                    width
+                    x
+                    y
+                  }
+                }
+              }
+              imageDualS {
+                asset {
+                  _id
+                }
+                crop {
+                  _key
+                  _type
+                  bottom
+                  right
+                  left
+                  top
+                }
+                hotspot {
+                  _key
+                  _type
+                  height
+                  width
+                  x
+                  y
+                }
+              }
+              youtubeVideo {
+                url
+              }
+            }
+          }
+          ... on SanityImageComponent {
+            _key
+            _type
+            asset {
+              _id
+            }
+            crop {
+              _key
+              _type
+              bottom
+              left
+              top
+              right
+            }
+            hotspot {
+              _key
+              _type
+              height
+              width
+              x
+              y
+            }
+          }
+          ... on SanityTextBlock {
+            _key
+            _type
+            _rawRichText
+            subTitle
+          }
+        }
         title
-        _rawContentAfterCarousel
-        _rawContentBeforeCarousel
+        otherTitle
         slug {
           current
-          _type
         }
         imageHeader {
           asset {
@@ -71,117 +165,32 @@ export const query = graphql`
             y
           }
         }
-        dualSection {
-          titleDualS
-          shortText
-          _rawRichTextDualS
-          youtubeVideo {
-            url
-          }
-          backgroundColor {
-            title
-            value
-          }
-          button {
-            link
-            nameButton
-          }
-          iconObject {
-            description
-            label
-            link
-            imageIcon {
-              asset {
-                _id
-              }
-              hotspot {
-                _key
-                _type
-                height
-                width
-                y
-                x
-              }
-              crop {
-                _key
-                _type
-                bottom
-                left
-                right
-                top
-              }
-            }
-          }
-          imageDualS {
-            asset {
-              _id
-            }
-            crop {
-              _key
-              _type
-              bottom
-              left
-              top
-              right
-            }
-            hotspot {
-              _key
-              _type
-              height
-              width
-              x
-              y
-            }
-          }
-          imageSide
-        }
-        carousel {
-          asset {
-            _id
-          }
-          crop {
-            _key
-            _type
-            bottom
-            left
-            right
-            top
-          }
-          hotspot {
-            _key
-            _type
-            height
-            width
-            x
-            y
-          }
-        }
         articleReferences {
           articleReference {
+            title
+            slug {
+              current
+            }
             imageHeader {
               asset {
                 _id
               }
-              crop {
-                _key
-                _type
-                bottom
-                right
-                left
-                top
-              }
               hotspot {
                 _key
                 _type
-                width
                 height
+                width
                 x
                 y
               }
-            }
-            title
-            slug {
-              current
+              crop {
+                _key
+                bottom
+                _type
+                left
+                right
+                top
+              }
             }
           }
         }

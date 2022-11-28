@@ -1,0 +1,13 @@
+.article {
+    .imageHeader{
+        width: 100%;
+    }
+    .title {
+        background: #DFDFDF;
+        padding: 24px 16px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%;
+    }
+}

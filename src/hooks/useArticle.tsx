@@ -1,11 +1,12 @@
 import { useStaticQuery, graphql } from "gatsby"
 
-const useArticle = () => {
+/* const useArticle = () => {
   return useStaticQuery(graphql`
     {
         allSanityArticle(filter: {slug: {current: {}}}) {
             nodes {
                 title
+                subtitleArt
                 _rawContentAfterCarousel
                 _rawContentBeforeCarousel
                 slug {
@@ -153,4 +154,4 @@ const useArticle = () => {
   `)
 } 
 
-export default useArticle
+export default useArticle */

@@ -8,7 +8,25 @@ const useCardVisitante = () => {
           id
           title
           imageHeader {
-            ...ImageWithPreview
+            asset {
+                _id
+            }
+            crop {
+                _key
+                _type
+                bottom
+                left
+                right
+                top
+            }
+            hotspot {
+                _key
+                _type
+                height
+                width
+                x
+                y
+            }
           }
           slug {
             current
@@ -20,7 +38,25 @@ const useCardVisitante = () => {
               label
               link
               imageIcon {
-                ...ImageWithPreview
+                asset {
+                    _id
+                }
+                hotspot {
+                    _key
+                    _type
+                    height
+                    width
+                    y
+                    x
+                }
+                crop {
+                    _key
+                    _type
+                    bottom
+                    left
+                    right
+                    top
+                }
               }
               description
             }

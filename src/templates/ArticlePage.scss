@@ -1,13 +1,35 @@
+@import "../globalStyles/global.scss";
+
 .article {
     .imageHeader{
         width: 100%;
     }
     .title {
-        background: #DFDFDF;
+        background: $light-gray-2;
         padding: 24px 16px;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
         width: 100%;
     }
+    .cardsArticle {
+        padding: 0 20px;
+        
+        h4 {
+            border-top: 2px solid $light-green-2;
+        }
+        .cards {
+            margin: 0 auto;
+        }
+    }
 }
+
+@media (min-width: $breakpoint-sm) {
+    .cardsArticle {
+       .cards {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+       }
+    }
+  }

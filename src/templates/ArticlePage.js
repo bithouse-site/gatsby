@@ -2,7 +2,7 @@ import React from "react"
 import { Page } from "../components/Page/index"
 import { graphql } from "gatsby"
 import SanityImage from "gatsby-plugin-sanity-image"
-import { SimpleCard, CustomSection } from "../components/index"
+import { CustomSection, Card } from "../components/index"
 import "./ArticlePage.scss"
 
 const ArticlePage = ({ data }) => {
@@ -14,6 +14,15 @@ const ArticlePage = ({ data }) => {
   } = data?.allSanityArticle?.nodes[0]
 
   const pageInfo = data?.allSanityArticle?.nodes[0]
+
+  const cardsComponent = articleReferences?.map(article => {
+    const articleData = {
+      title: article?.articleReference?.title,
+      image: article?.articleReference?.imageHeader,
+      link: article?.articleReference?.slug.current,
+    }
+    return <Card data={articleData} key={article?.id} />
+  })
 
   return (
     <>
@@ -28,7 +37,10 @@ const ArticlePage = ({ data }) => {
             <h5 className="title">{title}</h5>
           </div>
           <CustomSection sections={pageInfo?.ArticleBuilder} />
-          <SimpleCard data={articleReferences} title={otherTitle} />
+          <div className="cardsArticle my-4">
+            {otherTitle && <h4 className="my-5 pt-4">{otherTitle}</h4>}
+            <div className="cards">{cardsComponent}</div>
+          </div>
         </section>
       </Page>
     </>

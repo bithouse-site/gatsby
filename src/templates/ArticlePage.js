@@ -15,14 +15,16 @@ const ArticlePage = ({ data }) => {
 
   const pageInfo = data?.allSanityArticle?.nodes[0]
 
-  const cardsComponent = articleReferences?.map(article => {
-    const articleData = {
-      title: article?.articleReference?.title,
-      image: article?.articleReference?.imageHeader,
-      link: article?.articleReference?.slug.current,
-    }
-    return <Card data={articleData} key={article?.id} />
-  })
+  const cardsComponent = articleReferences
+    ?.map((article, id) => {
+      const articleData = {
+        title: article?.articleReference?.title,
+        image: article?.articleReference?.imageHeader,
+        link: article?.articleReference?.slug.current,
+      }
+      return <Card data={articleData} key={id} />
+    })
+    .slice(0, 3)
 
   return (
     <>

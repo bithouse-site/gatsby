@@ -50,7 +50,6 @@ const DualSymmetric = ({
           <div className="imageContainer">
             <SanityImage
               {...imageDualS}
-              imgClassName="dualImage"
               alt="Image Art"
               className="imageWrapper"
             />
@@ -91,7 +90,9 @@ const DualSymmetric = ({
             <div className="Profile d-flex align-items-center mt-4">
               <div className="me-3 d-flex flex-column">
                 <SanityImage {...imageIcon} alt="Icon Image" loading="eager" />
-                <small className="label-small" style={{ color: textColor }}>{iconObject?.label}</small>
+                <small className="label-small" style={{ color: textColor }}>
+                  {iconObject?.label}
+                </small>
               </div>
               <div>
                 <p className="body-medium">{iconObject?.description}</p>

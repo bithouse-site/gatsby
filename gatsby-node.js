@@ -3,8 +3,8 @@ const path = require("path")
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  // CREACION DE PAGINAS DE BLOG
-  const { data: blogQueryData } = await graphql(`
+  // CREACION DE PAGINAS DE ARTÍCULO
+  const { data: articleQueryData } = await graphql(`
     query Articles {
       allSanityArticle {
         nodes {
@@ -16,15 +16,15 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  if (blogQueryData.errors) {
-    reporter.panicOnBuild("Error creando paginas de blog")
+  if (articleQueryData.errors) {
+    reporter.panicOnBuild("Error creando paginas de article")
   }
 
-  blogQueryData.allSanityArticle.nodes.forEach(node => {
-    const BlogDetail = path.resolve("./src/templates/ArticlePage.js")
+  articleQueryData.allSanityArticle.nodes.forEach(node => {
+    const articleDetail = path.resolve("./src/templates/ArticlePage.js")
     createPage({
       path: "/visitantes/" + node.slug.current,
-      component: BlogDetail,
+      component: articleDetail,
       context: { slug: node.slug.current },
     })
   })

@@ -1,3 +1,16 @@
+@import "../../globalStyles/global.scss";
+
 .textContainer {
-   padding: 0 20px;
+  grid-template-columns: 1fr;
+  padding: var(--page-padding);
+}
+
+@media (min-width: $breakpoint-xl) {
+  .textContainer {
+    display: grid;
+    grid-template-columns:
+      1fr var(--middle-column-width, 1000px)
+      1fr;
+    margin-bottom: 3rem;
+  }
 }

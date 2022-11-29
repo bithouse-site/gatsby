@@ -30,18 +30,27 @@ const ArticlePage = ({ data }) => {
     <>
       <Page>
         <section className="article">
-          <div>
-            <SanityImage
-              {...imageHeader}
-              alt="Image Art"
-              className="imageHeader"
-            />
-            <h5 className="title">{title}</h5>
+          <div className="articleHeader">
+            <div className="empty-left"></div>
+            <div>
+              <SanityImage
+                {...imageHeader}
+                alt="Image Art"
+                className="imageHeader"
+              />
+              <h5 className="title">{title}</h5>
+              <div className="vacio"></div>
+            </div>
+            <div className="empty-right"></div>
           </div>
           <CustomSection sections={pageInfo?.ArticleBuilder} />
-          <div className="cardsArticle my-4">
-            {otherTitle && <h4 className="my-5 pt-4">{otherTitle}</h4>}
-            <div className="cards">{cardsComponent}</div>
+          <div className="cardsArticle py-4">
+            <div className="empty-left"></div>
+            <div className="cardsContent">
+              {otherTitle && <h4 className="py-4">{otherTitle}</h4>}
+              <div className="cards">{cardsComponent}</div>
+            </div>
+            <div className="empty-left"></div>
           </div>
         </section>
       </Page>

@@ -5,8 +5,12 @@ import "./TextBlock.scss"
 function TextBlock({ subTitle, richText }) {
   return (
     <div className="textContainer">
-      <h5 className="headline-small my-4">{subTitle}</h5>
-      <PortableText value={richText} />
+      <div className="empty-left"></div>
+      <div className="contentText">
+        <h5 className="headline-small my-4">{subTitle}</h5>
+        <PortableText value={richText} />
+      </div>
+      <div class="empty-right"></div>
     </div>
   )
 }

@@ -1,0 +1,54 @@
+@import "../globalStyles/global.scss";
+
+.article {
+  .articleHeader {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    .title {
+      background: $light-gray-2;
+      padding: 1rem 1rem 0 1rem; 
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      line-clamp: 2;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      margin-bottom: 0px;
+    }
+    .vacio {
+        height: 1rem;
+        background: $light-gray-2;
+    }
+  }
+  .cardsArticle {
+    .cardsContent {
+      padding: var(--page-padding);
+    }
+
+    h4 {
+      border-top: 2px solid $light-green-2;
+    }
+    .cards {
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-sm) {
+    .cards {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+@media (min-width: $breakpoint-lg) {
+    .cardsArticle {
+      grid-template-columns: 1fr 1000px 1fr;
+    }
+}
+@media (min-width: $breakpoint-xxl) {
+  .articleHeader {
+    grid-template-columns: 1fr 1400px 1fr;
+  }
+}

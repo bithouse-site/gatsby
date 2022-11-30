@@ -9,16 +9,48 @@ const useFooter = () => {
           phone
           email
           logo {
+            crop {
+              _key
+              _type
+              top
+              bottom
+              left
+              right
+            }
+            hotspot {
+              _key
+              _type
+              x
+              y
+              height
+              width
+            }
             asset {
-              gatsbyImageData
+              _id
             }
           }
           media {
             _key
             link
             icon {
+              crop {
+                _key
+                _type
+                top
+                bottom
+                left
+                right
+              }
+              hotspot {
+                _key
+                _type
+                x
+                y
+                height
+                width
+              }
               asset {
-                gatsbyImageData
+                _id
               }
             }
           }

@@ -17,9 +17,7 @@ const useBannerDoble = () => {
             value
           }
           image {
-            asset {
-              gatsbyImageData
-            }
+            ...ImageWithPreview
           }
           button {
             nameButton

@@ -7,7 +7,7 @@ import "./style.scss"
 
 export function Footer(): React.ReactElement {
   return (
-    <div className="Footer">
+    <footer className="Footer">
       <div className="ContentWrapper">
         <div className="Contacto">
           <h5 className="Title">Contactanos</h5>
@@ -21,6 +21,6 @@ export function Footer(): React.ReactElement {
           <SocialMedia logo/>
         </div>
       </div>
-    </div>
+    </footer>
   )
 }

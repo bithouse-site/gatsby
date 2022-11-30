@@ -1,7 +1,14 @@
 @import "../../globalStyles/global.scss";
 @import "../../globalStyles/theme.scss";
 
-.Medias {
+.Social {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Social .Medias {
   width: auto;
   display: flex;
   flex-direction: row;
@@ -13,17 +20,41 @@
   }
 }
 
+.Social .Logo {
+  color: var(--background-color);
+  object-fit: scale-down;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 1.5rem;
+}
+
 .MediasHero {
   a {
     margin-right: 15px;
   }
 }
 
-.Logo {
-  font-weight: 500;
-  color: var(--background-color);
-  letter-spacing: 1px;
-  margin-right: 1.5rem;
-  margin-bottom: 1.5rem;
-  margin-top: 1.5rem;
+@media (max-width: $breakpoint-sm) {
+  .Social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .MediasHero {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  .Social .Medias {
+    margin-right: 0.5rem;
+    margin-left: 1rem;
+  }
+  .Social .Medias .Media {
+    max-width: 50px;
+  }
+  .Social .Logo {
+    max-width: 256px;
+  }
 }

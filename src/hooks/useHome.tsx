@@ -16,8 +16,24 @@ const useHome = () => {
                 value
               }
               image {
+                crop {
+                  _key
+                  _type
+                  top
+                  bottom
+                  left
+                  right
+                }
+                hotspot {
+                  _key
+                  _type
+                  x
+                  y
+                  height
+                  width
+                }
                 asset {
-                  gatsbyImageData
+                  _id
                 }
               }
             }
@@ -36,8 +52,24 @@ const useHome = () => {
                 value
               }
               image {
+                crop {
+                  _key
+                  _type
+                  top
+                  bottom
+                  left
+                  right
+                }
+                hotspot {
+                  _key
+                  _type
+                  x
+                  y
+                  height
+                  width
+                }
                 asset {
-                  gatsbyImageData
+                  _id
                 }
               }
               button {
@@ -52,8 +84,24 @@ const useHome = () => {
               socialNetworks
               _rawRichTextHero
               imageHero {
+                crop {
+                  _key
+                  _type
+                  top
+                  bottom
+                  left
+                  right
+                }
+                hotspot {
+                  _key
+                  _type
+                  x
+                  y
+                  height
+                  width
+                }
                 asset {
-                  gatsbyImageData
+                  _id
                 }
               }
             }
@@ -131,8 +179,24 @@ const useHome = () => {
               description
               imageSide
               image {
+                crop {
+                  _key
+                  _type
+                  top
+                  bottom
+                  left
+                  right
+                }
+                hotspot {
+                  _key
+                  _type
+                  x
+                  y
+                  height
+                  width
+                }
                 asset {
-                  gatsbyImageData
+                  _id
                 }
               }
               button {

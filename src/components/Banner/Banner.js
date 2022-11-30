@@ -1,8 +1,8 @@
 import React from "react"
-import { GatsbyImage } from "gatsby-plugin-image"
+import SanityImage from "gatsby-plugin-sanity-image"
 import "./Banner.scss"
 
-const Banner = ({data : {title, description, color, image}}) => {
+const Banner = ({ data: { title, description, color, image } }) => {
   const textColor = color?.value === "#FCFCFC" ? "#1B1C1E" : "#FCFCFC"
   const showText = image === null ? true : undefined
   const bgColor = color === null ? "#0A694D" : color?.value
@@ -10,11 +10,10 @@ const Banner = ({data : {title, description, color, image}}) => {
 
   return (
     <div className="Banner" style={{ backgroundColor: bgColor }}>
-      {image?.asset && (
-        <GatsbyImage
-          image={image.asset.gatsbyImageData}
-          alt={altText}
-        />
+      {image && (
+        <div className="ImageContainer">
+          <SanityImage {...image} alt={altText} className="ImageWrapper" />
+        </div>
       )}
       {showText && (
         <p className="Title" style={{ color: textColor }}>

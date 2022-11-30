@@ -9,8 +9,24 @@ const useHero = () => {
           socialNetworks
           _rawRichTextHero
           imageHero {
+            crop {
+              _key
+              _type
+              top
+              bottom
+              left
+              right
+            }
+            hotspot {
+              _key
+              _type
+              x
+              y
+              height
+              width
+            }
             asset {
-              gatsbyImageData
+              _id
             }
           }
         }

@@ -1,4 +1,4 @@
-import { GatsbyImage } from "gatsby-plugin-image"
+import SanityImage from "gatsby-plugin-sanity-image"
 import React from "react"
 import { PortableText } from "@portabletext/react"
 import "./DualAsymmetric.scss"
@@ -23,19 +23,19 @@ const DualAsymmetric = ({
   const darkColors = ["#0A694D", "#868585", "#1B1C1E"]
   const textColor = darkColors.includes(bgColorText) ? "#FCFCFC" : "#1B1C1E"
   const buttonColor = darkColors.includes(bgColorText)
-    ? "default"
-    : "alternative"
+    ? "alternative"
+    : "default"
 
   const altText = description === null ? "Banner Dual Asimetric" : description
 
   return (
     <div className={`DualAsymmetric ${imageSide}`}>
-      {image?.asset && (
+      {image && (
         <div
           className="ImageContainer"
           style={{ backgroundColor: bgColorImage }}
         >
-          <GatsbyImage image={image.asset.gatsbyImageData} alt={altText} />
+          <SanityImage {...image} alt={altText} className="ImageWrapper" />
         </div>
       )}
       <div className="TextContainer" style={{ backgroundColor: bgColorText }}>

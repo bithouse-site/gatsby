@@ -2,32 +2,53 @@
 @import "../../globalStyles/theme.scss";
 
 .DualAsymmetric {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns:
+    1fr var(--left-column-width, 350px) var(--right-column-width, 750px)
+    1fr;
   min-height: 60vh;
-  &.left {
-    flex-direction: row;
-  }
+  // &.left {
+  //   order: 3;
+  // }
   &.right {
-    flex-direction: row-reverse;
+    grid-template-columns:
+      1fr var(--left-column-width, 750px) var(--right-column-width, 350px)
+      1fr;
   }
 }
 
 .DualAsymmetric .ImageContainer {
-  flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  // &.left {
+  //   order: 3;
+  // }
+  &.right {
+    order: 1;
+  }
 }
 
 .DualAsymmetric .TextContainer {
-  flex-grow: 3;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  p, h4 {
+  padding-left: 2.5rem;
+  p,
+  h4 {
     width: 50%;
+  }
+  &.right {
+    order: 0;
+  }
+  // &.left {
+  //   order: 3;
+  // }
+}
+
+.emptyRight {
+  &.right {
+    order: 5;
   }
 }
 
@@ -47,7 +68,6 @@
   }
 }
 
-
 @media (max-width: 768px) {
   .DualAsymmetric {
     &.left {
@@ -62,7 +82,8 @@
     padding-bottom: 1rem;
   }
   .DualAsymmetric .TextContainer {
-    p, h4 {
+    p,
+    h4 {
       width: 90%;
     }
   }
@@ -78,7 +99,8 @@
     }
   }
   .DualAsymmetric .TextContainer {
-    p, h4 {
+    p,
+    h4 {
       width: 70%;
     }
   }

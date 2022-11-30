@@ -2,19 +2,18 @@
 @import "../../globalStyles/theme.scss";
 
 .BannerDoble {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
+  grid-template-columns:
+    1fr var(--left-column-width, 350px) var(--right-column-width, 750px)
+    1fr;
   height: 18rem;
   text-align: center;
 }
 
 .BannerDoble .Text {
   display: flex;
-  flex-grow: 2;
+  justify-content: start;
   height: 100%;
-  flex-direction: column;
-  justify-content: center;
   &.light {
     h1,
     h2,
@@ -22,7 +21,7 @@
     h4,
     h5,
     h6,
-    p, 
+    p,
     a,
     blockquote {
       color: $bg-white;
@@ -35,20 +34,27 @@
     h4,
     h5,
     h6,
-    p, 
+    p,
     a,
     blockquote {
       color: $bg-black;
     }
   }
+  .TextContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
-.BannerDoble .ImageContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-  height: 100%;
+.BannerDoble {
+  .ImageContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    padding-left: 2.5rem;
+  }
 }
 
 .BannerDoble .Button {
@@ -61,7 +67,7 @@
   .BannerDoble {
     flex-direction: column;
   }
-  .BannerDoble .ImageContainer{
+  .BannerDoble .ImageContainer {
     width: 100%;
   }
 }

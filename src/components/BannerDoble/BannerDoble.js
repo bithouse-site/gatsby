@@ -19,16 +19,22 @@ const BannerDoble = ({
   
   return (
     <div className="BannerDoble">
+              <div className="emptyLeft" style={{ backgroundColor: bgColorImage }}></div>
       {image?.asset && (
+
+
         <div
           className="ImageContainer"
           style={{ backgroundColor: bgColorImage }}
-        >
-          <GatsbyImage image={image.asset.gatsbyImageData} alt={altText} />
+        ><div className="ImageContainer__img">
+              <GatsbyImage image={image.asset.gatsbyImageData} alt={altText} />
+        </div>
+      
         </div>
       )}
       <div className={`Text ${textColor}`} style={{ backgroundColor: bgColorText }}>
-        {_rawContent && (
+        <div className="TextContainer">
+           {_rawContent && (
             <PortableText
               value={_rawContent}
               style={{ color: textColor }}
@@ -44,7 +50,10 @@ const BannerDoble = ({
             </a>
           </div>
         )}
+        </div>
+       
       </div>
+      <div className="emptyRight" style={{ backgroundColor: bgColorText }}></div>
     </div>
   )
 }

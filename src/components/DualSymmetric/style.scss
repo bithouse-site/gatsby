@@ -2,111 +2,131 @@
 @import "../../globalStyles/theme.scss";
 
 .DualSymmetric {
-    .imageContainer{
-        width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  .imageContainer {
+    grid-column: span 2;
+    width: 100%;
+    height: 100%;
+  }
+  .videoContainer {
+    height: 180px;
+    grid-column: span 2;
+    iframe {
+      width: 100%;
+      object-fit: cover;
+      height: 100%;
     }
-    .videoContainer{
-        height: 180px;
-        iframe{
-            width: 100%;
-            object-fit: cover;
-            height: 100%;
-        }
+  }
+  .imageWrapper {
+    box-shadow: 0 0 2.5rem var(--box-shadow-color);
+    transition: all 0.3s ease-out;
+    object-fit: cover;
+    width: 100%;
+    height: 600px;
+    &:hover {
+      transform: translate3d(0px, -0.125rem, 0px);
+      box-shadow: 0 0 2.5rem var(--box-shadow-hover-color);
     }
-    .imageWrapper {
-        box-shadow: 0 0 2.5rem var(--box-shadow-color);
-        transition: all 0.3s ease-out;
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-        &:hover {
-            transform: translate3d(0px, -0.125rem, 0px);
-            box-shadow: 0 0 2.5rem var(--box-shadow-hover-color);
-        }
-    }
-    
-    .TextDetails {
-        width: 100%;
-        max-width: 35rem;
-        margin-top: 3rem; 
-        padding: 0 20px; 
-        
-        .Profile {
-            small {
-                color: var(--primary-color-green);
-                font-weight: 700;
-                font-size: 10px;
-                text-align: center;
-            }
-            p {
-                font-size: 14px;
-            }
-        }
-    }
+  }
 
-    a.CtaButton {
-        &.alternative{
-            @include secondaryBtn;
-        }
-        &.default{
-            @include primaryBtn;
-        }        
+  .TextDetails {
+    border: 1px solid black;
+    width: 100%;
+    max-width: 35rem;
+    margin-top: 3rem;
+    padding-left: 2.5rem;
+
+    .Profile {
+      small {
+        color: var(--primary-color-green);
+        font-weight: 700;
+        font-size: 10px;
+        text-align: center;
+      }
+      p {
+        font-size: 14px;
+      }
     }
+  }
+
+  a.CtaButton {
+    &.alternative {
+      @include secondaryBtn;
+    }
+    &.default {
+      @include primaryBtn;
+    }
+  }
 }
 
 @media (min-width: 425px) {
-    .DualSymmetric {
-        .videoContainer{
-            height: 230px;
-            
-        }
+  .DualSymmetric {
+    .videoContainer {
+      height: 230px;
     }
+  }
 }
 @media (min-width: 768px) {
-    .DualSymmetric {
-        .videoContainer{
-            height: 400px;
-            
-        }
+  .DualSymmetric {
+    .videoContainer {
+      height: 400px;
     }
+  }
 }
 
 @media (min-width: 992px) {
-    .DualSymmetric {
-        height: 500px;
-        display: flex;
-        column-gap: 2rem;            
+  .DualSymmetric {
+    height: 600px;
+    display: grid;
+    grid-template-columns:
+      1fr var(--left-column-width, 550px) var(--right-column-width, 550px)
+      1fr;
 
-        .videoContainer{
-            height: 280px;
-            width: 600px;
-            align-self: center;
-            flex-basis: 50%;
-        }
+    .videoContainer {
+      height: 280px;
+      width: 600px;
+      align-self: center;
+      justify-self: center;
+    }
 
-        &.left {
-            flex-direction: row;
-          }
-        &.right {
-            flex-direction: row-reverse;
-        }
-        .imageContainer {
-            flex-basis: 50%;
-        }
-        .TextDetails {
-            flex-basis: 50%;
-            margin-top: 0px;
-            align-self: center;
-        }
-    } 
-} 
+    // &.left {
+    //     flex-direction: row;
+    //   }
+    // &.right {
+    //     flex-direction: row-reverse;
+    // }
+    // .imageContainer {
+    //     flex-basis: 50%;
+    // }
+    .TextDetails {
+      // flex-basis: 50%;
+      margin-top: 0px;
+      align-self: center;
+    }
+  }
+}
 
 @media (min-width: 1400px) {
-    .DualSymmetric {
-        column-gap: 8rem;
-        
-        .videoContainer{
-            height: 405px;
-        }
+  .DualSymmetric {
+    // column-gap: 8rem;
+
+    .videoContainer {
+      height: 405px;
     }
+  }
+}
+
+@media (min-width: 1200px) {
+  .DualSymmetric {
+    // column-gap: 8rem;
+
+    .videoContainer {
+      grid-column: span 1;
+      order: 0;
+    }
+    .TextDetails {
+        order: 1;
+    }
+  }
 }

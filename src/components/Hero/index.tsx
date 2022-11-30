@@ -12,7 +12,8 @@ export function Hero(props: HeroContent): React.ReactElement {
     const heroImage = props?.data?.imageHero?.asset?.gatsbyImageData;
 
     return (
-        <Animation type="fadeUp" delay={400}>
+    
+            <Animation type="fadeUp" delay={400}>
             <Section anchor={props.sectionId} additionalClasses={[classes.HeroContainer]}>
                 <div className={classes.Hero}>
                     <div className={classes.Intro}>
@@ -37,5 +38,7 @@ export function Hero(props: HeroContent): React.ReactElement {
                 </div>
             </Section>
         </Animation>
+
+        
     );
 }

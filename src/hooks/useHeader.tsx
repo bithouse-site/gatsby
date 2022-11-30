@@ -14,8 +14,24 @@ const useHeader = () => {
             }
           }
           logo {
+            crop {
+              _key
+              _type
+              top
+              bottom
+              left
+              right
+            }
+            hotspot {
+              _key
+              _type
+              x
+              y
+              height
+              width
+            }
             asset {
-              gatsbyImageData
+              _id
             }
           }
           ctaButton {
@@ -25,7 +41,6 @@ const useHeader = () => {
         }
       }
     }
-    
   `)
 }
 

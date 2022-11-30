@@ -51,7 +51,6 @@ const DualSymmetric = ({
           <div className="imageContainer">
             <SanityImage
               {...imageDualS}
-              imgClassName="dualImage"
               alt="Image Art"
               className="imageWrapper"
             />

@@ -28,7 +28,7 @@ export function Header(): React.ReactElement {
             })}
             <a
                 href={header.ctaButton?.link}
-                target='_blank'
+                //target='_blank'
                 rel="noopener noreferrer"
                 className={classes.CtaButton}
                 onClick={!isDesktopBreakpoint ? () => setOpen(!open) : undefined}
@@ -64,7 +64,7 @@ export function Header(): React.ReactElement {
             {/* Make background blurry when sidebar is opened */}
             <Helmet bodyAttributes={{ class: open ? classes.Blurred : undefined }} />
             <Animation className={classes.ContentWrapper} type="fadeDown">
-                <Link to="/" aria-label="home">
+                <Link to="/home" aria-label="home">
                     <Logo />
                 </Link>
                 {isDesktopBreakpoint ? topNavigationBar : sideNavigationBar}

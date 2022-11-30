@@ -2,6 +2,7 @@ import React from "react"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Page } from "../components/Page/index"
 import useHome from "../hooks/useHome"
+import { Seo } from "../components/seo"
 
 // dynamic zone components
 import Banner from "../components/Banner/Banner"
@@ -11,11 +12,11 @@ import DualSymmetric from "../components/DualSymmetric/DualSymmetric"
 import DualAsymmetric from "../components/DualAsymmetric/DualAsymmetric"
 
 const bodyComponents = {
-  banner: data => <Banner data={data} />,
-  bannerDoble: data => <BannerDoble data={data} />,
-  hero: data => <Hero data={data} />,
-  dualSymmetric: data => <DualSymmetric data={data} />,
-  dualAsymmetric: data => <DualAsymmetric data={data} />,
+  banner: data => <Banner data={data} key={data?.id} />,
+  bannerDoble: data => <BannerDoble data={data} key={data?.id} />,
+  hero: data => <Hero data={data} key={data?.id} />,
+  dualSymmetric: data => <DualSymmetric data={data} key={data?.id} />,
+  dualAsymmetric: data => <DualAsymmetric data={data} key={data?.id} />,
 }
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
 
   return (
     <>
+      <Seo title="Home" description="" keywords="" />
       <Page useSplashScreenAnimation>
         {dynamicZone?.map(component => {
           return bodyComponents[component?._type]

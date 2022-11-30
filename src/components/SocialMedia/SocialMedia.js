@@ -1,5 +1,5 @@
 import React from "react"
-import { GatsbyImage } from "gatsby-plugin-image"
+import SanityImage from "gatsby-plugin-sanity-image"
 import useFooter from "../../hooks/useFooter"
 import "./SocialMedia.scss"
 
@@ -16,25 +16,18 @@ const SocialMedia = ({ logo }) => {
         rel="noopener noreferrer"
         key={media._key}
       >
-        <GatsbyImage
-          image={media?.icon.asset.gatsbyImageData}
-          alt={media.link}
-        />
+        <SanityImage {...media?.icon} alt={media?.link} className="Media" />
       </a>
     )
   })
   return (
     <>
       {logo ? (
-        <>
-          <GatsbyImage
-            className="Logo"
-            image={logoData.asset.gatsbyImageData}
-            alt="logo"
-          />
+        <div className="Social">
+          <SanityImage {...logoData} alt="Logo" className="Logo" />
 
           <div className="Medias">{socialMedia}</div>
-        </>
+        </div>
       ) : (
         <div className="MediasHero">{socialMedia}</div>
       )}

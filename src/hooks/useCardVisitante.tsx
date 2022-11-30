@@ -8,24 +8,24 @@ const useCardVisitante = () => {
           id
           title
           imageHeader {
+            asset {
+                _id
+            }
             crop {
-              _key
-              _type
-              top
-              bottom
-              left
-              right
+                _key
+                _type
+                bottom
+                left
+                right
+                top
             }
             hotspot {
-              _key
-              _type
-              x
-              y
-              height
-              width
-            }
-            asset {
-              _id
+                _key
+                _type
+                height
+                width
+                x
+                y
             }
           }
           slug {
@@ -38,24 +38,24 @@ const useCardVisitante = () => {
               label
               link
               imageIcon {
-                crop {
-                  _key
-                  _type
-                  top
-                  bottom
-                  left
-                  right
+                asset {
+                    _id
                 }
                 hotspot {
-                  _key
-                  _type
-                  x
-                  y
-                  height
-                  width
+                    _key
+                    _type
+                    height
+                    width
+                    y
+                    x
                 }
-                asset {
-                  _id
+                crop {
+                    _key
+                    _type
+                    bottom
+                    left
+                    right
+                    top
                 }
               }
               description

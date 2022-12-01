@@ -41,6 +41,32 @@ const useHome = () => {
               id
               _type
               title
+              subtitle {
+                description
+                label
+                link
+                imageIcon {
+                  crop {
+                    _key
+                    _type
+                    top
+                    bottom
+                    left
+                    right
+                  }
+                  hotspot {
+                    _key
+                    _type
+                    x
+                    y
+                    height
+                    width
+                  }
+                  asset {
+                    _id
+                  }
+                }
+              }
               description
               _rawContent
               colorLeft {
@@ -76,6 +102,7 @@ const useHome = () => {
                 nameButton
                 link
               }
+              buttonType
             }
             ... on SanityHero {
               id

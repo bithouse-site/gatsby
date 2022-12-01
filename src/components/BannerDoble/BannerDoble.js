@@ -4,7 +4,16 @@ import { PortableText } from "@portabletext/react"
 import "./BannerDoble.scss"
 
 const BannerDoble = ({
-  data: { description, _rawContent, colorLeft, colorRight, image, button },
+  data: {
+    description,
+    subtitle,
+    _rawContent,
+    colorLeft,
+    colorRight,
+    image,
+    button,
+    buttonType,
+  },
 }) => {
   const bgColorImage = colorLeft === null ? "#0A694D" : colorLeft?.value
   const bgColorText = colorRight === null ? "#0A694D" : colorRight?.value
@@ -12,6 +21,10 @@ const BannerDoble = ({
 
   const darkColors = ["#0A694D", "#868585", "#1B1C1E"]
   const textColor = darkColors.includes(bgColorText) ? "light" : "dark"
+  const buttonColor = darkColors.includes(bgColorText)
+    ? "alternative"
+    : "default"
+  const subtitleIcon = subtitle?.imageIcon
 
   return (
     <div className="BannerDoble">
@@ -28,15 +41,33 @@ const BannerDoble = ({
         style={{ backgroundColor: bgColorText }}
       >
         {_rawContent && (
-          <PortableText value={_rawContent} style={{ color: textColor }} />
+          <PortableText value={_rawContent} style={{ color: textColor }} className="RichText"/>
         )}
-        {button?.link && (
-          <div className="Button">
-            <a href={button?.link} rel="noreferrer">
-              <small className="label-large">{button?.nameButton}</small>
-            </a>
+        {subtitleIcon && (
+          <div className="Subtitle">
+            <SanityImage
+              {...subtitleIcon}
+              alt="Icon Image"
+              loading="eager"
+              className="Icon"
+            />
+            <div className="Content">{subtitle?.description}</div>
           </div>
         )}
+        {button?.link &&
+          (buttonType === "button" ? (
+            <a
+              href={button?.link}
+              rel="noreferrer"
+              className={`Button ${buttonColor}`}
+            >
+              <small>{button?.nameButton}</small>
+            </a>
+          ) : (
+            <a href={button?.link} rel="noreferrer" className={`Link`}>
+              <small className="label-large">{button?.nameButton}</small>
+            </a>
+          ))}
       </div>
     </div>
   )

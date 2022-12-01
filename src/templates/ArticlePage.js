@@ -38,8 +38,12 @@ const ArticlePage = ({ data }) => {
                 alt="Image Art"
                 className="imageHeader"
               />
-              <h5 className="title">{title}</h5>
-              <div className="vacio"></div>
+              <div className="titleContent">
+                <div></div>
+                <h5 className="title">{title}</h5>
+                <div className="vacio"></div>
+                <div></div>
+              </div>
             </div>
             <div className="empty-right"></div>
           </div>

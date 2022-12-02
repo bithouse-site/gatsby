@@ -42,6 +42,16 @@
   }
 }
 
+.BannerDoble .Text .Subtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .Icon {
+    max-width: 32px;
+    margin-right: 8px;
+  }
+}
+
 .BannerDoble .ImageContainer {
   display: flex;
   justify-content: center;
@@ -51,13 +61,25 @@
   max-height: 100%;
   width: 30%;
 }
-.BannerDoble .ImageContainer .ImageWrapper{
+.BannerDoble .ImageContainer .ImageWrapper {
   object-fit: scale-down;
 }
 
-.BannerDoble .Button {
+.BannerDoble .Link {
   a {
     text-decoration: underline;
+  }
+}
+.BannerDoble .Button {
+  align-self: center;
+  margin: 16px 0;
+  &.default {
+    @include primaryBtn;
+    color: $bg-white !important;
+  }
+  &.alternative {
+    @include secondaryBtn;
+    color: $bg-black !important;
   }
 }
 
@@ -65,7 +87,7 @@
   .BannerDoble {
     flex-direction: column;
     min-height: 450px;
-    max-height: 512px;
+    max-height: 600px;
   }
   .BannerDoble .ImageContainer {
     width: 100%;
@@ -75,8 +97,11 @@
   .BannerDoble .Text {
     width: 100%;
     min-height: 128px;
-    max-height: 256px;
+    max-height: 350px;
     padding-top: 2rem;
+  }
+  .BannerDoble .Text .Subtitle .Content {
+    max-width: 60%;
   }
 }
 
@@ -90,11 +115,11 @@
     width: 40%;
     height: 256px;
   }
-  .BannerDoble .ImageContainer .ImageWrapper{
+  .BannerDoble .ImageContainer .ImageWrapper {
     max-width: 200px;
   }
 
-  .BannerDoble .Text{
+  .BannerDoble .Text {
     height: 256px;
   }
 }

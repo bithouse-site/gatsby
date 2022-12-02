@@ -16,5 +16,11 @@
     height: 100%;
     max-width: var(--page-width);
     margin: 0 auto 8rem auto;
-    padding: var(--page-padding);
+    padding: 0 1.5rem;
+}
+
+@media (min-width: 768px){
+    .ContentWrapper  {
+        padding: 0 2.5rem;
+    }
 }

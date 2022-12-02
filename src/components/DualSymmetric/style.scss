@@ -5,13 +5,15 @@
   display: grid;
   grid-template-columns: 1fr;
   .imageContainer {
-    grid-column: span 2;
     width: 100%;
-    height: 100%;
+    height: 300px;
+    img {
+        height: 100%;
+    }
   }
   .videoContainer {
-    height: 180px;
-    grid-column: span 2;
+    height: 250px;
+
     iframe {
       width: 100%;
       object-fit: cover;
@@ -23,7 +25,6 @@
     transition: all 0.3s ease-out;
     object-fit: cover;
     width: 100%;
-    height: 600px;
     &:hover {
       transform: translate3d(0px, -0.125rem, 0px);
       box-shadow: 0 0 2.5rem var(--box-shadow-hover-color);
@@ -31,11 +32,9 @@
   }
 
   .TextDetails {
-    border: 1px solid black;
     width: 100%;
-    max-width: 35rem;
-    margin-top: 3rem;
-    padding-left: 2.5rem;
+    // max-width: 35rem;
+    padding: 1.5rem 1.5rem 3rem 1.5rem;
 
     .Profile {
       small {
@@ -60,73 +59,107 @@
   }
 }
 
-@media (min-width: 425px) {
+
+@media (min-width: $breakpoint-md) {
   .DualSymmetric {
-    .videoContainer {
-      height: 230px;
-    }
-  }
-}
-@media (min-width: 768px) {
-  .DualSymmetric {
+    height: max-content;
+    grid-template-columns:
+    1fr var(--left-column-width, 380px) var(--right-column-width, 380px)
+    1fr;
     .videoContainer {
       height: 400px;
+      grid-column: span 2;
+      align-self: center;
+      padding: 3rem 0;
+      &.right {
+        order: 1;
+      }
+    }
+    .imageContainer {
+        grid-column: span 2;
+        height: 100%;
+        img {
+            height: 100%;
+        }
+        &.right {
+          order: 1;
+        }
+    }
+    .TextDetails {
+      grid-column: span 1;
+        padding: 3rem 2rem 3rem 2.5rem;
+        align-self: center;
+        &.right {
+          order: 0;
+        }
+    }
+    .emptyRight {
+      &.right {
+        order: -1;
+      }
     }
   }
+  
 }
 
-@media (min-width: 992px) {
+@media (min-width: $breakpoint-lg) {
   .DualSymmetric {
-    height: 600px;
-    display: grid;
+    // height: 620px;
     grid-template-columns:
-      1fr var(--left-column-width, 550px) var(--right-column-width, 550px)
+      1fr var(--left-column-width, 480px) var(--right-column-width, 480px)
       1fr;
 
     .videoContainer {
-      height: 280px;
-      width: 600px;
+      height: 300px;
+      width: 100%;
       align-self: center;
       justify-self: center;
     }
-
-    // &.left {
-    //     flex-direction: row;
-    //   }
-    // &.right {
-    //     flex-direction: row-reverse;
-    // }
     // .imageContainer {
-    //     flex-basis: 50%;
+
+    //     height: 100%;
+
     // }
+
     .TextDetails {
-      // flex-basis: 50%;
       margin-top: 0px;
-      align-self: center;
+      
     }
   }
 }
 
-@media (min-width: 1400px) {
-  .DualSymmetric {
-    // column-gap: 8rem;
+@media (min-width: $breakpoint-xl) {
+    .DualSymmetric {
 
-    .videoContainer {
-      height: 405px;
+      grid-template-columns:
+      1fr var(--left-column-width, 550px) var(--right-column-width, 550px)
+      1fr;
+      .videoContainer {
+        height: 450px;
+      }
+    //   .TextDetails {
+    //       order: 1;
+    //   }
     }
   }
-}
 
-@media (min-width: 1200px) {
-  .DualSymmetric {
-    // column-gap: 8rem;
+// @media (min-width: $breakpoint-xxl) {
+//   .DualSymmetric {
+//     display: grid;
+//     grid-template-columns:
+//       1fr var(--left-column-width, 550px) var(--right-column-width, 550px)
+//       1fr;
 
-    .videoContainer {
-      grid-column: span 1;
-      order: 0;
-    }
-    .TextDetails {
-        order: 1;
-    }
-  }
-}
+//     .videoContainer {
+//       height: 280px;
+//       width: 600px;
+//       align-self: center;
+//       justify-self: center;
+//     }
+//     .videoContainer {
+//       height: 405px;
+//     }
+//   }
+// }
+
+

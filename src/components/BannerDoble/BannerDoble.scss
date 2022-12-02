@@ -3,16 +3,13 @@
 
 .BannerDoble {
   display: grid;
-  grid-template-columns:
-    1fr var(--left-column-width, 350px) var(--right-column-width, 750px)
-    1fr;
-  height: 18rem;
+  grid-template-columns: 1fr;
   text-align: center;
 }
 
 .BannerDoble .Text {
   display: flex;
-  justify-content: start;
+  justify-content: center;
   height: 100%;
   &.light {
     h1,
@@ -44,16 +41,17 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 1.5rem 1.5rem 3rem 1.5rem;
   }
 }
 
 .BannerDoble {
   .ImageContainer {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     height: 100%;
-    padding-left: 2.5rem;
+    padding: 3rem 4rem;
   }
 }
 
@@ -63,20 +61,35 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: $breakpoint-md) {
   .BannerDoble {
-    flex-direction: column;
+    height: 18rem;
+    display: grid;
+    grid-template-columns:
+      1fr var(--left-column-width, 250px) var(--right-column-width, 450px)
+      1fr;
+    .ImageContainer {
+      padding: 1.5rem;
+      justify-content: flex-start;
+    }
   }
-  .BannerDoble .ImageContainer {
-    width: 100%;
-  }
-  .BannerDoble .Text {
-    width: 100%;
+  .BannerDoble {
+    .Text {
+      .TextContainer {
+        padding-bottom: 0;
+      }
+    }
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $breakpoint-xl) {
   .BannerDoble {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns:
+      1fr var(--left-column-width, 350px) var(--right-column-width, 750px)
+      1fr;
+      .ImageContainer {
+        padding: 2.5rem;
+      }
   }
 }

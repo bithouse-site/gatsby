@@ -2,10 +2,6 @@
 
 /* GLOBAL VARIABLES */
 :root {
-  --breakpoint-xs: 480px;
-  --breakpoint-sm: 768px;
-  --breakpoint-md: 992px;
-  --breakpoint-lg: 1200px;
   --border-radius: 1rem;
   --page-width: 68.75rem;
   --page-padding: 0 2.5rem;
@@ -254,7 +250,7 @@ small.label-small {
 
 
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: $breakpoint-xl) {
 
   h1 {
     font-size: $xxxxxl;

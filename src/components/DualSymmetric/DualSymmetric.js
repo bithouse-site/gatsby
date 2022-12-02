@@ -48,7 +48,7 @@ const DualSymmetric = ({
       <section className={`DualSymmetric ${imageSide}`}>
 
         {dataImage && !videoUrl && (
-          <div className="imageContainer">
+          <div className={`imageContainer ${imageSide}`}>
             <SanityImage
               {...imageDualS}
               alt="Image Art"
@@ -58,7 +58,7 @@ const DualSymmetric = ({
         )}
 
         {videoUrl !== null && videoUrl !== undefined && (
-          <div className="videoContainer">
+          <div className={`videoContainer ${imageSide}`}>
             {url !== undefined && code !== undefined && (
               <iframe
                 loading="lazy"
@@ -79,7 +79,7 @@ const DualSymmetric = ({
           </div>
         )}
 
-        <div className="TextDetails" style={{ color: textColor }}>
+        <div className={`TextDetails ${imageSide}`} style={{ color: textColor }}>
           {(titleDualS || _rawRichTextDualS) && (
             <>
               <h4 style={{ color: textColor, marginTop: 0 }}>{titleDualS}</h4>
@@ -118,7 +118,7 @@ const DualSymmetric = ({
             </a>
           )}
         </div>
-        <div className="emptyRight"></div>
+        <div className={`emptyRight ${imageSide}`}></div>
       </section>
     </Animation>
   )

@@ -9,7 +9,7 @@
   border-top: none;
 }
 
-.ContentWrapper {
+.FooterWrapper {
   width: 100%;
   height: 100%;
   max-width: var(--page-width);
@@ -17,7 +17,6 @@
   padding: var(--page-padding);
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   flex-wrap: wrap;
 }
 
@@ -34,10 +33,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: auto;
+  margin:0 auto;
+  margin-bottom: 3rem;
 }
 
 .Contacto {
+  margin: 3rem 0;
   align-self: center;
   .Contactos {
     width: auto;
@@ -48,6 +49,7 @@
     img{
       width: 40px;
       height: 40px;
+      margin-bottom: 1rem;
     }
     p {
       font-family: $primary-font;
@@ -65,10 +67,10 @@
   .Links a {
     margin-right: 4rem;
   }
-}
-
-@media (max-width: 567px) {
-  .Redes{
-    margin-left: 0%;
+  .Redes {
+    margin: 0;
+    margin-left: auto;
+    margin-top: 3rem;
+    justify-content: start;
   }
 }

@@ -9,10 +9,10 @@ const CardsVisitantes = () => {
   const cardsComponent = articles?.nodes.map(article => {
     const articleData = {
       title: article?.title,
+      slug: `visitantes/${article?.slug?.current}`,
       _rawContent: article?.articleCard?._rawContent,
       image: article?.imageHeader,
       artists: article?.articleCard?.artists,
-      link: article?.articleCard?.link,
     }
     return <Card data={articleData} key={article?.id} />
   })

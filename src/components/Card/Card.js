@@ -1,20 +1,39 @@
 import React from "react"
+import { useMediaQuery } from "react-responsive"
 import SanityImage from "gatsby-plugin-sanity-image"
-import { PortableText } from "@portabletext/react"
+import { PortableText, toPlainText } from "@portabletext/react"
 
 import "./Card.scss"
 
 const Card = ({ data: { title, _rawContent, link, image, artists } }) => {
   const icon = artists?.imageIcon
+  const titleDisplay = title.length > 24 ? `${title.slice(0, 24)}...` : title
+  const plainContent = toPlainText(_rawContent)
+  const contentIsLong = plainContent.length > 200
+  const contentDisplay = contentIsLong
+    ? `${plainContent.slice(0, 200)}...`
+    : _rawContent
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" })
+  const showArtists = artists !== undefined && !isMobile
 
   return (
     <div className="Card">
-      {image && <SanityImage {...image} alt={`${title}`} />}
-      {title && <h6 className="title-small Title">{title}</h6>}
-      {_rawContent && (
-          <PortableText className="Content" value={_rawContent} />
+      {image && (
+        <div>
+          <SanityImage {...image} alt={`${title}`} className="ImageContainer" />
+        </div>
       )}
-      {artists && (
+      {title && <h6 className="title-small Title">{titleDisplay}</h6>}
+      {_rawContent && (
+        <div className="Content">
+          {contentIsLong ? (
+            <p>{contentDisplay}</p>
+          ) : (
+            <PortableText value={contentDisplay} />
+          )}
+        </div>
+      )}
+      {showArtists && (
         <div className="ArtistsContainer">
           <div className="Profile">
             <a href={artists?.link} rel="noopener noreferrer">

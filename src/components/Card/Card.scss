@@ -5,7 +5,8 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  max-width: 25%;
+  width: 282px;
+  min-height: 550px;
   padding: 16px;
 }
 
@@ -14,8 +15,17 @@
 }
 
 .Card .Content {
-  font-size: $xxxxs !important;
-  font-weight: $lighter !important;
+  p {
+    // body-medium
+    font-size: $xxxxs !important;
+    font-weight: $lighter !important;
+    line-height: 20px;
+  }
+}
+
+.Card .ImageContainer {
+  width: 250px;
+  height: 180px;
 }
 
 .ArtistsContainer {
@@ -43,6 +53,7 @@
 
 .Profile .Icon {
   max-width: 40px;
+  padding-bottom: 8px;
 }
 
 .Card .Artists {
@@ -53,6 +64,7 @@
 
 .Card .Link {
   color: $dark-green;
+  padding-top: 24px;
   a,
   small {
     &:hover {
@@ -61,20 +73,22 @@
   }
 }
 
-@media screen and (max-width: $breakpoint-sm) {
-  .Card {
-    max-width: 70%;
-  }
-}
-
 @media screen and (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
   .Card {
-    max-width: 30%;
+    width: 250px;
+  }
+  .Card .ImageContainer {
+    width: 220px;
+    height: 158px;
   }
 }
 
-@media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+@media screen and (max-width: $breakpoint-sm) {
   .Card {
-    max-width: 30%;
+    min-height: 350px;
+    max-height: 550px;
+  }
+  .Card .Link {
+    padding-top: 0px;
   }
 }

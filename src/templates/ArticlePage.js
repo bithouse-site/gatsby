@@ -20,7 +20,7 @@ const ArticlePage = ({ data }) => {
       const articleData = {
         title: article?.articleReference?.title,
         image: article?.articleReference?.imageHeader,
-        link: article?.articleReference?.slug.current,
+        slug: article?.articleReference?.slug.current,
       }
       return <Card data={articleData} key={id} />
     })

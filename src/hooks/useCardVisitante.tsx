@@ -32,7 +32,6 @@ const useCardVisitante = () => {
             current
           }
           articleCard {
-            link
             _rawContent
             artists {
               label

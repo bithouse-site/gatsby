@@ -1,15 +1,14 @@
-import React from 'react';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import { Animation } from '../../components/Animation';
-import { Section } from '../../components/Section';
-import { HeroContent } from '../../types';
-import {PortableText} from '@portabletext/react';
-import * as classes from './style.module.css';
-import SocialMedia from '../SocialMedia/SocialMedia';
-
+import React from "react"
+import SanityImage from "gatsby-plugin-sanity-image"
+import { Animation } from "../../components/Animation"
+import { Section } from "../../components/Section"
+import { HeroContent } from "../../types"
+import { PortableText } from "@portabletext/react"
+import * as classes from "./style.module.css"
+import SocialMedia from "../SocialMedia/SocialMedia"
 
 export function Hero(props: HeroContent): React.ReactElement {
-    const heroImage = props?.data?.imageHero?.asset?.gatsbyImageData;
+  const heroImage = props?.data?.imageHero
 
     return (
     
@@ -19,11 +18,7 @@ export function Hero(props: HeroContent): React.ReactElement {
                     <div className={classes.Intro}>
                         {heroImage && (
                             <Animation className={classes.Image} type="waving-hand" duration={2500} iterationCount={3}>
-                                <GatsbyImage
-                                    image={heroImage}
-                                    alt="Intro Image"
-                                    loading="eager"
-                                />
+                                <SanityImage {...heroImage} alt="Intro Image" loading="eager" />
                             </Animation>
                         )}
                     </div>

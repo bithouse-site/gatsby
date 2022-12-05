@@ -132,14 +132,47 @@
     .DualSymmetric {
 
       grid-template-columns:
-      1fr var(--left-column-width, 550px) var(--right-column-width, 550px)
+      1fr var(--left-column-width, 555px) var(--right-column-width, 555px)
       1fr;
       .videoContainer {
         height: 450px;
       }
-    //   .TextDetails {
-    //       order: 1;
-    //   }
+    }
+  }
+
+  @media (min-width: $breakpoint-xxl) {
+    .DualSymmetric {
+
+      grid-template-columns:
+      1fr var(--left-column-width, 630px) var(--right-column-width, 630px)
+      1fr;
+      .videoContainer {
+        height: 450px;
+      }
+    }
+  }
+  
+  @media (min-width: $breakpoint-xxxl) {
+    .DualSymmetric {
+
+      grid-template-columns:
+      1fr var(--left-column-width, 705px) var(--right-column-width, 705px)
+      1fr;
+      .videoContainer {
+        height: 450px;
+      }
+    }
+  }
+  
+  @media (min-width: $breakpoint-xxxxl) {
+    .DualSymmetric {
+
+      grid-template-columns:
+      1fr var(--left-column-width, 780px) var(--right-column-width, 780px)
+      1fr;
+      .videoContainer {
+        height: 450px;
+      }
     }
   }
 

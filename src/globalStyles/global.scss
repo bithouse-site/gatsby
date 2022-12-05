@@ -1,5 +1,3 @@
-//@import "normalize.css";
-
 /* GLOBAL VARIABLES */
 :root {
   --border-radius: 1rem;
@@ -22,12 +20,16 @@ $gray: #868585;
 $light-gray-1: #b4b2b0;
 $light-gray-2: #dfdfdf;
 
-/* BREAKPOINTS */
+/* BREAKPOINTS max width of content in comments */
 $breakpoint-sm: 576px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 992px;
-$breakpoint-xl: 1200px;
-$breakpoint-xxl: 1400px;
+$breakpoint-md: 768px; //760 
+$breakpoint-lg: 992px; //960 320/640
+$breakpoint-xl: 1200px; //1110 370/740
+$breakpoint-xxl: 1400px; //1260 420/840
+$breakpoint-xxxl: 1600px; //1410 470/940
+$breakpoint-xxxxl: 1800px; //1560 520/1040
+$breakpoint-max: 1920px; //1710 570/1140
+
 
 /* BUTTONS */
 @mixin primaryBtn {

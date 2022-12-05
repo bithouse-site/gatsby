@@ -20,7 +20,7 @@ const ArticlePage = ({ data }) => {
       const articleData = {
         title: article?.articleReference?.title,
         image: article?.articleReference?.imageHeader,
-        link: article?.articleReference?.slug.current,
+        slug: article?.articleReference?.slug.current,
       }
       return <Card data={articleData} key={id} />
     })
@@ -38,8 +38,12 @@ const ArticlePage = ({ data }) => {
                 alt="Image Art"
                 className="imageHeader"
               />
-              <h5 className="title">{title}</h5>
-              <div className="vacio"></div>
+              <div className="titleContent">
+                <div></div>
+                <h5 className="title">{title}</h5>
+                <div className="vacio"></div>
+                <div></div>
+              </div>
             </div>
             <div className="empty-right"></div>
           </div>

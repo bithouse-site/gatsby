@@ -5,9 +5,17 @@
     display: grid;
     grid-template-columns: 1fr;
 
-    .title {
+    img {
+      height: 30vh;
+      width: 100%;
+      object-fit: cover;
+    }
+    
+    .titleContent{
       background: $light-gray-2;
-      padding: 1rem 1rem 0 1rem; 
+    }
+    .title {      
+      padding: 1rem 2.5rem 0 2.5rem;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
@@ -15,10 +23,11 @@
       text-overflow: ellipsis;
       overflow: hidden;
       margin-bottom: 0px;
+      border-bottom: 1px solid $light-gray-2;
     }
     .vacio {
-        height: 1rem;
-        background: $light-gray-2;
+      background: $light-gray-2;
+      height: 1rem;
     }
   }
   .cardsArticle {
@@ -36,19 +45,41 @@
 }
 
 @media (min-width: $breakpoint-sm) {
-    .cards {
-      display: flex;
-      justify-content: space-between;
+  .cards {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+  }
+}
+
+@media (min-width: $breakpoint-xl) {
+  .article {
+    .articleHeader {
+      .titleContent{
+        display: grid;
+        grid-template-columns: 1fr 1000px 1fr;
+
+        .title {
+          padding: 1rem 0;
+        }
+      }
+      img {
+        height: 40vh;
+      }
     }
   }
-
-@media (min-width: $breakpoint-lg) {
-    .cardsArticle {
-      grid-template-columns: 1fr 1000px 1fr;
+  .cardsArticle {
+    display: grid;
+    grid-template-columns: 1fr 1000px 1fr;
+    .cardsContent {
+      padding: 0 !important;
     }
+  }
 }
+
+
 @media (min-width: $breakpoint-xxl) {
-  .articleHeader {
+  .article .articleHeader {
     grid-template-columns: 1fr 1400px 1fr;
   }
 }

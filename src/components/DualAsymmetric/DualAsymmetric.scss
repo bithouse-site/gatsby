@@ -2,40 +2,22 @@
 @import "../../globalStyles/theme.scss";
 
 .DualAsymmetric {
-  display: flex;
-  justify-content: center;
-  min-height: 60vh;
-  max-height: 80vh;
-  &.left {
-    flex-direction: row;
-  }
-  &.right {
-    flex-direction: row-reverse;
-  }
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .DualAsymmetric .ImageContainer {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 33%;
-}
-
-.DualAsymmetric .ImageWrapper{
-  object-fit: scale-down;
-  width: 100%;
+  padding: 3rem 4rem;
+  img {
+    max-width: 350px !important;
+  }
 }
 
 .DualAsymmetric .TextContainer {
-  flex-grow: 3;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  p, h4 {
-    width: 50%;
-  }
+  padding: 1.5rem 1.5rem 3rem 1.5rem;
 }
 
 .DualAsymmetric .Title {
@@ -54,55 +36,122 @@
   }
 }
 
-
-@media (max-width: $breakpoint-sm) {
+@media (min-width: $breakpoint-md) {
   .DualAsymmetric {
-    &.left {
-      flex-direction: column;
-    }
+    display: grid;
+    grid-template-columns:
+      1fr var(--left-column-width, 250px) var(--right-column-width, 510px)
+      1fr;
     &.right {
-      flex-direction: column;
+      grid-template-columns:
+        1fr var(--left-column-width, 510px) var(--right-column-width, 250px)
+        1fr;
     }
     max-height: 100vh;
   }
   .DualAsymmetric .ImageContainer {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    max-width: 100%;
-    height: 10rem;
-    justify-content: center;
+    display: flex;
     align-items: center;
-  }
-  .DualAsymmetric .ImageWrapper{
-    width: 100%;
-    max-width: 126px;
-    align-self: center;
+    padding: 1.5rem;
+    &.right {
+      order: 1;
+    }
   }
   .DualAsymmetric .TextContainer {
-    p, h4 {
+    padding: 3rem 0 3rem 2.5rem;
+    p,
+    h4 {
       width: 90%;
     }
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    &.right {
+      order: 0;
+    }
+  }
+  .emptyRight {
+    &.right {
+      order: 5;
+    }
   }
 }
 
-@media (min-width: $breakpoint-sm) {
+@media (min-width: $breakpoint-lg) {
   .DualAsymmetric {
-    &.left {
-      flex-direction: row;
-    }
+    grid-template-columns:
+    1fr var(--left-column-width, 320px) var(--right-column-width, 640px)
+    1fr;
     &.right {
-      flex-direction: row-reverse;
+      grid-template-columns:
+        1fr var(--left-column-width, 640px) var(--right-column-width, 320px)
+        1fr;
     }
   }
-  .DualAsymmetric .TextContainer {
-    p, h4 {
-      width: 70%;
-    }
+  
+  .DualAsymmetric .ImageContainer {
+    padding: 0 0 0 2.5rem;
+  }
+}
+
+@media (min-width: $breakpoint-xl) {
+  .DualAsymmetric {
+    display: grid;
+    grid-template-columns:
+      1fr var(--left-column-width, 370px) var(--right-column-width, 740px)
+      1fr;
+      &.right {
+        grid-template-columns:
+          1fr var(--left-column-width, 740px) var(--right-column-width, 370px)
+          1fr;
+      }
   }
   .DualAsymmetric .ImageContainer {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 0 0 0 2.5rem;
+  }
+  .DualAsymmetric .TextContainer {
+    p,
+    h4 {
+      width: 90%;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-xxl) {
+  .DualAsymmetric {
+    display: grid;
+    grid-template-columns:
+      1fr var(--left-column-width, 420px) var(--right-column-width, 840px)
+      1fr;
+      &.right {
+        grid-template-columns:
+          1fr var(--left-column-width, 840px) var(--right-column-width, 420px)
+          1fr;
+      }
+  }
+}
+
+@media (min-width: $breakpoint-xxxl) {
+  .DualAsymmetric {
+    display: grid;
+    grid-template-columns:
+      1fr var(--left-column-width, 470px) var(--right-column-width, 940px)
+      1fr;
+      &.right {
+        grid-template-columns:
+          1fr var(--left-column-width, 940px) var(--right-column-width, 470px)
+          1fr;
+      }
+  }
+}
+
+@media (min-width: $breakpoint-xxxxl) {
+  .DualAsymmetric {
+    display: grid;
+    grid-template-columns:
+      1fr var(--left-column-width, 520px) var(--right-column-width, 1040px)
+      1fr;
+      &.right {
+        grid-template-columns:
+          1fr var(--left-column-width, 1040px) var(--right-column-width, 520px)
+          1fr;
+      }
   }
 }

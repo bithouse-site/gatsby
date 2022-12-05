@@ -5,6 +5,7 @@
     width: 100%;
     height: auto;
     min-height: var(--header-height);
+
 }
 
 .ContentWrapper  {
@@ -12,7 +13,7 @@
     height: 100%;
     max-width: var(--page-width);
     margin: 0 auto;
-    padding: var(--page-padding);
+    padding: 0 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -177,4 +178,41 @@
     transition: all 0.3s ease-out;
     pointer-events: none;
     user-select: none;
+}
+
+@media (min-width: 768px){
+    .ContentWrapper  {
+        padding: 0 2.5rem;
+        max-width: 760px;
+    }
+}
+
+@media (min-width: 992px){
+    .ContentWrapper  {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px){
+    .ContentWrapper  {
+        max-width: 1110px;
+    }
+}
+
+@media (min-width: 1400px){
+    .ContentWrapper  {
+        max-width: 1260px;
+    }
+}
+
+@media (min-width: 1600px){
+    .ContentWrapper  {
+        max-width: 1410px;
+    }
+}
+
+@media (min-width: 1800px){
+    .ContentWrapper  {
+        max-width: 1560px;
+    }
 }

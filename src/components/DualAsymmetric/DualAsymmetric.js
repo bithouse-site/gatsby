@@ -30,15 +30,16 @@ const DualAsymmetric = ({
 
   return (
     <div className={`DualAsymmetric ${imageSide}`}>
+      <div className="emptyLeft" style={{ backgroundColor: bgColorImage }}></div>
       {image && (
         <div
-          className="ImageContainer"
+          className={`ImageContainer ${imageSide}`}
           style={{ backgroundColor: bgColorImage }}
         >
-          <SanityImage {...image} alt={altText} className="ImageWrapper" />
+          <SanityImage {...image} alt={altText} />
         </div>
       )}
-      <div className="TextContainer" style={{ backgroundColor: bgColorText }}>
+      <div className={`TextContainer ${imageSide}`} style={{ backgroundColor: bgColorText }}>
         {(title || _rawRichTextDualA) && (
           <>
             <h4 className="Title" style={{ color: textColor }}>
@@ -57,6 +58,7 @@ const DualAsymmetric = ({
           </a>
         )}
       </div>
+      <div className={`emptyRight ${imageSide}`} style={{ backgroundColor: bgColorText }}></div>
     </div>
   )
 }

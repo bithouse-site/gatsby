@@ -2,18 +2,15 @@
 @import "../../globalStyles/theme.scss";
 
 .BannerDoble {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
   text-align: center;
 }
 
 .BannerDoble .Text {
   display: flex;
-  flex-grow: 2;
-  height: 100%;
-  flex-direction: column;
   justify-content: center;
+  height: 100%;
   &.light {
     h1,
     h2,
@@ -40,29 +37,30 @@
       color: $bg-black;
     }
   }
-}
-
-.BannerDoble .Text .Subtitle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  .Icon {
-    max-width: 32px;
-    margin-right: 8px;
+  .TextContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem 1.5rem 3rem 1.5rem;
+    .Subtitle {
+      img {
+        max-width: 20px;
+      }
+    }
   }
 }
 
-.BannerDoble .ImageContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-  height: 100%;
-  max-height: 100%;
-  width: 30%;
-}
-.BannerDoble .ImageContainer .ImageWrapper {
-  object-fit: scale-down;
+.BannerDoble {
+  .ImageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 3rem 4rem;
+    img {
+      max-width: 200px;
+    }
+  }
 }
 
 .BannerDoble .Link {
@@ -83,43 +81,83 @@
   }
 }
 
-@media (max-width: $breakpoint-sm) {
+@media (min-width: $breakpoint-md) {
   .BannerDoble {
-    flex-direction: column;
-    min-height: 450px;
-    max-height: 600px;
+    height: 18rem;
+    display: grid;
+    grid-template-columns:
+      1fr var(--left-column-width, 250px) var(--right-column-width, 450px)
+      1fr;
+    .ImageContainer {
+      padding: 1.5rem;
+      justify-content: flex-start;
+    }
   }
-  .BannerDoble .ImageContainer {
-    width: 100%;
-    min-height: 128px;
-    max-height: 256px;
-  }
-  .BannerDoble .Text {
-    width: 100%;
-    min-height: 128px;
-    max-height: 350px;
-    padding-top: 2rem;
-  }
-  .BannerDoble .Text .Subtitle .Content {
-    max-width: 60%;
+  .BannerDoble {
+    .Text {
+      .TextContainer {
+        padding-bottom: 0;
+      }
+    }
   }
 }
 
-@media (min-width: $breakpoint-sm) {
+@media (min-width: $breakpoint-lg) {
   .BannerDoble {
-    flex-direction: row;
-    min-height: 256px;
-    max-height: 300px;
+    display: grid;
+    grid-template-columns:
+      1fr var(--left-column-width, 320px) var(--right-column-width, 640px)
+      1fr;
+      .ImageContainer {
+        padding: 2.5rem;
+      }
   }
-  .BannerDoble .ImageContainer {
-    width: 40%;
-    height: 256px;
-  }
-  .BannerDoble .ImageContainer .ImageWrapper {
-    max-width: 200px;
-  }
+}
 
-  .BannerDoble .Text {
-    height: 256px;
+@media (min-width: $breakpoint-xl) {
+  .BannerDoble {
+    display: grid;
+    grid-template-columns:
+      1fr var(--left-column-width, 370px) var(--right-column-width, 740px)
+      1fr;
+      .ImageContainer {
+        padding: 2.5rem;
+      }
+  }
+}
+
+@media (min-width: $breakpoint-xxl) {
+  .BannerDoble {
+    display: grid;
+    grid-template-columns:
+      1fr var(--left-column-width, 420px) var(--right-column-width, 840px)
+      1fr;
+      .ImageContainer {
+        padding: 2.5rem;
+      }
+  }
+}
+
+@media (min-width: $breakpoint-xxxl) {
+  .BannerDoble {
+    display: grid;
+    grid-template-columns:
+      1fr var(--left-column-width, 470px) var(--right-column-width, 940px)
+      1fr;
+      .ImageContainer {
+        padding: 2.5rem;
+      }
+  }
+}
+
+@media (min-width: $breakpoint-xxxxl) {
+  .BannerDoble {
+    display: grid;
+    grid-template-columns:
+      1fr var(--left-column-width, 520px) var(--right-column-width, 1040px)
+      1fr;
+      .ImageContainer {
+        padding: 2.5rem;
+      }
   }
 }

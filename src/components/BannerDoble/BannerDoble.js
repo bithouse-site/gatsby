@@ -28,22 +28,30 @@ const BannerDoble = ({
 
   return (
     <div className="BannerDoble">
-      {image && (
+              <div className="emptyLeft" style={{ backgroundColor: bgColorImage }}></div>
+
+      {image?.asset && (
+
+
         <div
           className="ImageContainer"
-          style={{ backgroundColor: bgColorImage }}
-        >
-          <SanityImage {...image} alt={altText} className="ImageWrapper" />
+          style={{ backgroundColor: bgColorImage }} >
+                   
+ 
+         <SanityImage {...image} alt={altText}/>
+      
         </div>
       )}
-      <div
-        className={`Text ${textColor}`}
-        style={{ backgroundColor: bgColorText }}
-      >
-        {_rawContent && (
-          <PortableText value={_rawContent} style={{ color: textColor }} className="RichText"/>
-        )}
-        {subtitleIcon && (
+
+
+      <div className={`Text ${textColor}`} style={{ backgroundColor: bgColorText }}>
+        <div className="TextContainer">
+           {_rawContent && (
+            <PortableText
+              value={_rawContent}
+              style={{ color: textColor }}
+            />)}
+            {subtitleIcon && (
           <div className="Subtitle">
             <SanityImage
               {...subtitleIcon}
@@ -51,9 +59,10 @@ const BannerDoble = ({
               loading="eager"
               className="Icon"
             />
-            <div className="Content">{subtitle?.description}</div>
+            <span className="Content">  {subtitle?.description}</span>
           </div>
         )}
+
         {button?.link &&
           (buttonType === "button" ? (
             <a
@@ -63,12 +72,17 @@ const BannerDoble = ({
             >
               <small>{button?.nameButton}</small>
             </a>
+        
+       
           ) : (
             <a href={button?.link} rel="noreferrer" className={`Link`}>
               <small className="label-large">{button?.nameButton}</small>
             </a>
           ))}
       </div>
+      
+    </div> 
+    <div className="emptyRight" style={{ backgroundColor: bgColorText }}></div>
     </div>
   )
 }

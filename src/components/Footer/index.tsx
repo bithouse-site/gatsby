@@ -8,7 +8,7 @@ import "./style.scss"
 export function Footer(): React.ReactElement {
   return (
     <footer className="Footer">
-      <div className="ContentWrapper">
+      <div className="FooterWrapper">
         <div className="Contacto">
           <h5 className="Title">Contactanos</h5>
           <div className="Contactos">

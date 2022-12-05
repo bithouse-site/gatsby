@@ -1,13 +1,7 @@
-//@import "normalize.css";
-
 /* GLOBAL VARIABLES */
 :root {
-  --breakpoint-xs: 480px;
-  --breakpoint-sm: 768px;
-  --breakpoint-md: 992px;
-  --breakpoint-lg: 1200px;
   --border-radius: 1rem;
-  --page-width: 62.5rem;
+  --page-width: 68.75rem;
   --page-padding: 0 2.5rem;
   --header-height: 6.25rem;
   --footer-height: 7.5rem;
@@ -26,18 +20,22 @@ $gray: #868585;
 $light-gray-1: #b4b2b0;
 $light-gray-2: #dfdfdf;
 
-/* BREAKPOINTS */
+/* BREAKPOINTS max width of content in comments */
 $breakpoint-sm: 576px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 992px;
-$breakpoint-xl: 1200px;
-$breakpoint-xxl: 1400px;
+$breakpoint-md: 768px; //760 
+$breakpoint-lg: 992px; //960 320/640
+$breakpoint-xl: 1200px; //1110 370/740
+$breakpoint-xxl: 1400px; //1260 420/840
+$breakpoint-xxxl: 1600px; //1410 470/940
+$breakpoint-xxxxl: 1800px; //1560 520/1040
+$breakpoint-max: 1920px; //1710 570/1140
+
 
 /* BUTTONS */
 @mixin primaryBtn {
   font-size: 1rem;
   font-weight: 700;
-  width: auto;
+  width: fit-content;
   height: auto;
   border-radius: var(--border-radius);
   border: 0.125rem solid $dark-green;
@@ -67,7 +65,7 @@ $breakpoint-xxl: 1400px;
 @mixin secondaryBtn {
   font-size: 1rem;
   font-weight: 700;
-  width: auto;
+  width: fit-content;
   height: auto;
   border-radius: var(--border-radius);
   border: 0.125rem solid $bg-white;
@@ -248,9 +246,13 @@ small.label-small {
   font-weight: $max-bold;
 }
 
+.containerRight {
+  padding-right: 0.5rem;
+}
 
 
-@media screen and (min-width: 1024px) {
+
+@media screen and (min-width: $breakpoint-xl) {
 
   h1 {
     font-size: $xxxxxl;
@@ -279,6 +281,11 @@ small.label-small {
   p {
     font-size: $xs;
     line-height: 28px;
+  }
+
+  .containerRight {
+    padding-right: 4rem;
+    max-width: 760px;
   }
 
 }

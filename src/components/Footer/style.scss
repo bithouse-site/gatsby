@@ -9,7 +9,7 @@
   padding-bottom: 2rem;
 }
 
-.ContentWrapper {
+.FooterWrapper {
   width: 100%;
   height: 100%;
   max-width: var(--page-width);
@@ -17,7 +17,6 @@
   padding: var(--page-padding);
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   flex-wrap: wrap;
 }
 
@@ -34,10 +33,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: auto;
+  margin:0 auto;
+  margin-bottom: 3rem;
 }
 
 .Contacto {
+  margin: 3rem 0;
   align-self: center;
   .Contactos {
     width: auto;
@@ -48,6 +49,7 @@
     img{
       width: 40px;
       height: 40px;
+      margin-bottom: 1rem;
     }
     p {
       font-family: $primary-font;
@@ -62,13 +64,47 @@
 }
 
 @media (min-width: 768px) {
+  .FooterWrapper {
+    max-width: 760px;
+  }
   .Links a {
     margin-right: 4rem;
   }
+  .Redes {
+    margin: 0;
+    margin-left: auto;
+    margin-top: 3rem;
+    justify-content: start;
+  }
 }
 
-@media (max-width: 567px) {
-  .Redes{
-    margin-left: 0%;
+
+@media (min-width: 992px){
+  .FooterWrapper  {
+      max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px){
+  .FooterWrapper  {
+      max-width: 1110px;
+  }
+}
+
+@media (min-width: 1400px){
+  .FooterWrapper  {
+      max-width: 1260px;
+  }
+}
+
+@media (min-width: 1600px){
+  .FooterWrapper  {
+      max-width: 1410px;
+  }
+}
+
+@media (min-width: 1800px){
+  .FooterWrapper  {
+      max-width: 1560px;
   }
 }

@@ -65,7 +65,7 @@
     width: 100%;
     margin-top: auto;
     margin-bottom: auto;
-    padding: 0 3rem 3rem 0;
+    /* padding: 0 3rem 3rem 0; */
 }
 
 .heroImageCont .heroImage {
@@ -86,6 +86,6 @@
 
 @media (min-width: 1024px) {
     .Hero {
-        width: 70%;
+        width: 65%;
     }
 }

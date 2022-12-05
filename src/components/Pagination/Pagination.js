@@ -11,7 +11,7 @@ const Pagination = ({ posts, postPerPage, inicialState }) => {
   const [postsPerPage] = useState(`${postPerPage}`)
   const pageNumbers = []
 
-  for (let i = 1; i <= Math.ceil(posts.length / postsPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(posts?.length / postsPerPage); i++) {
     pageNumbers.push(i)
   }
 
@@ -19,7 +19,7 @@ const Pagination = ({ posts, postPerPage, inicialState }) => {
     ? 1 * postsPerPage
     : currentPage * postsPerPage
   const indexOfFirstPost = indexOfLastPost - postsPerPage
-  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
+  const currentPosts = posts?.slice(indexOfFirstPost, indexOfLastPost)
 
   // Change page
   const paginate = pageNumber => {

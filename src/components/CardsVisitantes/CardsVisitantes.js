@@ -3,10 +3,11 @@ import Pagination from "../Pagination/Pagination"
 import useCardVisitante from "../../hooks/useCardVisitante"
 import Card from "../Card/Card"
 
-const CardsVisitantes = () => {
-  const articles = useCardVisitante().allSanityArticle
-
-  const cardsComponent = articles?.nodes.map(article => {
+const CardsVisitantes = ({ data }) => {
+  //const articles = useCardVisitante().allSanityArticle
+  console.log(data)
+  const cardsComponent = data.map(article => {
+    console.log(article)
     const articleData = {
       title: article?.title,
       slug: `visitantes/${article?.slug?.current}`,

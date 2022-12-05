@@ -1,0 +1,29 @@
+@import "../../globalStyles/global.scss";
+
+.heroBg {
+  display: grid;
+  grid-template-columns: 1fr;
+  .imageBg {
+    display: none;
+  }
+  .contentText {
+    padding: 4rem 2rem;
+    .imageText {
+      img {
+        width: 100%;
+        object-fit: cover;
+        padding: 1.5rem;
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .heroBg {
+    display: grid;
+    grid-template-columns: 1fr 1000px 1fr;
+    .imageBg {
+      display: block;
+    }
+  }
+}

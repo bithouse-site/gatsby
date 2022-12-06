@@ -1,7 +1,6 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import useFooter from "../../../hooks/useFooter"
-import "./Email.scss"
 
 const Email = () => {
   const email = useFooter().allSanityFooter?.nodes[0]?.email

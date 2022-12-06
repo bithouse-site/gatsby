@@ -54,7 +54,7 @@ const ArticlePage = ({ data }) => {
               {otherTitle && <h4 className="py-4">{otherTitle}</h4>}
               <div className="cards">{cardsComponent}</div>
             </div>
-            <div className="empty-left"></div>
+            <div className="empty-right"></div>
           </div>
         </section>
       </Page>

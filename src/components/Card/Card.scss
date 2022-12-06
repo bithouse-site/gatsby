@@ -2,93 +2,103 @@
 @import "../../globalStyles/theme.scss";
 
 .Card {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
   width: 282px;
-  min-height: 550px;
   padding: 16px;
-}
+  background-color: $bg-white;
+  margin-top: 2rem;
 
-.Card .Title {
-  padding-top: 1rem;
-}
-
-.Card .Content {
-  p {
-    // body-medium
-    font-size: $xxxxs !important;
-    font-weight: $lighter !important;
-    line-height: 20px;
-  }
-}
-
-.Card .ImageContainer {
-  width: 250px;
-  height: 180px;
-}
-
-.ArtistsContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: nowrap;
-  line-height: normal;
-}
-
-.ArtistsContainer .Profile {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  height: auto;
-  align-items: center;
-  max-width: 30%;
-  color: $dark-green;
-  a {
+  .Link {
     color: $dark-green;
+    padding-top: 24px;
+    a,
+    small {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
-}
+  .Title {
+    padding-top: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    line-clamp: 1;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .Content {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    line-clamp: 4;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    p {
+      // body-medium
+      font-size: $xxxxs !important;
+      font-weight: $lighter !important;
+      line-height: 20px;
+    }
+  }
+  .ImageContainer {
+    width: 100%;
+    height: 235px;
+    object-fit: cover;
+  }
+  .ArtistsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    line-height: normal;
+    padding-top: 10px;
 
-.Profile .Icon {
-  max-width: 40px;
-  padding-bottom: 8px;
-}
-
-.Card .Artists {
-  padding-left: 16px;
-  font-weight: 200;
-  font-size: 12px;
-}
-
-.Card .Link {
-  color: $dark-green;
-  padding-top: 24px;
-  a,
-  small {
-    &:hover {
-      text-decoration: underline;
+    .Profile {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      height: auto;
+      align-items: center;
+      max-width: 30%;
+      margin-top: 1rem;
+      color: $dark-green;
+      a {
+        color: $dark-green;
+      }
+      .Icon {
+        max-width: 40px;
+      }
+    }
+    .Artists {
+      padding-left: 16px;
+      font-weight: 200;
+      font-size: 14px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      line-clamp: 2;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
   }
 }
 
-@media screen and (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
+@media screen and (min-width: $breakpoint-sm) {
   .Card {
-    width: 250px;
-  }
-  .Card .ImageContainer {
-    width: 220px;
-    height: 158px;
+    width: 420px;
   }
 }
 
-@media screen and (max-width: $breakpoint-sm) {
+@media screen and (min-width: $breakpoint-md) {
   .Card {
-    min-height: 350px;
-    max-height: 550px;
+    width: 240px;
   }
-  .Card .Link {
-    padding-top: 0px;
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+  .Card {
+    width: 280px;
   }
 }

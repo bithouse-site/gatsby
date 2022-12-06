@@ -31,7 +31,7 @@ const CustomSection = ({ sections }) => {
         section?._type !== undefined &&
         section?._type === "imageComponent" &&
         checkImagePrint === false ? (
-          <div className="my-5">
+          <div className="my-3">
             <Carousel key={index} images={sectionsImages} />
             {(checkImagePrint = true)}
           </div>

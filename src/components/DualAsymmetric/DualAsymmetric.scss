@@ -9,7 +9,9 @@
 .DualAsymmetric .ImageContainer {
   padding: 3rem 4rem;
   img {
-    max-width: 350px !important;
+    max-width: 192px !important;
+    display: block;
+    margin: 0 auto;
   }
 }
 
@@ -84,11 +86,14 @@
         1fr var(--left-column-width, 640px) var(--right-column-width, 320px)
         1fr;
     }
+    .ImageContainer {
+      padding: 0 0 0 2.5rem;
+    }
+    .TextContainer {
+      padding: 5rem 0 5rem 2.5rem;
+    }
   }
-  
-  .DualAsymmetric .ImageContainer {
-    padding: 0 0 0 2.5rem;
-  }
+
 }
 
 @media (min-width: $breakpoint-xl) {
@@ -102,9 +107,11 @@
           1fr var(--left-column-width, 740px) var(--right-column-width, 370px)
           1fr;
       }
-  }
-  .DualAsymmetric .ImageContainer {
-    padding: 0 0 0 2.5rem;
+      .ImageContainer {
+        img {
+          max-width: 320px !important;
+        }
+      }
   }
   .DualAsymmetric .TextContainer {
     p,

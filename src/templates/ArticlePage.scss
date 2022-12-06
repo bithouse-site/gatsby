@@ -15,7 +15,7 @@
       background: $light-gray-2;
     }
     .title {      
-      padding: 1rem 2.5rem 0 2.5rem;
+      padding: 1rem 1.5rem 0 1.5rem;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
@@ -52,12 +52,42 @@
   }
 }
 
+@media (min-width: $breakpoint-md) {
+  .article {
+    .articleHeader {
+      .title {
+        padding: 1rem 2.5rem 1rem 0;
+      }
+      .titleContent {
+        display: grid;
+        grid-template-columns: 1fr 760px 1fr;
+      }
+    }
+    .cardsArticle {
+      display: grid;
+      grid-template-columns: 1fr 760px 1fr;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .article {
+    .articleHeader {
+      .titleContent {
+        grid-template-columns: 1fr 960px 1fr;
+      }
+    }
+    .cardsArticle {
+      grid-template-columns: 1fr 960px 1fr;
+    }
+  }
+}
+
 @media (min-width: $breakpoint-xl) {
   .article {
     .articleHeader {
       .titleContent{
-        display: grid;
-        grid-template-columns: 1fr 1000px 1fr;
+        grid-template-columns: 1fr 1110px 1fr;
 
         .title {
           padding: 1rem 0;
@@ -70,7 +100,7 @@
   }
   .cardsArticle {
     display: grid;
-    grid-template-columns: 1fr 1000px 1fr;
+    grid-template-columns: 1fr 1110px 1fr;
     .cardsContent {
       padding: 0 !important;
     }
@@ -79,7 +109,41 @@
 
 
 @media (min-width: $breakpoint-xxl) {
-  .article .articleHeader {
-    grid-template-columns: 1fr 1400px 1fr;
+  .article {
+    .articleHeader {
+      .titleContent {
+        grid-template-columns: 1fr 1260px 1fr;
+      }
+    }
+    .cardsArticle {
+      grid-template-columns: 1fr 1260px 1fr;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-xxxl) {
+  .article {
+    .articleHeader {
+      .titleContent {
+        grid-template-columns: 1fr 1410px 1fr;
+      }
+      
+    }
+    .cardsArticle {
+      grid-template-columns: 1fr 1410px 1fr;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-xxxxl) {
+  .article {
+    .articleHeader {
+      .titleContent {
+        grid-template-columns: 1fr 1560px 1fr;
+      }
+    }
+    .cardsArticle {
+      grid-template-columns: 1fr 1560px 1fr;
+    }
   }
 }

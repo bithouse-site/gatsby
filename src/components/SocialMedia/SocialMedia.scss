@@ -43,7 +43,6 @@
   .MediasHero {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
   }
@@ -52,9 +51,9 @@
     margin-left: 1rem;
   }
   .Social .Medias .Media {
-    max-width: 50px;
+    max-width: 40px;
   }
   .Social .Logo {
-    max-width: 256px;
+    max-width: 200px;
   }
 }

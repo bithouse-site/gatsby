@@ -23,7 +23,6 @@ export function Hero(props: HeroContent): React.ReactElement {
                         )}
                     </div>
                     <h4 className={classes.Title}>{props?.data?.titleHero}</h4>
-                    {/* <p>{dataHero?.description}</p> */}
                     <PortableText value={props?.data?._rawRichTextHero} />
                     <Animation type="fadeLeft" delay={800}>
                         {props?.data?.socialNetworks === true ? (

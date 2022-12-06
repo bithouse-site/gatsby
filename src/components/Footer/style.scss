@@ -3,21 +3,45 @@
 
 .Footer {
   width: 100%;
-  height: 100%;
-  min-height: var(--footer-height);
   background: $dark-green;
   padding-bottom: 2rem;
+  height: fit-content;
 }
+
+
 
 .FooterWrapper {
   width: 100%;
-  height: 100%;
   max-width: var(--page-width);
   margin: 0 auto;
-  padding: var(--page-padding);
+  padding: 0 1.5rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  @media (min-width: 768px) {
+    max-width: 760px;
+}
+  @media (min-width: 992px) {
+    max-width: 960px;
+}
+@media (min-width: 1200px){
+      max-width: 1110px;
+}
+@media (min-width: 1400px){
+  max-width: 1260px;
+}
+@media (min-width: 1600px){
+  max-width: 1410px;
+}
+@media (min-width: 1800px){
+  max-width: 1560px;
+}
+}
+
+.Links a {
+  @media (min-width: 768px) {
+    margin-right: 4rem;
+}
 }
 
 .Footer .Title {
@@ -28,6 +52,13 @@
   margin-top: 1.5rem;
 }
 
+.Info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
 .Redes {
   display: flex;
   flex-direction: column;
@@ -35,6 +66,12 @@
   align-items: center;
   margin:0 auto;
   margin-bottom: 3rem;
+  @media (min-width: 768px) {
+    margin: 0;
+    margin-left: auto;
+    margin-top: 3rem;
+    justify-content: start;
+}
 }
 
 .Contacto {
@@ -46,16 +83,18 @@
     flex-direction: column;
     justify-content: space-between;
     flex-wrap: nowrap;
+
     img{
       width: 40px;
       height: 40px;
-      margin-bottom: 1rem;
+      // margin-right: 5px;
     }
     p {
       font-family: $primary-font;
       color: var(--background-color);
-      letter-spacing: 1px;
       margin-bottom: 0;
+      padding-left: 10px;
+      
     }
     p:last-child {
       margin-right: 0;
@@ -63,48 +102,6 @@
   }
 }
 
-@media (min-width: 768px) {
-  .FooterWrapper {
-    max-width: 760px;
-  }
-  .Links a {
-    margin-right: 4rem;
-  }
-  .Redes {
-    margin: 0;
-    margin-left: auto;
-    margin-top: 3rem;
-    justify-content: start;
-  }
-}
 
 
-@media (min-width: 992px){
-  .FooterWrapper  {
-      max-width: 960px;
-  }
-}
 
-@media (min-width: 1200px){
-  .FooterWrapper  {
-      max-width: 1110px;
-  }
-}
-
-@media (min-width: 1400px){
-  .FooterWrapper  {
-      max-width: 1260px;
-  }
-}
-
-@media (min-width: 1600px){
-  .FooterWrapper  {
-      max-width: 1410px;
-  }
-}
-
-@media (min-width: 1800px){
-  .FooterWrapper  {
-      max-width: 1560px;
-  }
-}

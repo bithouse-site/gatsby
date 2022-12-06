@@ -7,7 +7,9 @@ const Location = () => {
   const address = useFooter().allSanityFooter?.nodes[0]?.address
   return (
     <div className="Info">
-      <StaticImage src="../../../images/icon-location.png" alt="location-icon" />
+      <div className="imgContainer">
+        <StaticImage src="../../../images/icon-location.png" alt="location-icon" />
+      </div>
       <p>{address}</p>
     </div>
   )

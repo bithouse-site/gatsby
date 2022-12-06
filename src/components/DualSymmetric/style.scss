@@ -111,7 +111,7 @@
       }
 
     .videoContainer {
-      height: 300px;
+      height: 400px;
       width: 100%;
       align-self: center;
       justify-self: center;
@@ -166,7 +166,7 @@
       1fr var(--left-column-width, 705px) var(--right-column-width, 705px)
       1fr;
     .videoContainer {
-      height: 450px;
+      height: 500px;
     }
   }
 }
@@ -177,26 +177,8 @@
       1fr var(--left-column-width, 780px) var(--right-column-width, 780px)
       1fr;
     .videoContainer {
-      height: 450px;
+      height: 550px;
     }
   }
 }
 
-// @media (min-width: $breakpoint-xxl) {
-//   .DualSymmetric {
-//     display: grid;
-//     grid-template-columns:
-//       1fr var(--left-column-width, 550px) var(--right-column-width, 550px)
-//       1fr;
-
-//     .videoContainer {
-//       height: 280px;
-//       width: 600px;
-//       align-self: center;
-//       justify-self: center;
-//     }
-//     .videoContainer {
-//       height: 405px;
-//     }
-//   }
-// }

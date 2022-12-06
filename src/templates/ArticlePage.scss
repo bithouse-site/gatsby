@@ -44,11 +44,10 @@
   }
 }
 
-@media (min-width: $breakpoint-sm) {
+@media (min-width: $breakpoint-md) {
   .cards {
     display: flex;
     justify-content: center;
-    gap: 4rem;
   }
 }
 
@@ -71,6 +70,9 @@
   .cardsArticle {
     display: grid;
     grid-template-columns: 1fr 1000px 1fr;
+    .cards{
+      gap: 4rem;
+    }
     .cardsContent {
       padding: 0 !important;
     }

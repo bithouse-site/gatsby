@@ -28,7 +28,7 @@ const Pagination = ({ posts, postPerPage, inicialState }) => {
 
   return (
     <>
-      <div className="PaginationContent">{currentPosts}</div>
+      <div className="CardsContent">{currentPosts}</div>
       <nav>
         <ul className="Pagination">
           <li className="Pagination__item">

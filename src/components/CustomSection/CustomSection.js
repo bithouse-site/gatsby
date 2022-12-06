@@ -13,7 +13,6 @@ const CustomSection = ({ sections }) => {
     return item._type === "articleReference"
   })
 
-  console.log(sectionsCards)
   const sectionResult = sections.map((section, index) => {
     return (
       <>
@@ -46,19 +45,19 @@ const CustomSection = ({ sections }) => {
         {section?._type !== null &&
         section?._type !== undefined &&
         section?._type === "sectionBanner" ? (
-          <div className="my-5 py-4">
+          <>
             <BannerDoble key={index} data={section?.banner} />
-          </div>
+          </>
         ) : null}
 
         {section?._type !== null &&
         section?._type !== undefined &&
         section?._type === "articleReference" &&
         checkImagePrint === false ? (
-          <div className="my-5">
+          <>
             <CardsVisitantes key={index} data={sectionsCards} />
             {(checkImagePrint = true)}
-          </div>
+          </>
         ) : null}
       </>
     )

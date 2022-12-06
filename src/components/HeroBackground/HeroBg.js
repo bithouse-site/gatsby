@@ -8,22 +8,22 @@ const HeroBg = ({ data }) => {
 
   return (
     <div className="heroBg">
-      <div></div>
-      <div className="BgImage">
-        <StaticImage
+      <div className="bgImage">
+        {/*  <StaticImage
           src="../../../content/images/BgHero.svg"
           alt="Background Image"
-          className="imageBg"
-        />
-      </div>
-      <div className="contentText">
-        {image && (
-          <div className="imageText">
-            <SanityImage {...image} alt="Image Visitants" />
-          </div>
-        )}
-        <h5 className="headline-small">{data?.heroVisitant?.titleHeroBg}</h5>
-        <div></div>
+          className="imageTemplate"
+        /> */}
+
+        <div className="contentText">
+          {image && (
+            <div className="imageText">
+              <SanityImage {...image} alt="Image Visitants" />
+            </div>
+          )}
+          <h5 className="headline-small">{data?.heroVisitant?.titleHeroBg}</h5>
+        </div>
+        <div className="empty-right"></div>
       </div>
     </div>
   )

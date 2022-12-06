@@ -44,7 +44,7 @@
     padding: 1.5rem 1.5rem 3rem 1.5rem;
     .Subtitle {
       img {
-        max-width: 20px;
+        max-width: 40px;
       }
     }
   }
@@ -108,6 +108,11 @@
     grid-template-columns:
       1fr var(--left-column-width, 320px) var(--right-column-width, 640px)
       1fr;
+      .Text .TextContainer .Subtitle {
+        img {
+          max-width: 50px;
+        }
+      }
       .ImageContainer {
         padding: 2.5rem;
       }

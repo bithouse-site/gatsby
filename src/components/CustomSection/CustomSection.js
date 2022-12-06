@@ -1,11 +1,16 @@
 import React from "react"
-import { DualSymmetric, TextBlock, Carousel } from "../"
+import { DualSymmetric, TextBlock, Carousel, BannerDoble } from "../"
+import CardsVisitantes from "../CardsVisitantes/CardsVisitantes"
 
 const CustomSection = ({ sections }) => {
   let checkImagePrint = false
 
   const sectionsImages = sections.filter(item => {
     return item._type === "imageComponent"
+  })
+
+  const sectionsCards = sections.filter(item => {
+    return item._type === "articleReference"
   })
 
   const sectionResult = sections.map((section, index) => {
@@ -35,6 +40,24 @@ const CustomSection = ({ sections }) => {
             <Carousel key={index} images={sectionsImages} />
             {(checkImagePrint = true)}
           </div>
+        ) : null}
+
+        {section?._type !== null &&
+        section?._type !== undefined &&
+        section?._type === "sectionBanner" ? (
+          <>
+            <BannerDoble key={index} data={section?.banner} />
+          </>
+        ) : null}
+
+        {section?._type !== null &&
+        section?._type !== undefined &&
+        section?._type === "articleReference" &&
+        checkImagePrint === false ? (
+          <>
+            <CardsVisitantes key={index} data={sectionsCards} />
+            {(checkImagePrint = true)}
+          </>
         ) : null}
       </>
     )

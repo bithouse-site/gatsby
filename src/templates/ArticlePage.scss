@@ -44,11 +44,10 @@
   }
 }
 
-@media (min-width: $breakpoint-sm) {
+@media (min-width: $breakpoint-md) {
   .cards {
     display: flex;
     justify-content: center;
-    gap: 4rem;
   }
 }
 

@@ -1,16 +1,14 @@
 import React from "react"
 import { DualSymmetric, TextBlock, Carousel, BannerDoble } from "../"
 import CardsVisitantes from "../CardsVisitantes/CardsVisitantes"
+import useArticle from "../../hooks/useArticle"
 
 const CustomSection = ({ sections }) => {
   let checkImagePrint = false
+  const dataArticles = useArticle().allSanityArticle.nodes
 
   const sectionsImages = sections.filter(item => {
     return item._type === "imageComponent"
-  })
-
-  const sectionsCards = sections.filter(item => {
-    return item._type === "articleReference"
   })
 
   const sectionResult = sections.map((section, index) => {
@@ -52,12 +50,8 @@ const CustomSection = ({ sections }) => {
 
         {section?._type !== null &&
         section?._type !== undefined &&
-        section?._type === "articleReference" &&
-        checkImagePrint === false ? (
-          <>
-            <CardsVisitantes key={index} data={sectionsCards} />
-            {(checkImagePrint = true)}
-          </>
+        section?._type === "booleanArticle" ? (
+          <CardsVisitantes key={index} data={dataArticles} />
         ) : null}
       </>
     )

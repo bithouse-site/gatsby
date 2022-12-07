@@ -6,11 +6,11 @@ const CustomSection = ({ sections }) => {
   let checkImagePrint = false
 
   const sectionsImages = sections.filter(item => {
-    return item._type === "imageComponent"
+    return item?._type === "imageComponent"
   })
 
   const sectionsCards = sections.filter(item => {
-    return item._type === "articleReference"
+    return item?._type === "articleReference"
   })
 
   const sectionResult = sections.map((section, index) => {

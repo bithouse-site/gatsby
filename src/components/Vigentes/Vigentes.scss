@@ -20,7 +20,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 3rem;
   img {
     max-width: 280px;
     margin-bottom: 2rem;
@@ -32,7 +32,13 @@
 }
 
 @media (min-width: $breakpoint-sm) {
-  .Vigentes .VigentesText{
+  .Vigentes {
+    grid-template-columns:
+      1fr
+      500px
+      1fr;
+  }
+  .Vigentes .VigentesText {
     img {
       max-width: 400px;
     }
@@ -41,28 +47,34 @@
     }
     .Button {
       max-width: 400px;
-      padding: 0.3rem 10rem !important;      
+      padding: 0.3rem 10rem !important;
     }
   }
 }
 
 @media (min-width: $breakpoint-md) {
+  .Vigentes {
+    grid-template-columns:
+      1fr
+      760px
+      1fr;
+  }
   .Vigentes .VigentesText {
     img {
-      max-width: 450px;
+      max-width: 630px;
     }
     p {
-      max-width: 450px;
+      max-width: 630px;
     }
     .Button {
-      max-width: 450px;
-      padding: 0.3rem 10rem !important;
+      max-width: 630px;
+      padding: 0.3rem 17rem !important;
     }
   }
   .Vigentes .CardsContainer {
     .Cards {
       flex-direction: row;
-      justify-content: center;
+      justify-content: space-around;
     }
   }
 }

@@ -88,12 +88,25 @@
 @media screen and (min-width: $breakpoint-sm) {
   .Card {
     width: 420px;
+    &.wide {
+      .ImageContainer {
+        object-fit: cover;
+      }
+    }
   }
 }
 
 @media screen and (min-width: $breakpoint-md) {
   .Card {
     width: 240px;
+    &.wide {
+      width: 282px;
+      .ImageContainer {
+        width: 100%;
+        height: auto;
+        object-fit: scale-down;
+      }
+    }
   }
 }
 

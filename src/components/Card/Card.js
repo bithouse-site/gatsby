@@ -6,13 +6,18 @@ import { Link } from "gatsby"
 
 import "./Card.scss"
 
-const Card = ({ data: { title, slug, _rawContent, image, artists } }) => {
+const Card = ({
+  data: { title, slug, link, _rawContent, image, artists },
+  wide,
+}) => {
   const icon = artists?.imageIcon
   const isMobile = useMediaQuery({ query: "(max-width: 576px)" })
   const showArtists = artists !== undefined && !isMobile
+  const wideCard = wide ? "wide" : ""
+  const showLink = !slug && link
 
   return (
-    <div className="Card">
+    <div className={`Card ${wideCard}`}>
       {image && (
         <div>
           <SanityImage {...image} alt={`${title}`} className="ImageContainer" />
@@ -40,10 +45,16 @@ const Card = ({ data: { title, slug, _rawContent, image, artists } }) => {
           <div className="Artists">{artists?.description}</div>
         </div>
       )}
-      {slug && (
+      {slug ? (
         <Link to={`../${slug}`} className="Link">
           <small>Ver más</small>
         </Link>
+      ) : (
+        link && (
+          <a href={link} rel="noopener noreferrer" className="Link">
+            <small>Ver más</small>
+          </a>
+        )
       )}
     </div>
   )

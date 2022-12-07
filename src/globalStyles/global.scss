@@ -22,14 +22,13 @@ $light-gray-2: #dfdfdf;
 
 /* BREAKPOINTS max width of content in comments */
 $breakpoint-sm: 576px;
-$breakpoint-md: 768px; //760 
+$breakpoint-md: 768px; //760
 $breakpoint-lg: 992px; //960 320/640
 $breakpoint-xl: 1200px; //1110 370/740
 $breakpoint-xxl: 1400px; //1260 420/840
 $breakpoint-xxxl: 1600px; //1410 470/940
 $breakpoint-xxxxl: 1800px; //1560 520/1040
 $breakpoint-max: 1920px; //1710 570/1140
-
 
 /* BUTTONS */
 @mixin primaryBtn {
@@ -99,6 +98,35 @@ $breakpoint-max: 1920px; //1710 570/1140
   }
   @media screen and (max-width: $breakpoint-lg) {
     padding: 0.3rem 5rem;
+    font-size: 1rem;
+  }
+}
+
+@mixin outlinedButton {
+  font-size: 1rem;
+  font-weight: 700;
+  width: fit-content;
+  height: auto;
+  border-radius: 0.5rem;
+  border: 0.125rem solid $dark-green;
+  transition: 20ms ease-out;
+  background-color: $bg-white;
+  color: $dark-green;
+
+  &:hover {
+    background-color: $light-gray-2;
+  }
+
+  @media screen and (max-width: $breakpoint-md) {
+    padding: 0.3rem 5rem;
+    font-size: 1rem;
+  }
+  @media screen and (min-width: $breakpoint-md) {
+    padding: 0.3rem 3rem;
+    font-size: 1rem;
+  }
+  @media screen and (min-width: $breakpoint-lg) {
+    padding: 0.5rem 1.5rem;
     font-size: 1rem;
   }
 }
@@ -190,7 +218,6 @@ h3 {
   font-weight: $max-bold;
 }
 
-
 // headline-large
 h4 {
   font-size: $m;
@@ -261,14 +288,11 @@ small.label-small {
   padding-right: 0.5rem;
 }
 
-
-
 @media screen and (min-width: $breakpoint-xl) {
-
   h1 {
     font-size: $xxxxxl;
   }
-  
+
   h2 {
     font-size: $xxxxl;
   }
@@ -277,7 +301,7 @@ small.label-small {
     font-size: $xxxl;
   }
 
- h4 {
+  h4 {
     font-size: $xxl;
   }
 
@@ -298,7 +322,6 @@ small.label-small {
     padding-right: 4rem;
     max-width: 760px;
   }
-
 }
 
 hr {

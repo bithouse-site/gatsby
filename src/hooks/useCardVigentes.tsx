@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby"
 
-const useArticleCard = () => {
+const useCardVigentes = () => {
   return useStaticQuery(graphql`
     {
       allSanityCardsVigentes {
@@ -36,4 +36,4 @@ const useArticleCard = () => {
   `)
 }
 
-export default useArticleCard
+export default useCardVigentes

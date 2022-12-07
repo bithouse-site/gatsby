@@ -4,7 +4,7 @@ import Card from "../Card/Card"
 import "./CardsVisitants.scss"
 
 const CardsVisitantes = ({ data }) => {
-  const cardsComponent = data.map(article => {
+  const cardsComponent = data?.map(article => {
     const articleData = {
       title: article?.articleReference?.title,
       slug: `visitantes/${article?.articleReference?.slug?.current}`,

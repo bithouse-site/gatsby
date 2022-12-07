@@ -31,66 +31,10 @@ const useVisitant = () => {
                 }
               }
               VisitantBuilder {
-                ... on SanityArticleReference {
+                ... on SanityBooleanArticle {
                   _key
                   _type
-                  articleReference {
-                    articleCard {
-                      artists {
-                        label
-                        link
-                        description
-                        imageIcon {
-                          asset {
-                            _id
-                          }
-                          crop {
-                            _key
-                            _type
-                            bottom
-                            left
-                            right
-                            top
-                          }
-                          hotspot {
-                            _key
-                            _type
-                            height
-                            x
-                            width
-                            y
-                          }
-                        }
-                      }
-                      _rawContent
-                    }
-                    slug {
-                      current
-                    }
-                    title
-                    otherTitle
-                    imageHeader {
-                      asset {
-                        _id
-                      }
-                      hotspot {
-                        _key
-                        _type
-                        height
-                        width
-                        x
-                        y
-                      }
-                      crop {
-                        _key
-                        _type
-                        bottom
-                        left
-                        right
-                        top
-                      }
-                    }
-                  }
+                  Articulos
                 }
                 ... on SanitySectionBanner {
                   _key

@@ -6,11 +6,11 @@ import "./CardsVisitants.scss"
 const CardsVisitantes = ({ data }) => {
   const cardsComponent = data?.map(article => {
     const articleData = {
-      title: article?.articleReference?.title,
-      slug: `visitantes/${article?.articleReference?.slug?.current}`,
-      _rawContent: article?.articleReference?.articleCard?._rawContent,
-      image: article?.articleReference?.imageHeader,
-      artists: article?.articleReference?.articleCard?.artists,
+      title: article?.title,
+      slug: `visitantes/${article?.slug?.current}`,
+      _rawContent: article?.articleCard?._rawContent,
+      image: article?.imageHeader,
+      artists: article?.articleCard?.artists,
     }
     return <Card data={articleData} key={article?.id} />
   })

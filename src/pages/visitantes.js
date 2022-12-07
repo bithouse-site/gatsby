@@ -9,7 +9,7 @@ export default function Visitantes() {
   const data = useVisitant().allSanityVisitant.nodes[0]
   return (
     <>
-      <Page useSplashScreenAnimation>
+      <Page>
         <HeroBg data={data} />
         <CustomSection sections={data?.VisitantBuilder} />
       </Page>

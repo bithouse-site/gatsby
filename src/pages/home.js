@@ -5,11 +5,14 @@ import useHome from "../hooks/useHome"
 import { Seo } from "../components/seo"
 
 // dynamic zone components
-import Banner from "../components/Banner/Banner"
-import BannerDoble from "../components/BannerDoble/BannerDoble"
-import { Hero } from "../components/Hero/index"
-import DualSymmetric from "../components/DualSymmetric/DualSymmetric"
-import DualAsymmetric from "../components/DualAsymmetric/DualAsymmetric"
+import {
+  Banner,
+  BannerDoble,
+  Hero,
+  DualSymmetric,
+  DualAsymmetric,
+  Vigentes,
+} from "../components/index"
 
 const bodyComponents = {
   banner: data => <Banner data={data} key={data?.id} />,
@@ -17,6 +20,7 @@ const bodyComponents = {
   hero: data => <Hero data={data} key={data?.id} />,
   dualSymmetric: data => <DualSymmetric data={data} key={data?.id} />,
   dualAsymmetric: data => <DualAsymmetric data={data} key={data?.id} />,
+  vigentes: data => <Vigentes data={data} key={data?.id} />,
 }
 
 export default function Home() {

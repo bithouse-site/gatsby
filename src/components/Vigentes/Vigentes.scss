@@ -1,0 +1,124 @@
+@import "../../globalStyles/global.scss";
+@import "../../globalStyles/theme.scss";
+
+.Vigentes {
+  display: grid;
+  .Button {
+    @include outlinedButton;
+    max-width: 300px;
+    margin-bottom: 1rem;
+  }
+  .Cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.Vigentes .VigentesText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  img {
+    max-width: 280px;
+    margin-bottom: 2rem;
+  }
+  p {
+    max-width: 280px;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (min-width: $breakpoint-sm) {
+  .Vigentes .VigentesText{
+    img {
+      max-width: 400px;
+    }
+    p {
+      max-width: 400px;
+    }
+    .Button {
+      max-width: 400px;
+      padding: 0.3rem 10rem !important;      
+    }
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  .Vigentes .VigentesText {
+    img {
+      max-width: 450px;
+    }
+    p {
+      max-width: 450px;
+    }
+    .Button {
+      max-width: 450px;
+      padding: 0.3rem 10rem !important;
+    }
+  }
+  .Vigentes .CardsContainer {
+    .Cards {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .Vigentes {
+    grid-template-columns:
+      1fr
+      var(--left-column-width, 430px)
+      var(--right-column-width, 430px)
+      1fr;
+  }
+
+  .Vigentes .VigentesText {
+    align-items: flex-start;
+    img {
+      max-width: 300px;
+    }
+    p {
+      max-width: 300px;
+    }
+    .Button {
+      padding: 0.5rem 1.5rem !important;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-xl) {
+  .Vigentes {
+    grid-template-columns:
+      1fr
+      var(--left-column-width, 555px)
+      var(--right-column-width, 555px)
+      1fr;
+    height: 678px;
+  }
+
+  .Vigentes .VigentesText {
+    margin: 150px 0;
+    img {
+      max-width: 485px;
+      margin-bottom: 1.5rem;
+    }
+    p {
+      margin-bottom: 1.5rem;
+      max-width: 500px;
+    }
+  }
+
+  .Vigentes .CardsContainer {
+    margin: 95px 0;
+    .Cards {
+      max-height: 400px;
+      .Card {
+        min-height: 0px !important;
+      }
+    }
+  }
+}

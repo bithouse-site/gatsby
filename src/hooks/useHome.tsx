@@ -239,6 +239,84 @@ const useHome = () => {
                 value
               }
             }
+            ... on SanityVigentes {
+              id
+              _type
+              titleVigentes {
+                asset {
+                  _id
+                }
+                crop {
+                  _key
+                  _type
+                  top
+                  bottom
+                  left
+                  right
+                }
+                hotspot {
+                  _key
+                  _type
+                  x
+                  y
+                  height
+                  width
+                }
+              }
+              _rawRichTextVigentes
+              background {
+                crop {
+                  _key
+                  _type
+                  top
+                  bottom
+                  left
+                  right
+                }
+                hotspot {
+                  _key
+                  _type
+                  x
+                  y
+                  height
+                  width
+                }
+                asset {
+                  _id
+                  url
+                }
+              }
+              button {
+                link
+                nameButton
+              }
+              cards {
+                title
+                _rawContent
+                link
+                image {
+                  crop {
+                    _key
+                    _type
+                    top
+                    bottom
+                    left
+                    right
+                  }
+                  hotspot {
+                    _key
+                    _type
+                    x
+                    y
+                    height
+                    width
+                  }
+                  asset {
+                    _id
+                  }
+                }
+              }
+            }
           }
         }
       }

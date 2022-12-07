@@ -1,0 +1,74 @@
+@import "../../globalStyles/global.scss";
+@import "../../globalStyles/theme.scss";
+
+.Products {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 3rem 0;
+  .iconContainer {
+    img {
+        width: 40px;
+    }
+  }
+}
+
+.ProductCard {
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: $breakpoint-md) {
+  .Products {
+    grid-template-columns:
+      1fr var(--middle-column-width, 760px)
+      1fr;
+    &__content {
+        display: flex;
+    }
+  }
+  .ProductCard {
+    width: 33%;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .Products {
+    grid-template-columns:
+      1fr var(--middle-column-width, 960px)
+      1fr;
+  }
+}
+
+@media (min-width: $breakpoint-xl) {
+  .Products {
+    grid-template-columns:
+      1fr var(--middle-column-width, 1110px)
+      1fr;
+  }
+}
+
+@media (min-width: $breakpoint-xxl) {
+  .Products {
+    grid-template-columns:
+      1fr var(--middle-column-width, 1260px)
+      1fr;
+  }
+}
+
+@media (min-width: $breakpoint-xxxl) {
+  .Products {
+    grid-template-columns:
+      1fr var(--middle-column-width, 1410px)
+      1fr;
+  }
+}
+
+@media (min-width: $breakpoint-xxxxl) {
+  .Products {
+    grid-template-columns:
+      1fr var(--middle-column-width, 1560px)
+      1fr;
+  }
+}

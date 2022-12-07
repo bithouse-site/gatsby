@@ -14,7 +14,6 @@ const Card = ({
   const isMobile = useMediaQuery({ query: "(max-width: 576px)" })
   const showArtists = artists !== undefined && !isMobile
   const wideCard = wide ? "wide" : ""
-  const showLink = !slug && link
 
   return (
     <div className={`Card ${wideCard}`}>

@@ -16,7 +16,6 @@ const Vigentes = ({
     }
     return <Card data={cardData} key={id} wide />
   })
-  console.log(background?.asset?.url)
   return (
     <div
       className="Vigentes"

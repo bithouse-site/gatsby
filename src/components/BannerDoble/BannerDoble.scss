@@ -58,7 +58,7 @@
     height: 100%;
     padding: 3rem 4rem;
     img {
-      max-width: 200px;
+      max-width: 192px;
     }
   }
 }
@@ -83,7 +83,6 @@
 
 @media (min-width: $breakpoint-md) {
   .BannerDoble {
-    height: 18rem;
     display: grid;
     grid-template-columns:
       1fr var(--left-column-width, 250px) var(--right-column-width, 450px)
@@ -104,7 +103,7 @@
 
 @media (min-width: $breakpoint-lg) {
   .BannerDoble {
-    display: grid;
+
     grid-template-columns:
       1fr var(--left-column-width, 320px) var(--right-column-width, 640px)
       1fr;
@@ -114,55 +113,46 @@
         }
       }
       .ImageContainer {
-        padding: 2.5rem;
+        padding: 5rem 2.5rem;
       }
   }
 }
 
 @media (min-width: $breakpoint-xl) {
   .BannerDoble {
-    display: grid;
     grid-template-columns:
       1fr var(--left-column-width, 370px) var(--right-column-width, 740px)
       1fr;
-      .ImageContainer {
-        padding: 2.5rem;
+      .Text {
+        justify-content: start;
+        padding-left: 5rem;
       }
   }
 }
 
 @media (min-width: $breakpoint-xxl) {
   .BannerDoble {
-    display: grid;
+
     grid-template-columns:
       1fr var(--left-column-width, 420px) var(--right-column-width, 840px)
       1fr;
-      .ImageContainer {
-        padding: 2.5rem;
-      }
   }
 }
 
 @media (min-width: $breakpoint-xxxl) {
   .BannerDoble {
-    display: grid;
+
     grid-template-columns:
       1fr var(--left-column-width, 470px) var(--right-column-width, 940px)
       1fr;
-      .ImageContainer {
-        padding: 2.5rem;
-      }
   }
 }
 
 @media (min-width: $breakpoint-xxxxl) {
   .BannerDoble {
-    display: grid;
+
     grid-template-columns:
       1fr var(--left-column-width, 520px) var(--right-column-width, 1040px)
       1fr;
-      .ImageContainer {
-        padding: 2.5rem;
-      }
   }
 }

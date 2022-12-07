@@ -46,7 +46,7 @@
     .Hero .Title {
         font-size: 2.625rem;
         line-height: 4rem;
-        margin-bottom: 0;
+        margin-bottom: 2rem;
     }
 
     .Hero .Subtitle {
@@ -57,6 +57,9 @@
     .ImagePrefix {
         font-size: 2.625rem;
         line-height: 4rem;
+    }
+    .Intro {
+        margin-bottom: 1rem;
     }
 }
 
@@ -78,10 +81,10 @@
         flex-direction: column;
         margin-bottom: 50px;
     }
-
     .Hero {
         display: block;
     }
+
 }
 
 @media (min-width: 1024px) {

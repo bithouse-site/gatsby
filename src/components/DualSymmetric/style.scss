@@ -8,7 +8,7 @@
     width: 100%;
     height: 300px;
     img {
-        height: 100%;
+      height: 100%;
     }
   }
   .videoContainer {
@@ -59,13 +59,12 @@
   }
 }
 
-
 @media (min-width: $breakpoint-md) {
   .DualSymmetric {
     height: max-content;
     grid-template-columns:
-    1fr var(--left-column-width, 380px) var(--right-column-width, 380px)
-    1fr;
+      1fr var(--left-column-width, 380px) var(--right-column-width, 380px)
+      1fr;
     .videoContainer {
       height: 400px;
       grid-column: span 2;
@@ -76,22 +75,22 @@
       }
     }
     .imageContainer {
-        grid-column: span 2;
-        height: 100%;
-        img {
-            height: 100%;
-        }
-        &.right {
-          order: 1;
-        }
+      grid-column: span 2;
+      height: 100%;
+      img {
+        object-fit: cover;
+      }
+      &.right {
+        order: 1;
+      }
     }
     .TextDetails {
       grid-column: span 1;
-        padding: 3rem 2rem 3rem 2.5rem;
-        align-self: center;
-        &.right {
-          order: 0;
-        }
+      padding: 3rem 2rem 3rem 2.5rem;
+      align-self: center;
+      &.right {
+        order: 0;
+      }
     }
     .emptyRight {
       &.right {
@@ -99,100 +98,87 @@
       }
     }
   }
-  
 }
 
 @media (min-width: $breakpoint-lg) {
   .DualSymmetric {
-    // height: 620px;
+    height: 600px;
     grid-template-columns:
       1fr var(--left-column-width, 480px) var(--right-column-width, 480px)
       1fr;
+      .TextDetails {
+        padding: 5rem 2rem 5rem 2.5rem;
+      }
 
     .videoContainer {
-      height: 300px;
+      height: 400px;
       width: 100%;
       align-self: center;
       justify-self: center;
     }
-    // .imageContainer {
-
-    //     height: 100%;
-
-    // }
+    .imageContainer {
+      height: 600px;
+      img {
+        object-fit: cover;
+      }
+    }
 
     .TextDetails {
       margin-top: 0px;
-      
     }
   }
 }
 
 @media (min-width: $breakpoint-xl) {
-    .DualSymmetric {
-
-      grid-template-columns:
+  .DualSymmetric {
+    height: 650px;
+    grid-template-columns:
       1fr var(--left-column-width, 555px) var(--right-column-width, 555px)
       1fr;
-      .videoContainer {
-        height: 450px;
-      }
+    .videoContainer {
+      height: 450px;
+    }
+    .imageContainer {
+      height: 650px;
+
     }
   }
+}
 
-  @media (min-width: $breakpoint-xxl) {
-    .DualSymmetric {
-
-      grid-template-columns:
+@media (min-width: $breakpoint-xxl) {
+  .DualSymmetric {
+    height: 590px;
+    grid-template-columns:
       1fr var(--left-column-width, 630px) var(--right-column-width, 630px)
       1fr;
-      .videoContainer {
-        height: 450px;
-      }
+    .videoContainer {
+      height: 550px;
+    }
+    .imageContainer {
+      height: 590px;
     }
   }
-  
-  @media (min-width: $breakpoint-xxxl) {
-    .DualSymmetric {
+}
 
-      grid-template-columns:
+@media (min-width: $breakpoint-xxxl) {
+  .DualSymmetric {
+    grid-template-columns:
       1fr var(--left-column-width, 705px) var(--right-column-width, 705px)
       1fr;
-      .videoContainer {
-        height: 450px;
-      }
+    .videoContainer {
+      height: 500px;
     }
   }
-  
-  @media (min-width: $breakpoint-xxxxl) {
-    .DualSymmetric {
+}
 
-      grid-template-columns:
+@media (min-width: $breakpoint-xxxxl) {
+  .DualSymmetric {
+    grid-template-columns:
       1fr var(--left-column-width, 780px) var(--right-column-width, 780px)
       1fr;
-      .videoContainer {
-        height: 450px;
-      }
+    .videoContainer {
+      height: 550px;
     }
   }
-
-// @media (min-width: $breakpoint-xxl) {
-//   .DualSymmetric {
-//     display: grid;
-//     grid-template-columns:
-//       1fr var(--left-column-width, 550px) var(--right-column-width, 550px)
-//       1fr;
-
-//     .videoContainer {
-//       height: 280px;
-//       width: 600px;
-//       align-self: center;
-//       justify-self: center;
-//     }
-//     .videoContainer {
-//       height: 405px;
-//     }
-//   }
-// }
-
+}
 

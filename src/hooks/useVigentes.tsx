@@ -28,27 +28,6 @@ const useVigentes = () => {
             }
           }
           _rawRichTextVigentes
-          background {
-            crop {
-              _key
-              _type
-              top
-              bottom
-              left
-              right
-            }
-            hotspot {
-              _key
-              _type
-              x
-              y
-              height
-              width
-            }
-            asset {
-              _id
-            }
-          }
           button {
             link
             nameButton

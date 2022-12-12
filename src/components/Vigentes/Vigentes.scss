@@ -3,10 +3,11 @@
 
 .Vigentes {
   display: grid;
+  grid-template-columns: 1fr;
   .Button {
     @include outlinedButton;
     max-width: 300px;
-    margin-bottom: 1rem;
+    margin: 0 auto;
   }
   .Cards {
     display: flex;
@@ -21,28 +22,21 @@
   align-items: center;
   justify-content: center;
   margin-top: 3rem;
+  .ImageWrapper {
+    margin: 0 auto;
+  }
   img {
-    max-width: 280px;
-    margin-bottom: 2rem;
+    max-width: 350px;
   }
   p {
-    max-width: 280px;
-    margin-bottom: 2rem;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    margin-bottom: 0 !important;
   }
 }
 
 @media (min-width: $breakpoint-sm) {
-  .Vigentes {
-    grid-template-columns:
-      1fr
-      500px
-      1fr;
-  }
   .Vigentes .VigentesText {
     img {
-      max-width: 400px;
-    }
-    p {
       max-width: 400px;
     }
     .Button {
@@ -58,18 +52,6 @@
       1fr
       760px
       1fr;
-  }
-  .Vigentes .VigentesText {
-    img {
-      max-width: 630px;
-    }
-    p {
-      max-width: 630px;
-    }
-    .Button {
-      max-width: 630px;
-      padding: 0.3rem 17rem !important;
-    }
   }
   .Vigentes .CardsContainer {
     .Cards {
@@ -91,10 +73,10 @@
   .Vigentes .VigentesText {
     align-items: flex-start;
     img {
-      max-width: 300px;
+      max-width: 400px;
     }
     p {
-      max-width: 300px;
+      padding: 1.5rem 1.5rem 2rem 0;
     }
     .Button {
       padding: 0.5rem 1.5rem !important;
@@ -109,18 +91,18 @@
       var(--left-column-width, 555px)
       var(--right-column-width, 555px)
       1fr;
-    height: 678px;
   }
 
   .Vigentes .VigentesText {
     margin: 150px 0;
+    .ImageWrapper {
+      margin: 0 auto 1.5rem 0;
+    }
     img {
       max-width: 485px;
-      margin-bottom: 1.5rem;
     }
     p {
       margin-bottom: 1.5rem;
-      max-width: 500px;
     }
   }
 
@@ -132,5 +114,38 @@
         min-height: 0px !important;
       }
     }
+  }
+  .Vigentes .Button {
+    margin: 0 auto auto 0;
+  }
+}
+
+@media (min-width: $breakpoint-xxl) {
+  .Vigentes {
+    grid-template-columns:
+      1fr
+      var(--left-column-width, 630px)
+      var(--right-column-width, 630px)
+      1fr;
+  }
+}
+
+@media (min-width: $breakpoint-xxxl) {
+  .Vigentes {
+    grid-template-columns:
+      1fr
+      var(--left-column-width, 705px)
+      var(--right-column-width, 705px)
+      1fr;
+  }
+}
+
+@media (min-width: $breakpoint-xxxxl) {
+  .Vigentes {
+    grid-template-columns:
+      1fr
+      var(--left-column-width, 780px)
+      var(--right-column-width, 780px)
+      1fr;
   }
 }

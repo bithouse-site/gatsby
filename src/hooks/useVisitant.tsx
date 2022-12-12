@@ -35,7 +35,7 @@ const useVisitant = () => {
                   _key
                   _type
                   Articulos
-                }
+              }
                 ... on SanitySectionBanner {
                   _key
                   _type

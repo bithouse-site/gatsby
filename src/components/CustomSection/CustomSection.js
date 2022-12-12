@@ -8,7 +8,7 @@ const CustomSection = ({ sections }) => {
   const dataArticles = useArticle().allSanityArticle.nodes
 
   const sectionsImages = sections.filter(item => {
-    return item._type === "imageComponent"
+    return item?._type === "imageComponent"
   })
 
   const sectionResult = sections.map((section, index) => {

@@ -1,6 +1,6 @@
 import React from "react"
 import SanityImage from "gatsby-plugin-sanity-image"
-import { StaticImage } from "gatsby-plugin-image"
+
 import "./HeroBg.scss"
 
 const HeroBg = ({ data }) => {
@@ -9,12 +9,6 @@ const HeroBg = ({ data }) => {
   return (
     <div className="heroBg">
       <div className="bgImage">
-        {/*  <StaticImage
-          src="../../../content/images/BgHero.svg"
-          alt="Background Image"
-          className="imageTemplate"
-        /> */}
-
         <div className="contentText">
           {image && (
             <div className="imageText">

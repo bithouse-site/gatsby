@@ -53,5 +53,13 @@ module.exports = {
     },
     `gatsby-plugin-image`,
     `gatsby-plugin-sass`,
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-WFTZCTM",
+        includeInDevelopment: true,
+        enableWebVitalsTracking: true,
+      },
+    }
   ],
 }

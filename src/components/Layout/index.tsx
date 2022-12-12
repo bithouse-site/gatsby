@@ -38,7 +38,7 @@ export function Layout(props: LayoutProps): React.ReactElement {
             />
             <div className={classes.Layout}>
                 <Header />
-                <main>{props.children}</main>
+                <main className={classes.main}>{props.children}</main>
                 {props.useCookieBar && <CookieBar />}
                 <Footer />
             </div>

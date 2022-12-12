@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useRef, useState } from "react"
 import { Link } from "gatsby"
 import "./Pagination.scss"
 import RArrowDark from "../../images/RArrow-dark.svg"
@@ -10,6 +10,7 @@ const Pagination = ({ posts, postPerPage, inicialState }) => {
   const [currentPage, setCurrentPage] = useState(1)
   const [postsPerPage] = useState(`${postPerPage}`)
   const pageNumbers = []
+  const wrapperRef = useRef(null)
 
   for (let i = 1; i <= Math.ceil(posts?.length / postsPerPage); i++) {
     pageNumbers.push(i)
@@ -24,10 +25,11 @@ const Pagination = ({ posts, postPerPage, inicialState }) => {
   // Change page
   const paginate = pageNumber => {
     setCurrentPage(pageNumber)
+    wrapperRef.current.scrollIntoView({ behavior: "smooth" })
   }
 
   return (
-    <>
+    <div ref={wrapperRef}>
       <div className="CardsContent">{currentPosts}</div>
       <nav>
         <ul className="Pagination">
@@ -92,7 +94,7 @@ const Pagination = ({ posts, postPerPage, inicialState }) => {
           </li>
         </ul>
       </nav>
-    </>
+    </div>
   )
 }
 

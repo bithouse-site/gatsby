@@ -1,5 +1,9 @@
 import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faChevronRight,
+  faChevronLeft,
+} from "@fortawesome/free-solid-svg-icons"
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
 import SanityImage from "gatsby-plugin-sanity-image"
@@ -7,8 +11,6 @@ import SanityImage from "gatsby-plugin-sanity-image"
 import "./LogosSections.scss"
 
 const LogosSections = ({ data }) => {
-  console.log(data)
-
   const logoList = data.map(logo => {
     return (
       <div className="logos__image">
@@ -19,15 +21,15 @@ const LogosSections = ({ data }) => {
 
   const responsive = {
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 4,
+      breakpoint: { max: 3000, min: 1025 },
+      items: 3,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 768 },
+      breakpoint: { max: 1024, min: 992 },
       items: 3,
     },
     mobileTablet: {
-      breakpoint: { max: 767, min: 577 },
+      breakpoint: { max: 991, min: 577 },
       items: 2,
     },
     mobile: {
@@ -39,7 +41,7 @@ const LogosSections = ({ data }) => {
     return (
       <FontAwesomeIcon
         class="react-multiple-carousel__arrow react-multiple-carousel__arrow--left custom-arrow left"
-        icon="fa-solid fa-chevron-left"
+        icon={faChevronLeft}
         onClick={() => onClick()}
       />
     )
@@ -48,14 +50,14 @@ const LogosSections = ({ data }) => {
     return (
       <FontAwesomeIcon
         class="react-multiple-carousel__arrow react-multiple-carousel__arrow--right custom-arrow right"
-        icon="fa-solid fa-chevron-right"
+        icon={faChevronRight}
         onClick={() => onClick()}
       />
     )
   }
 
   return (
-    <div className="logos py-3 my-3">
+    <div className="logos my-3">
       <Carousel
         responsive={responsive}
         autoPlay={logoList.length > 4}

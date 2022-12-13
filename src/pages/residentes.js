@@ -6,6 +6,7 @@ import Banner from "../components/Banner/Banner"
 import BannerDoble from "../components/BannerDoble/BannerDoble"
 import ModuloResidentes from "../components/ModuloResidentes/ModuloResidentes"
 import Products from "../components/Products/Products"
+import { Seo } from "../components/seo"
 
 import "./residentes.scss"
 
@@ -14,6 +15,10 @@ export default function Residentes() {
   console.log(data, "data")
   return (
     <>
+      <Seo
+        title="Residentes"
+        description="Esta es una pagina donde se muestran los residentes de la bithouse. Son las empresas que trabajan en bithouse"
+        keywords="Bithouse, Residente, house, bitlogic" />
       <Page>
         {data.banner !== null && data.banner !== undefined && (
           <Banner data={data.banner} />

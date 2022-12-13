@@ -31,7 +31,7 @@ const Card = ({
       {showArtists && (
         <div className="ArtistsContainer">
           <div className="Profile">
-            <a href={artists?.link} rel="noopener noreferrer">
+            <a href={artists?.link} rel="noopener noreferrer" target="_blank">
               <SanityImage
                 {...icon}
                 alt="Icon Image"
@@ -50,7 +50,12 @@ const Card = ({
         </Link>
       ) : (
         link && (
-          <a href={link} rel="noopener noreferrer" className="Link">
+          <a
+            href={link}
+            rel="noopener noreferrer"
+            className="Link"
+            target="_blank"
+          >
             <small>Ver más</small>
           </a>
         )

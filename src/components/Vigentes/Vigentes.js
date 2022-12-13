@@ -8,7 +8,7 @@ import bgDesktop from "../../images/Bg-vigentes-desktop.png"
 import bgMobile from "../../images/Bg-vigentes-mobile.png"
 
 const Vigentes = ({
-  data: { titleVigentes, background, _rawRichTextVigentes, button, cards },
+  data: { titleVigentes, _rawRichTextVigentes, button, cards },
 }) => {
   const cardsComponent = cards?.slice(0, 2)?.map((card, id) => {
     const cardData = {
@@ -34,7 +34,12 @@ const Vigentes = ({
         )}
         {_rawRichTextVigentes && <PortableText value={_rawRichTextVigentes} />}
         {button.link && (
-          <a href={button.link} className="Button">
+          <a
+            href={button.link}
+            className="Button"
+            target="_blank"
+            rel="noreferrer"
+          >
             {button.nameButton}
           </a>
         )}

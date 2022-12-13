@@ -19,7 +19,6 @@
     h5,
     h6,
     p,
-    a,
     blockquote {
       color: $bg-white;
     }
@@ -32,9 +31,11 @@
     h5,
     h6,
     p,
-    a,
     blockquote {
       color: $bg-black;
+    }
+    a, small{
+      color: $dark-green;
     }
   }
   .TextContainer {

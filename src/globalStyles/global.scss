@@ -1,6 +1,6 @@
 /* GLOBAL VARIABLES */
 :root {
-  --border-radius: 1rem;
+  --border-radius: 0.5rem;
   --page-width: 68.75rem;
   --page-padding: 0 2.5rem;
   --header-height: 6.25rem;
@@ -34,13 +34,15 @@ $breakpoint-max: 1920px; //1710 570/1140
 @mixin primaryBtn {
   font-size: 1rem;
   font-weight: 700;
-  width: fit-content;
-  height: auto;
   border-radius: var(--border-radius);
   border: 0.125rem solid $dark-green;
   transition: 20ms ease-out;
   background-color: $dark-green;
   color: $bg-white;
+  height: 44px;
+  width: 200px;
+  display: grid;
+  place-content: center;
 
   &:hover {
     background: var(--background-color);
@@ -50,26 +52,15 @@ $breakpoint-max: 1920px; //1710 570/1140
     background: var(--background-color);
     color: var(--primary-color-green) !important;
   }
-
-  @media screen and (min-width: $breakpoint-lg) {
-    padding: 0.5rem 1.5rem;
-    font-size: 1rem;
-  }
-  @media screen and (min-width: 768px) {
-    padding: 0.3rem 3rem;
-    font-size: 1rem;
-  }
-  @media screen and (max-width: $breakpoint-lg) {
-    padding: 0.3rem 5rem;
-    font-size: 1rem;
-  }
 }
 
 @mixin secondaryBtn {
   font-size: 1rem;
   font-weight: 700;
-  width: fit-content;
-  height: auto;
+  height: 44px;
+  width: 200px;
+  display: grid;
+  place-content: center;
   border-radius: var(--border-radius);
   border: 0.125rem solid $bg-white;
   transition: 20ms ease-out;
@@ -87,26 +78,15 @@ $breakpoint-max: 1920px; //1710 570/1140
     background-color: $light-green-2;
     border: 0.125rem solid $bg-white;
   }
-
-  @media screen and (min-width: $breakpoint-lg) {
-    padding: 0.5rem 1.5rem;
-    font-size: 1rem;
-  }
-  @media screen and (min-width: 768px) {
-    padding: 0.3rem 3rem;
-    font-size: 1rem;
-  }
-  @media screen and (max-width: $breakpoint-lg) {
-    padding: 0.3rem 5rem;
-    font-size: 1rem;
-  }
 }
 
 @mixin outlinedButton {
+  height: 44px;
+  width: 200px;
+  display: grid;
+  place-content: center;
   font-size: 1rem;
   font-weight: 700;
-  width: fit-content;
-  height: auto;
   border-radius: 0.5rem;
   border: 0.125rem solid $dark-green;
   transition: 20ms ease-out;
@@ -117,18 +97,6 @@ $breakpoint-max: 1920px; //1710 570/1140
     background-color: $light-gray-2;
   }
 
-  @media screen and (max-width: $breakpoint-md) {
-    padding: 0.3rem 5rem;
-    font-size: 1rem;
-  }
-  @media screen and (min-width: $breakpoint-md) {
-    padding: 0.3rem 3rem;
-    font-size: 1rem;
-  }
-  @media screen and (min-width: $breakpoint-lg) {
-    padding: 0.5rem 1.5rem;
-    font-size: 1rem;
-  }
 }
 
 /* GLOBAL STYLES */

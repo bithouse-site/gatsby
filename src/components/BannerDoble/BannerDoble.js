@@ -25,64 +25,71 @@ const BannerDoble = ({
     ? "alternative"
     : "default"
   const subtitleIcon = subtitle?.imageIcon
+  const isExternalLink =
+    button?.link?.includes("https") || button?.link?.includes("http")
 
   return (
     <div className="BannerDoble">
-              <div className="emptyLeft" style={{ backgroundColor: bgColorImage }}></div>
+      <div
+        className="emptyLeft"
+        style={{ backgroundColor: bgColorImage }}
+      ></div>
 
       {image?.asset && (
-
-
         <div
           className="ImageContainer"
-          style={{ backgroundColor: bgColorImage }} >
-                   
- 
-         <SanityImage {...image} alt={altText}/>
-      
+          style={{ backgroundColor: bgColorImage }}
+        >
+          <SanityImage {...image} alt={altText} />
         </div>
       )}
 
-
-      <div className={`Text ${textColor}`} style={{ backgroundColor: bgColorText }}>
+      <div
+        className={`Text ${textColor}`}
+        style={{ backgroundColor: bgColorText }}
+      >
         <div className="TextContainer">
-           {_rawContent && (
-            <PortableText
-              value={_rawContent}
-              style={{ color: textColor }}
-            />)}
-            {subtitleIcon && (
-          <div className="Subtitle">
-            <SanityImage
-              {...subtitleIcon}
-              alt="Icon Image"
-              loading="eager"
-              className="Icon"
-            />
-            <span className="Content">  {subtitle?.description}</span>
-          </div>
-        )}
+          {_rawContent && (
+            <PortableText value={_rawContent} style={{ color: textColor }} />
+          )}
+          {subtitleIcon && (
+            <div className="Subtitle">
+              <SanityImage
+                {...subtitleIcon}
+                alt="Icon Image"
+                loading="eager"
+                className="Icon"
+              />
+              <span className="Content"> {subtitle?.description}</span>
+            </div>
+          )}
 
-        {button?.link &&
-          (buttonType === "button" ? (
-            <a
-              href={button?.link}
-              rel="noreferrer"
-              className={`Button ${buttonColor}`}
-            >
-              <small>{button?.nameButton}</small>
-            </a>
-        
-       
-          ) : (
-            <a href={button?.link} rel="noreferrer" className={`Link`}>
-              <small className="label-large">{button?.nameButton}</small>
-            </a>
-          ))}
+          {button?.link &&
+            (buttonType === "button" ? (
+              <a
+                href={button?.link}
+                rel="noreferrer"
+                className={`Button ${buttonColor}`}
+                target={isExternalLink ? "_blank" : ""}
+              >
+                <small>{button?.nameButton}</small>
+              </a>
+            ) : (
+              <a
+                href={button?.link}
+                rel="noreferrer"
+                className={`Link mt-4`}
+                target={isExternalLink ? "_blank" : ""}
+              >
+                <small className="label-large">{button?.nameButton}</small>
+              </a>
+            ))}
+        </div>
       </div>
-      
-    </div> 
-    <div className="emptyRight" style={{ backgroundColor: bgColorText }}></div>
+      <div
+        className="emptyRight"
+        style={{ backgroundColor: bgColorText }}
+      ></div>
     </div>
   )
 }

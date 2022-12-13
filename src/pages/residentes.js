@@ -5,6 +5,9 @@ import useResidentes from "../hooks/useResidentes.tsx"
 import Banner from "../components/Banner/Banner"
 import BannerDoble from "../components/BannerDoble/BannerDoble"
 import ModuloResidentes from "../components/ModuloResidentes/ModuloResidentes"
+import Products from "../components/Products/Products"
+
+import "./residentes.scss"
 
 export default function Residentes() {
   const data = useResidentes().allSanityResidentes.nodes[1]
@@ -19,9 +22,14 @@ export default function Residentes() {
           data.moduloResidentes !== undefined && (
             <ModuloResidentes data={data.moduloResidentes} />
           )}
-        {data.bannerDoble !== null && data.bannerDoble !== undefined && (
-          <BannerDoble data={data.bannerDoble} />
+        {data.productos !== null && data.productos !== undefined && (
+          <Products data={data.productos} />
         )}
+        <div className="containerBanner">
+          {data.bannerDoble !== null && data.bannerDoble !== undefined && (
+            <BannerDoble data={data.bannerDoble} />
+          )}
+        </div>
       </Page>
     </>
   )

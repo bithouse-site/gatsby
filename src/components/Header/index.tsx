@@ -62,7 +62,9 @@ export function Header(): React.ReactElement {
     return (
         <header className={classes.Header}>
             {/* Make background blurry when sidebar is opened */}
-            <Helmet bodyAttributes={{ class: open ? classes.Blurred : undefined }} />
+            <Helmet bodyAttributes={{ 
+                class: open && !isDesktopBreakpoint ? classes.Blurred : undefined 
+            }} />
             <Animation className={classes.ContentWrapper} type="fadeDown">
                 <Link to="/" aria-label="home">
                     <Logo />

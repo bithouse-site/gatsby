@@ -57,7 +57,7 @@ const LogosSections = ({ data }) => {
   }
 
   return (
-    <div className="logos my-3">
+    <div className="logos my-5">
       <Carousel
         responsive={responsive}
         autoPlay={logoList.length > 4}

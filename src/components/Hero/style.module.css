@@ -1,3 +1,5 @@
+
+
 .HeroContainer {
     display: flex;
 }
@@ -10,12 +12,6 @@
     min-height: 50vh;
 }
 
-.Hero .Title {
-    margin: 0 0 1.5rem 0;
-    font-weight: 700;
-    font-size: 2rem;
-    line-height: 2.375rem;
-}
 
 .Hero .Subtitle {
     margin: -0.5rem 0 0 0;
@@ -24,10 +20,6 @@
     line-height: 1.5rem;
 }
 
-.Hero p {
-    font-size: 1.125rem;
-    margin-bottom: 2rem;
-}
 
 .Intro {
     display: flex;
@@ -54,7 +46,7 @@
     .Hero .Title {
         font-size: 2.625rem;
         line-height: 4rem;
-        margin-bottom: 0;
+        margin-bottom: 2rem;
     }
 
     .Hero .Subtitle {
@@ -66,6 +58,9 @@
         font-size: 2.625rem;
         line-height: 4rem;
     }
+    .Intro {
+        margin-bottom: 1rem;
+    }
 }
 
 .heroImageCont {
@@ -73,7 +68,7 @@
     width: 100%;
     margin-top: auto;
     margin-bottom: auto;
-    padding: 0 3rem 3rem 0;
+    /* padding: 0 3rem 3rem 0; */
 }
 
 .heroImageCont .heroImage {
@@ -86,14 +81,14 @@
         flex-direction: column;
         margin-bottom: 50px;
     }
-
     .Hero {
         display: block;
     }
+
 }
 
 @media (min-width: 1024px) {
     .Hero {
-        width: 70%;
+        width: 65%;
     }
 }

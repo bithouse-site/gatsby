@@ -1,37 +1,95 @@
 import React from "react"
-import { GatsbyImage } from "gatsby-plugin-image"
+import SanityImage from "gatsby-plugin-sanity-image"
+import { PortableText } from "@portabletext/react"
 import "./BannerDoble.scss"
 
 const BannerDoble = ({
-  data: { title, description, color, image, button },
+  data: {
+    description,
+    subtitle,
+    _rawContent,
+    colorLeft,
+    colorRight,
+    image,
+    button,
+    buttonType,
+  },
 }) => {
-  const textColor = color?.value === "#FCFCFC" ? "#1B1C1E" : "#FCFCFC"
-  const bgColor = color === null ? "#0A694D" : color?.value
+  const bgColorImage = colorLeft === null ? "#0A694D" : colorLeft?.value
+  const bgColorText = colorRight === null ? "#0A694D" : colorRight?.value
   const altText = description === null ? "Banner Doble" : description
 
+  const darkColors = ["#0A694D", "#868585", "#1B1C1E"]
+  const textColor = darkColors.includes(bgColorText) ? "light" : "dark"
+  const buttonColor = darkColors.includes(bgColorText)
+    ? "alternative"
+    : "default"
+  const subtitleIcon = subtitle?.imageIcon
+  const isExternalLink =
+    button?.link?.includes("https") || button?.link?.includes("http")
+
   return (
-    <div className="BannerDoble" style={{ backgroundColor: bgColor }}>
+    <div className="BannerDoble">
+      <div
+        className="emptyLeft"
+        style={{ backgroundColor: bgColorImage }}
+      ></div>
+
       {image?.asset && (
-        <GatsbyImage image={image.asset.gatsbyImageData} alt={altText} />
+        <div
+          className="ImageContainer"
+          style={{ backgroundColor: bgColorImage }}
+        >
+          <SanityImage {...image} alt={altText} />
+        </div>
       )}
-      <div className="Text">
-        {title && (
-          <p className="Title" style={{ color: textColor }}>
-            {title}
-          </p>
-        )}
-        {button?.link && (
-          <div className="Button">
-            <a
-              href={button?.link}
-              rel="noreferrer"
-              style={{ color: textColor }}
-            >
-              {button?.nameButton}
-            </a>
-          </div>
-        )}
+
+      <div
+        className={`Text ${textColor}`}
+        style={{ backgroundColor: bgColorText }}
+      >
+        <div className="TextContainer">
+          {_rawContent && (
+            <PortableText value={_rawContent} style={{ color: textColor }} />
+          )}
+          {subtitleIcon && (
+            <div className="Subtitle">
+              <SanityImage
+                {...subtitleIcon}
+                alt="Icon Image"
+                loading="eager"
+                className="Icon"
+              />
+              <span className="Content"> {subtitle?.description}</span>
+            </div>
+          )}
+
+          {button?.link &&
+            (buttonType === "button" ? (
+              <a
+                href={button?.link}
+                rel="noreferrer"
+                className={`Button ${buttonColor}`}
+                target={isExternalLink ? "_blank" : ""}
+              >
+                <small>{button?.nameButton}</small>
+              </a>
+            ) : (
+              <a
+                href={button?.link}
+                rel="noreferrer"
+                className={`Link mt-4`}
+                target={isExternalLink ? "_blank" : ""}
+              >
+                <small className="label-large">{button?.nameButton}</small>
+              </a>
+            ))}
+        </div>
       </div>
+      <div
+        className="emptyRight"
+        style={{ backgroundColor: bgColorText }}
+      ></div>
     </div>
   )
 }

@@ -6,20 +6,68 @@ const useBannerDoble = () => {
       allSanityBannerDoble {
         nodes {
           title
+          subtitle {
+            description
+            label
+            link
+            imageIcon {
+              crop {
+                _key
+                _type
+                top
+                bottom
+                left
+                right
+              }
+              hotspot {
+                _key
+                _type
+                x
+                y
+                height
+                width
+              }
+              asset {
+                _id
+              }
+            }
+          }
           description
-          color {
+          _rawContent
+          colorLeft {
+            title
+            value
+          }
+          colorRight {
             title
             value
           }
           image {
+            crop {
+              _key
+              _type
+              top
+              bottom
+              left
+              right
+            }
+            hotspot {
+              _key
+              _type
+              x
+              y
+              height
+              width
+            }
             asset {
-              gatsbyImageData
+              _id
             }
           }
           button {
             nameButton
             link
           }
+          buttonType
         }
       }
     }

@@ -13,9 +13,46 @@ const useHeader = () => {
               link
             }
           }
-          logo {
+          logoMobile {
             asset {
-              gatsbyImageData
+              _id
+            }
+            crop {
+              _key
+              _type
+              bottom
+              left
+              right
+              top
+            }
+            hotspot {
+              _key
+              _type
+              height
+              width
+              x
+              y
+            }
+          }
+          logo {
+            crop {
+              _key
+              _type
+              top
+              bottom
+              left
+              right
+            }
+            hotspot {
+              _key
+              _type
+              x
+              y
+              height
+              width
+            }
+            asset {
+              _id
             }
           }
           ctaButton {
@@ -25,7 +62,6 @@ const useHeader = () => {
         }
       }
     }
-    
   `)
 }
 

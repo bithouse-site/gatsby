@@ -7,11 +7,11 @@ module.exports = {
     {
       resolve: "gatsby-theme-portfolio-minimal",
       options: {
-        siteUrl: "https://gatsby-starter-portfolio-minimal-theme.netlify.app/", // Used for sitemap generation
+        siteUrl: "https://bithouse.com.ar", // Used for sitemap generation
         manifestSettings: {
-          favicon: "./content/images/favicon.png", // Path is relative to the root
-          siteName: "My Minimal Portfolio", // Used in manifest.json
-          shortName: "Portfolio", // Used in manifest.json
+          favicon: "./content/images/bithouse.png", // Path is relative to the root
+          siteName: "Bithouse", // Used in manifest.json
+          shortName: "Bithouse", // Used in manifest.json
           startUrl: "/", // Used in manifest.json
           backgroundColor: "#FFFFFF", // Used in manifest.json
           themeColor: "#000000", // Used in manifest.json
@@ -43,7 +43,23 @@ module.exports = {
         graphqlTag: "default",
       },
     },
+    {
+      resolve: "gatsby-plugin-sanity-image",
+      options: {
+        // Sanity project info (required)
+        projectId: `g3ub24w8`,
+        dataset: process.env.SANITY_DATASET,
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-plugin-sass`,
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-WFTZCTM",
+        includeInDevelopment: true,
+        enableWebVitalsTracking: true,
+      },
+    }
   ],
 }

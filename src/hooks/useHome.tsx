@@ -16,8 +16,24 @@ const useHome = () => {
                 value
               }
               image {
+                crop {
+                  _key
+                  _type
+                  top
+                  bottom
+                  left
+                  right
+                }
+                hotspot {
+                  _key
+                  _type
+                  x
+                  y
+                  height
+                  width
+                }
                 asset {
-                  gatsbyImageData
+                  _id
                 }
               }
             }
@@ -25,20 +41,68 @@ const useHome = () => {
               id
               _type
               title
+              subtitle {
+                description
+                label
+                link
+                imageIcon {
+                  crop {
+                    _key
+                    _type
+                    top
+                    bottom
+                    left
+                    right
+                  }
+                  hotspot {
+                    _key
+                    _type
+                    x
+                    y
+                    height
+                    width
+                  }
+                  asset {
+                    _id
+                  }
+                }
+              }
               description
-              color {
+              _rawContent
+              colorLeft {
+                title
+                value
+              }
+              colorRight {
                 title
                 value
               }
               image {
+                crop {
+                  _key
+                  _type
+                  top
+                  bottom
+                  left
+                  right
+                }
+                hotspot {
+                  _key
+                  _type
+                  x
+                  y
+                  height
+                  width
+                }
                 asset {
-                  gatsbyImageData
+                  _id
                 }
               }
               button {
                 nameButton
                 link
               }
+              buttonType
             }
             ... on SanityHero {
               id
@@ -47,8 +111,90 @@ const useHome = () => {
               socialNetworks
               _rawRichTextHero
               imageHero {
+                crop {
+                  _key
+                  _type
+                  top
+                  bottom
+                  left
+                  right
+                }
+                hotspot {
+                  _key
+                  _type
+                  x
+                  y
+                  height
+                  width
+                }
                 asset {
-                  gatsbyImageData
+                  _id
+                }
+              }
+            }
+            ... on SanityDualSymmetric {
+              id
+              _type
+              imageSide
+              shortText
+              titleDualS
+              _rawRichTextDualS
+              backgroundColor {
+                title
+                value
+              }
+              button {
+                link
+                nameButton
+              }
+              iconObject {
+                description
+                label
+                link
+                imageIcon {
+                  crop {
+                    _key
+                    _type
+                    top
+                    bottom
+                    left
+                    right
+                  }
+                  hotspot {
+                    _key
+                    _type
+                    x
+                    y
+                    height
+                    width
+                  }
+                  asset {
+                    _id
+                  }
+                }
+              }
+              youtubeVideo {
+                url
+              }
+              imageDualS {
+                crop {
+                  _key
+                  _type
+                  top
+                  bottom
+                  left
+                  right
+                }
+                hotspot {
+                  _key
+                  _type
+                  x
+                  y
+                  height
+                  width
+                }
+                asset {
+                  _id
                 }
               }
             }
@@ -60,8 +206,24 @@ const useHome = () => {
               description
               imageSide
               image {
+                crop {
+                  _key
+                  _type
+                  top
+                  bottom
+                  left
+                  right
+                }
+                hotspot {
+                  _key
+                  _type
+                  x
+                  y
+                  height
+                  width
+                }
                 asset {
-                  gatsbyImageData
+                  _id
                 }
               }
               button {
@@ -75,6 +237,62 @@ const useHome = () => {
               colorRight {
                 title
                 value
+              }
+            }
+            ... on SanityVigentes {
+              id
+              _type
+              titleVigentes {
+                asset {
+                  _id
+                }
+                crop {
+                  _key
+                  _type
+                  top
+                  bottom
+                  left
+                  right
+                }
+                hotspot {
+                  _key
+                  _type
+                  x
+                  y
+                  height
+                  width
+                }
+              }
+              _rawRichTextVigentes
+              button {
+                link
+                nameButton
+              }
+              cards {
+                title
+                _rawContent
+                link
+                image {
+                  crop {
+                    _key
+                    _type
+                    top
+                    bottom
+                    left
+                    right
+                  }
+                  hotspot {
+                    _key
+                    _type
+                    x
+                    y
+                    height
+                    width
+                  }
+                  asset {
+                    _id
+                  }
+                }
               }
             }
           }

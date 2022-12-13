@@ -25,7 +25,7 @@ const BannerDoble = ({
     ? "alternative"
     : "default"
   const subtitleIcon = subtitle?.imageIcon
-  const isLink =
+  const isExternalLink =
     button?.link?.includes("https") || button?.link?.includes("http")
 
   return (
@@ -70,7 +70,7 @@ const BannerDoble = ({
                 href={button?.link}
                 rel="noreferrer"
                 className={`Button ${buttonColor}`}
-                target={isLink ? "_blank" : ""}
+                target={isExternalLink ? "_blank" : ""}
               >
                 <small>{button?.nameButton}</small>
               </a>
@@ -79,7 +79,7 @@ const BannerDoble = ({
                 href={button?.link}
                 rel="noreferrer"
                 className={`Link mt-4`}
-                target={isLink ? "_blank" : ""}
+                target={isExternalLink ? "_blank" : ""}
               >
                 <small className="label-large">{button?.nameButton}</small>
               </a>

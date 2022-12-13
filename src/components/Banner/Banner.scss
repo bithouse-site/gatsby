@@ -8,6 +8,7 @@
   text-align: center;
   max-height: 30vh;
   height: 100%;
+  padding: 2rem 0;
 }
 
 .Banner .Title {
@@ -18,9 +19,7 @@
 }
 
 .Banner .ImageContainer {
-  display: flex;
-  justify-content: center;
-  height: 100%;
+  max-width: 500px;
 }
 
 .Banner .ImageWrapper {

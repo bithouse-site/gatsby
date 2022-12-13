@@ -8,10 +8,11 @@
 }
 
 .main {
-    margin-bottom: 6rem;
+    /* margin-bottom: 6rem; */
+    height: fit-content;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .main {
         margin-bottom: 0;
     }
@@ -28,4 +29,4 @@
     .main {
         margin-bottom: 0;
     }
-}
+} */

@@ -11,8 +11,8 @@ import { Seo } from "../components/seo"
 import "./residentes.scss"
 
 export default function Residentes() {
-  const data = useResidentes().allSanityResidentes.nodes[1]
-  console.log(data, "data")
+  const data = useResidentes().allSanityResidentes.nodes[0]
+  console.log(useResidentes().allSanityResidentes, "data")
   return (
     <>
       <Seo
@@ -20,18 +20,18 @@ export default function Residentes() {
         description="Esta es una pagina donde se muestran los residentes de la bithouse. Son las empresas que trabajan en bithouse"
         keywords="Bithouse, Residente, house, bitlogic" />
       <Page>
-        {data.banner !== null && data.banner !== undefined && (
+        {data?.banner !== null && data?.banner !== undefined && (
           <Banner data={data.banner} />
         )}
-        {data.moduloResidentes !== null &&
-          data.moduloResidentes !== undefined && (
+        {data?.moduloResidentes !== null &&
+          data?.moduloResidentes !== undefined && (
             <ModuloResidentes data={data.moduloResidentes} />
           )}
-        {data.productos !== null && data.productos !== undefined && (
+        {data?.productos !== null && data?.productos !== undefined && (
           <Products data={data.productos} />
         )}
         <div className="containerBanner">
-          {data.bannerDoble !== null && data.bannerDoble !== undefined && (
+          {data?.bannerDoble !== null && data?.bannerDoble !== undefined && (
             <BannerDoble data={data.bannerDoble} />
           )}
         </div>

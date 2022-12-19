@@ -17,7 +17,7 @@ const ProductCard = data => {
           />
         </div>
       )}
-      {data.data.title && <h6 className="title-medium">{data.data.title}</h6>}
+      {data.data.title && <h6 className="title-medium text-center">{data.data.title}</h6>}
       {data.data._rawContent && (
         <div className="textCard">
           <PortableText value={data.data._rawContent} />

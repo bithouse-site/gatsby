@@ -89,7 +89,7 @@ const DualSymmetric = ({
 
           {iconObject && (
             <div className="Profile d-flex align-items-center mt-4">
-              <div className="me-3 d-flex flex-column">
+              <div className="me-3 d-flex flex-column Profile__Icon">
                 <SanityImage {...imageIcon} alt="Icon Image" loading="eager" />
                 <small className="label-small" style={{ color: textColor }}>
                   {iconObject?.label}

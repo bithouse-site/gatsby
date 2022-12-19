@@ -48,11 +48,13 @@ const BannerDoble = ({
         className={`Text ${textColor}`}
         style={{ backgroundColor: bgColorText }}
       >
+        
         <div className="TextContainer">
           {_rawContent && (
             <PortableText value={_rawContent} style={{ color: textColor }} />
           )}
-          {subtitleIcon && (
+          {subtitleIcon != null && subtitleIcon?.asset && (
+            
             <div className="Subtitle">
               <SanityImage
                 {...subtitleIcon}

@@ -29,11 +29,12 @@ const Card = ({
             <PortableText value={_rawContent} />
           </div>
         )}
+        {console.log(showArtists)}
         {showArtists && (
           <div className="ArtistsContainer">
             <div className="Profile">
               <a href={artists?.link} rel="noopener noreferrer" target="_blank">
-                {showArtists.icon && (
+                {icon && (
                   <SanityImage
                     {...icon}
                     alt="Icon Image"

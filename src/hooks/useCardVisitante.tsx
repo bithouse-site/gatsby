@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 const useCardVisitante = () => {
   return useStaticQuery(graphql`
     {
-      allSanityArticle {
+      allSanityArticle(sort: {fields: _createdAt, order: DESC}) {
         nodes {
           id
           title

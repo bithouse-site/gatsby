@@ -88,8 +88,9 @@ const DualSymmetric = ({
           )}
 
           {iconObject && (
-            <div className="Profile d-flex align-items-center mt-4">
-              <div className="me-3 d-flex flex-column">
+            // <div className="Profile d-flex align-items-center mt-4">
+            <div className="Profile d-flex  mt-4 mb-3">
+              <div className="me-3 d-flex flex-column Profile__Icon">
                 <SanityImage {...imageIcon} alt="Icon Image" loading="eager" />
                 <small className="label-small" style={{ color: textColor }}>
                   {iconObject?.label}
@@ -102,8 +103,8 @@ const DualSymmetric = ({
           )}
 
           {shortText && (
-            <div className="mt-2">
-              <p>{shortText}</p>
+            <div className="mt-2 mb-2">
+              <small >{shortText}</small>
             </div>
           )}
 

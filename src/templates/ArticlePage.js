@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import SanityImage from "gatsby-plugin-sanity-image"
 import { CustomSection, Card } from "../components/index"
 import "./ArticlePage.scss"
+import { Seo } from "../components/seo"
 
 const ArticlePage = ({ data }) => {
   const {
@@ -28,6 +29,10 @@ const ArticlePage = ({ data }) => {
 
   return (
     <>
+    <Seo
+        title={title}
+        description="Esta es una pagina donde se muestran los artístas que exponen sus obras en la bithouse."
+        keywords="Bithouse, Visitantes, house, bitlogic" />
       <Page>
         <section className="article">
           <div className="articleHeader">

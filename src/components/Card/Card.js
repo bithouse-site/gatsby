@@ -17,33 +17,39 @@ const Card = ({
 
   return (
     <div className={`Card ${wideCard}`}>
-      {image && (
-        <div>
-          <SanityImage {...image} alt={`${title}`} className="ImageContainer" />
-        </div>
-      )}
-      {title && <h6 className="title-small Title">{title}</h6>}
-      {_rawContent && (
-        <div className="Content">
-          <PortableText value={_rawContent} />
-        </div>
-      )}
-      {showArtists && (
-        <div className="ArtistsContainer">
-          <div className="Profile">
-            <a href={artists?.link} rel="noopener noreferrer" target="_blank">
-              <SanityImage
-                {...icon}
-                alt="Icon Image"
-                loading="eager"
-                className="Icon"
-              />
-              <p className="body-small fw-bolder">{artists?.label}</p>
-            </a>
+      <div>
+        {image && (
+          <div>
+            <SanityImage {...image} alt={`${title}`} className="ImageContainer" />
           </div>
-          <div className="Artists">{artists?.description}</div>
-        </div>
-      )}
+        )}
+        {title && <h6 className="title-small Title">{title}</h6>}
+        {_rawContent && (
+          <div className="Content">
+            <PortableText value={_rawContent} />
+          </div>
+        )}
+        {console.log(showArtists)}
+        {showArtists && (
+          <div className="ArtistsContainer">
+            <div className="Profile">
+              <a href={artists?.link} rel="noopener noreferrer" target="_blank">
+                {icon && (
+                  <SanityImage
+                    {...icon}
+                    alt="Icon Image"
+                    loading="eager"
+                    className="Icon"
+                  />
+                )}
+
+                <p className="body-small fw-bolder">{artists?.label}</p>
+              </a>
+            </div>
+            <div className="Artists">{artists?.description}</div>
+          </div>
+        )}
+      </div>
       {slug ? (
         <Link to={`../${slug}`} className="Link">
           <small>Ver más</small>

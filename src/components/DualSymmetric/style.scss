@@ -46,6 +46,9 @@
       p {
         font-size: 14px;
       }
+      a:hover {
+        color: var(--primary-color-green);
+      }
 
       &__Icon {
         width: 30px;
@@ -111,9 +114,9 @@
     grid-template-columns:
       1fr var(--left-column-width, 480px) var(--right-column-width, 480px)
       1fr;
-      .TextDetails {
-        padding: 5rem 2rem 5rem 2.5rem;
-      }
+    .TextDetails {
+      padding: 5rem 2rem 5rem 2.5rem;
+    }
 
     .videoContainer {
       height: 400px;
@@ -145,7 +148,6 @@
     }
     .imageContainer {
       height: 650px;
-
     }
   }
 }
@@ -186,4 +188,3 @@
     }
   }
 }
-

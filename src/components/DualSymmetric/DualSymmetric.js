@@ -46,7 +46,6 @@ const DualSymmetric = ({
       style={{ backgroundColor: backgroundColor?.value }}
     >
       <section className={`DualSymmetric ${imageSide}`}>
-
         {dataImage && !videoUrl && (
           <div className={`imageContainer ${imageSide}`}>
             <SanityImage
@@ -79,7 +78,10 @@ const DualSymmetric = ({
           </div>
         )}
 
-        <div className={`TextDetails ${imageSide}`} style={{ color: textColor }}>
+        <div
+          className={`TextDetails ${imageSide}`}
+          style={{ color: textColor }}
+        >
           {(titleDualS || _rawRichTextDualS) && (
             <>
               <h4 style={{ color: textColor, marginTop: 0 }}>{titleDualS}</h4>
@@ -88,7 +90,6 @@ const DualSymmetric = ({
           )}
 
           {iconObject && (
-            // <div className="Profile d-flex align-items-center mt-4">
             <div className="Profile d-flex  mt-4 mb-3">
               <div className="me-3 d-flex flex-column Profile__Icon">
                 <SanityImage {...imageIcon} alt="Icon Image" loading="eager" />
@@ -97,14 +98,24 @@ const DualSymmetric = ({
                 </small>
               </div>
               <div>
-                <p className="body-medium">{iconObject?.description}</p>
+                {iconObject?.link ? (
+                  <a
+                    href={iconObject?.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <p className="body-medium">{iconObject?.description}</p>
+                  </a>
+                ) : (
+                  <p className="body-medium">{iconObject?.description}</p>
+                )}
               </div>
             </div>
           )}
 
           {shortText && (
             <div className="mt-2 mb-2">
-              <small >{shortText}</small>
+              <small>{shortText}</small>
             </div>
           )}
 
